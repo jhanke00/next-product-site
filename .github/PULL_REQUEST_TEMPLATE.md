@@ -4,7 +4,7 @@ Add the description of your change.
 
 ## Issue Reference
 
-Add the [GitHub Issue](https://github.com/jhanke00/nextjs-product-site/issues) link.
+Add the [GitHub Issue](https://github.com/jhanke00/next-product-site/issues) link.
 
 ## Checklist
 

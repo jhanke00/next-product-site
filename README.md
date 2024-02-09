@@ -26,7 +26,7 @@ This is a dummy product site that needs help adding new features and maturing th
 
 ## Areas of Focus
 
-Select one of the three areas to contribute to and help enhance the application with features that might not be present. Look at the [GitHub Issues](https://github.com/jhanke00/nextjs-product-site/issues) for capabilities to work on. Setup your PRs based on the following areas of focus.
+Select one of the three areas to contribute to and help enhance the application with features that might not be present. Look at the [GitHub Issues](https://github.com/jhanke00/next-product-site/issues) for capabilities to work on. Setup your PRs based on the following areas of focus.
 
 ### Frontend
 
