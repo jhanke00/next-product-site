@@ -21,7 +21,8 @@ This is a dummy product site that needs help adding new features and maturing th
 
 1. Clone the repository with `git clone`.
 2. Run `pnpm i` to install dependencies.
-3. Run `pnpm start` to start application.
+3. Run `pnpm dev` to start application.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Areas of Focus
 
@@ -48,3 +49,10 @@ Select one of the three areas to contribute to and help enhance the application 
 ## Contributing
 
 Read more in [Contributing](./CONTRIBUTING.md).
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
