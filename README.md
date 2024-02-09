@@ -10,16 +10,16 @@ This is a dummy product site that needs help adding new features and maturing th
 
 - NextJS
 - Mock Product Data
-- GitHub Action (CI/CD)
-- Testing Framework (Jest)
-- Component Testing (Storybook)
+- GitHub Action
+- Jest
+- Storybook
 - Folder Structure
 
 ## Getting Started
 
 ### Setup
 
-1. Clone the repository with `git clone`.
+1. Clone the repository with `git clone` or fork the repository.
 2. Run `pnpm i` to install dependencies.
 3. Run `pnpm dev` to start application.
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -31,13 +31,13 @@ Select one of the three areas to contribute to and help enhance the application 
 ### Frontend
 
 1. Create a new folder under `/app` or `/pages` directory, which will store your capability. (Ex: `/app/product-search`)
-2. Create custom components under `/components` and utility functions under `/utils` as a directory with the same name as the capability folder. (Ex: `/components/product-search`)
+2. Create custom components under `/src/components` and utility functions under `/src/utils` as a directory with the same name as the capability folder. (Ex: `/src/components/product-search`)
 3. Create a `README.md` detailing what you are trying to build, how it is used within the application, and how to test your changes.
 
 ### Backend
 
 1. Create a new folder under `/app/api` or `/pages/api` directory, which will store your API route. (Ex: `/app/api/products`)
-2. Create utility functions under `/utils` as a directory with the same name as the API route. (Ex: `/utils/products`)
+2. Create utility functions under `/src/utils` as a directory with the same name as the API route. (Ex: `/src/utils/products`)
 3. Create a `README.md` detailing what you are trying to build, how it is used within the application, and how to test your changes.
 
 ### DevOps
