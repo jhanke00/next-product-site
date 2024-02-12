@@ -3,7 +3,7 @@ import { pathsToModuleNameMapper } from 'ts-jest';
 import { compilerOptions } from './tsconfig.json';
 
 const config: Config = {
-  setupFiles: ['<rootDir>/test/setupJest.ts'],
+  setupFiles: ['<rootDir>/tests/setupJest.ts'],
   moduleFileExtensions: ['ts', 'js', 'json'],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }),
   transform: { '^.+\\.ts$': 'ts-jest' },
