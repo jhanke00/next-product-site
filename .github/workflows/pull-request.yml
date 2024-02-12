@@ -18,7 +18,7 @@ jobs:
 
       - name: Configure Worflow
         uses: ./.github/actions/configure
-    
+
       - name: Build Project
         run: pnpm build
 
@@ -30,7 +30,7 @@ jobs:
 
       - name: Configure Worflow
         uses: ./.github/actions/configure
-    
+
       - name: Build Project
         run: pnpm test
 
