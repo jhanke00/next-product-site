@@ -1,5 +1,5 @@
-const { faker } = require("@faker-js/faker");
-const fs = require("fs");
+const { faker } = require('@faker-js/faker');
+const fs = require('fs');
 
 function generateProducts() {
   const products = [];
@@ -24,5 +24,5 @@ function generateProducts() {
 
 const products = generateProducts();
 const json = JSON.stringify(products, null, 2);
-fs.writeFileSync("products.json", json);
-console.log("Products generated");
+fs.writeFileSync('products.json', json);
+console.log('Products generated');
