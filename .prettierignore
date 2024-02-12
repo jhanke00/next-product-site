@@ -1,0 +1,9 @@
+# Add files here to ignore them from prettier formatting
+
+/dist
+/cache
+/coverage
+/node_modules
+/storybook-static
+/.github/CODEOWNERS
+**/.next
