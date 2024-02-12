@@ -51,7 +51,7 @@ function generateOrders(users, products) {
     const items = [];
     let total = 0;
 
-    for (let p = 0; p < randomInt(10); p++) {
+    for (let p = 0; p < randomInt(1, 10); p++) {
       const { id, name, price } = products[randomInt(products.length)];
       const count = randomInt(1, 5);
 
