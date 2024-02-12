@@ -9,7 +9,7 @@ This is a dummy product site that needs help adding new features and maturing th
 ### What is Current State
 
 - NextJS (`/app` or `/pages`)
-- Mock Product Data (`/src/mock`)
+- Mock Data (`/src/mock`)
 - GitHub Action (`/.github`)
 - Jest
 - Storybook
