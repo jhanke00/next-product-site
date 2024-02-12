@@ -1,0 +1,20 @@
+name: Setup Workflow
+description: Setup GitHub Action Workflow
+
+runs:
+  using: composite
+  steps:
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+
+    - name: Install PNPM
+      uses: pnpm/action-setup@v2
+      id: pnpm-install
+      with:
+        version: ${{ env.PNPM_VERSION }}
+
+    - name: Install Dependencies
+      run: pnpm install
+      shell: bash

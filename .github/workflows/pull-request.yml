@@ -1,0 +1,47 @@
+name: Pull Request
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches: [main]
+
+env:
+  NODE_VERSION: 18.x
+  PNPM_VERSION: 8
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Git
+        uses: actions/checkout@v4
+
+      - name: Configure Worflow
+        uses: ./.github/actions/configure
+    
+      - name: Build Project
+        run: pnpm build
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Git
+        uses: actions/checkout@v4
+
+      - name: Configure Worflow
+        uses: ./.github/actions/configure
+    
+      - name: Build Project
+        run: pnpm test
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Git
+        uses: actions/checkout@v4
+
+      - name: Configure Worflow
+        uses: ./.github/actions/configure
+
+      - name: Build Project
+        run: pnpm lint
