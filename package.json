@@ -12,7 +12,8 @@
     "test": "jest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "generate-mock-data": "node ./scripts/generateData.js"
   },
   "engines": {
     "node": ">=18",
