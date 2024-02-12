@@ -8,3 +8,4 @@
 /.github/CODEOWNERS
 /src/mock/*.json
 **/.next
+pnpm-lock.yaml
