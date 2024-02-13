@@ -27,7 +27,8 @@ body:
   - type: checkboxes
     id: area-of-focus
     attributes:
-      label: What areas of focus does this encompass?
+      label: Area of Focus
+      description: What are the area of focus that this feature encompasses?
       options:
         - label: Frontend
         - label: Backend
