@@ -1,6 +1,6 @@
 import type { Product } from '@type/products';
 
-const Products = () => {
+export default function Products() {
   const products: Array<Product> = [
     {
       id: 1,
@@ -55,8 +55,7 @@ const Products = () => {
   ];
 
   return (
-    <main className='flex min-h-screen flex-col items-center  p-24'>
-      <h1 className='text-3xl fixed left-0 top-0 flex w-full justify-center'>Products</h1>
+    <main className='flex min-h-screen flex-col items-center p-24'>
       <div className='z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex'>
         <div className='grid lg:max-w-5xl lg:w-full lg:grid-cols-2 lg:text-left'>
           {products.map((product) => (
@@ -78,5 +77,3 @@ const Products = () => {
     </main>
   );
 }
-
-export default Product;
