@@ -16,6 +16,15 @@ body:
       value: 'I need a new feature to perform X.'
     validations:
       required: true
+  - type: textarea
+    id: considerations
+    attributes:
+      label: Considerations
+      description: What are things to consider for this feature?
+      placeholder: Describe considerations for this feature.
+      value: 'We may want to have this feature do X in a certain way.'
+    validations:
+      required: true
   - type: dropdown
     id: area-of-focus
     attributes:
