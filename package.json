@@ -13,7 +13,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepare": "husky",
-    "generate-mock-data": "node ./scripts/generateData.js"
+    "generate-large-data": "node ./scripts/generateLargeData.js",
+    "generate-small-data": "node ./scripts/generateSmallData.js"
   },
   "engines": {
     "node": ">=18",

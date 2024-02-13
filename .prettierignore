@@ -6,6 +6,6 @@
 /node_modules
 /storybook-static
 /.github/CODEOWNERS
-/src/mock/*.json
+/src/mock/**/*.json
 **/.next
 pnpm-lock.yaml

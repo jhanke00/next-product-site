@@ -17,7 +17,6 @@ This is a dummy product site that needs help adding new features and maturing th
 - Docs (`/docs`)
 - Prettier
 - ESLint
-- Docker (`/docker`)
 - Folder Structure
 - Mock Product Page (`/app/products`)
 
@@ -27,6 +26,7 @@ This is a dummy product site that needs help adding new features and maturing th
 
 - [Install Node v18+](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)
 - [Install PNPM v8+](https://pnpm.io/installation)
+- [Install Docker Desktop](https://www.docker.com/products/docker-desktop)
 
 ### Setup
 
@@ -37,7 +37,9 @@ This is a dummy product site that needs help adding new features and maturing th
 
 ## Areas of Focus
 
-Select one of the three areas to contribute to and help enhance the application with features that might not be present. Look at the [GitHub Issues](https://github.com/jhanke00/next-product-site/issues) for capabilities to work on. Feature requests will have the `feature request` label associated with the GitHub Issue and may encompass one or multiple areas of focus. Setup your PRs based on the following areas of focus. For all changes, please detail what you planned on doing to make those changes in the `/docs` folder and address the MVP for those changes so it is clear what changes were planned.
+Select one of the three areas to contribute to and help enhance the application with features that might not be present. Look at the [GitHub Issues](https://github.com/jhanke00/next-product-site/issues) for capabilities to work on. Feature requests will have the `feature request` label associated with the GitHub Issue and may encompass one or multiple areas of focus. Setup your PRs based on the following areas of focus. For all changes, please detail what you planned on doing to make those changes in the `/docs` folder and define the MVP for those changes so it is clear what changes were planned. If infrastructure is needed, make sure that this all can be run locally with Docker.
+
+> Remember we want to understand your thought process, so if you are unable to complete the changes please note down what has been attempted and what is left.
 
 ### Frontend
 
