@@ -23,7 +23,7 @@ body:
     id: feedback
     attributes:
       label: What feedback do you have about this format?
-      description: Did you have any comments, questions, or concerns that were not clear with the format?
+      description: Did you have any comments, questions, or concerns with the format?
       placeholder: Tell us your experience.
       value: 'I really enjoyed this format!'
     validations:
