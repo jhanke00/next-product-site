@@ -37,7 +37,7 @@ This is a dummy product site that needs help adding new features and maturing th
 
 ## Areas of Focus
 
-Select one of the three areas to contribute to and help enhance the application with features that might not be present. Look at the [GitHub Issues](https://github.com/jhanke00/next-product-site/issues) for capabilities to work on. Feature requests will have the `feature request` label associated with the GitHub Issue and may encompass one or multiple areas of focus. Setup your PRs based on the following areas of focus.
+Select one of the three areas to contribute to and help enhance the application with features that might not be present. Look at the [GitHub Issues](https://github.com/jhanke00/next-product-site/issues) for capabilities to work on. Feature requests will have the `feature request` label associated with the GitHub Issue and may encompass one or multiple areas of focus. Setup your PRs based on the following areas of focus. For all changes, please detail what you planned on doing to make those changes in the `/docs` folder and address the MVP for those changes so it is clear what changes were planned.
 
 ### Frontend
 
@@ -60,7 +60,8 @@ Select one of the three areas to contribute to and help enhance the application 
 ### Infrastructure
 
 1. Create a new folder under `/infra`, which will store the infrastructure setup with Docker. (Ex: `/infra/products`)
-2. Create a `Dockerfile` or `docker-compose.yml` for any image you want to use to manage creating local resources. (`/infra/`)
+2. Create a `Dockerfile` or `docker-compose.yml` for any image you want to use to manage creating local resources. (`/infra/products/Dockerfile`)
+3. Create a Markdown file in the `/docs` folder with the name of your change detailing what you are trying to build, how it is used within the project, and how to test your changes. (Ex: `/docs/infrastructure/products-db.md`)
 
 ## Contributing
 
