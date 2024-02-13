@@ -10,12 +10,18 @@ This is a dummy product site that needs help adding new features and maturing th
 
 - NextJS (`/app` or `/pages`)
 - Mock Data (`/src/mock`)
-- GitHub Action (`/.github`)
+- GitHub Actions for CI/CD (`/.github`)
 - Jest
 - Storybook
 - Folder Structure
+- Mock Product Page (`/app/products`)
 
 ## Getting Started
+
+### Prerequisite
+
+- [Install Node v18+](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)
+- [Install PNPM v8+](https://pnpm.io/installation)
 
 ### Setup
 
@@ -30,7 +36,7 @@ Select one of the three areas to contribute to and help enhance the application 
 
 ### Frontend
 
-1. Create a new folder under `/app` or `/pages` directory, which will store your capability. (Ex: `/app/product-search`)
+1. Create a new folder under `/app` or `/pages` directory, which will store a new route on the site if you are creating a page. (Ex: `/app/product-search`)
 2. Create custom components under `/src/components` and utility functions under `/src/utils` as a directory with the same name as the capability folder. (Ex: `/src/components/product-search`)
 3. Create a `README.md` detailing what you are trying to build, how it is used within the application, and how to test your changes.
 

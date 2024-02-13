@@ -1,23 +1,12 @@
-type Product = {
-  id: number;
-  name: string;
-  price: number;
-  description: string;
-  image: string;
-  category: string;
-  rating: number;
-  numReviews: number;
-  countInStock: number;
-};
+import type { Product } from '@type/products';
 
-export default function Products() {
-  const products = [
+const Products = () => {
+  const products: Array<Product> = [
     {
       id: 1,
       name: 'Product 1',
       price: 100,
       description: 'This is a product',
-      image: 'product1.jpg',
       category: 'Category 1',
       rating: 4.5,
       numReviews: 10,
@@ -28,7 +17,6 @@ export default function Products() {
       name: 'Product 2',
       price: 200,
       description: 'This is a product',
-      image: 'product2.jpg',
       category: 'Category 2',
       rating: 4.0,
       numReviews: 10,
@@ -39,7 +27,6 @@ export default function Products() {
       name: 'Product 3',
       price: 300,
       description: 'This is a product',
-      image: 'product3.jpg',
       category: 'Category 3',
       rating: 3.5,
       numReviews: 10,
@@ -50,7 +37,6 @@ export default function Products() {
       name: 'Product 4',
       price: 400,
       description: 'This is a product',
-      image: 'product4.jpg',
       category: 'Category 4',
       rating: 3.0,
       numReviews: 10,
@@ -61,7 +47,6 @@ export default function Products() {
       name: 'Product 5',
       price: 500,
       description: 'This is a product',
-      image: 'product5.jpg',
       category: 'Category 5',
       rating: 2.5,
       numReviews: 10,
@@ -93,3 +78,5 @@ export default function Products() {
     </main>
   );
 }
+
+export default Product;
