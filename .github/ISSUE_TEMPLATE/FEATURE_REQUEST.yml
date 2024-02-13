@@ -16,14 +16,15 @@ body:
       value: 'I need a new feature to perform X.'
     validations:
       required: true
-  - type: checkboxes
+  - type: dropdown
     id: area-of-focus
     attributes:
       label: Area of Focus
       description: What are the area of focus that this feature encompasses?
+      multiple: true
       options:
-        - label: Frontend
-        - label: Backend
-        - label: DevOps
+        - Frontend
+        - Backend
+        - DevOps
     validations:
       required: true
