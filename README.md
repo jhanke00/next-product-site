@@ -15,6 +15,8 @@ This is a dummy product site that needs help adding new features and maturing th
 - Storybook (`/.storybook`)
 - Husky (`/.husky`)
 - Docs (`/docs`)
+- Prettier
+- ESLint
 - Folder Structure
 - Mock Product Page (`/app/products`)
 
