@@ -32,3 +32,5 @@ body:
         - label: Frontend
         - label: Backend
         - label: DevOps
+    validations:
+      required: true
