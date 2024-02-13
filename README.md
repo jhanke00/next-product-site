@@ -17,6 +17,7 @@ This is a dummy product site that needs help adding new features and maturing th
 - Docs (`/docs`)
 - Prettier
 - ESLint
+- Docker (`/docker`)
 - Folder Structure
 - Mock Product Page (`/app/products`)
 
@@ -55,6 +56,11 @@ Select one of the three areas to contribute to and help enhance the application 
 1. Create a new workflow file under `/.github/workflows` or actions folder under `/.github/actions`, which will store changes to the GitHub Actions. (Ex: `/.github/workflows/deploy.yml`)
 2. Updates to the project can be made directly to the root and additional configuration files may also be created as well. (Ex: `Dockerfile`)
 3. Create a Markdown file in the `/docs` folder with the name of your change detailing what you are trying to build, how it is used within the project, and how to test your changes. (Ex: `/docs/devops/github-action-workflow-deploy.md`)
+
+### Infrastructure
+
+1. Create a new folder under `/infra`, which will store the infrastructure setup with Docker. (Ex: `/infra/products`)
+2. Create a `Dockerfile` or `docker-compose.yml` for any image you want to use to manage creating local resources. (`/infra/`)
 
 ## Contributing
 

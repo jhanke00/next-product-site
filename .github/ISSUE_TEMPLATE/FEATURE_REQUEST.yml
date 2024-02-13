@@ -35,5 +35,6 @@ body:
         - Frontend
         - Backend
         - DevOps
+        - Infrastructure
     validations:
       required: true
