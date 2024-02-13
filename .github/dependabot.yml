@@ -10,9 +10,9 @@ updates:
     schedule:
       interval: 'monthly'
     reviewers:
-      - 'jhanke00'
-      - 'thychamp'
-      - 'srikanthbandaru'
+      - jhanke00
+      - thychamp
+      - srikanthbandaru
     versioning-strategy: increase-if-necessary
 
   - package-ecosystem: 'github-actions'
