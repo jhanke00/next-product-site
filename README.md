@@ -54,7 +54,7 @@ Select one of the four areas to contribute to and help enhance the application w
 
 You can also come up with your own feature request if there are none that cover what you want to contribute. The issues are there to be picked up or to give you an idea of what can be worked on. [Create a new feature request](https://github.com/jhanke00/next-product-site/issues/new?assignees=&labels=feature+request&projects=&template=FEATURE_REQUEST.yml&title=%5BNew+Feature%5D%3A+) that covers what you will be working on and add the appropriate labels for the area of focus that the feature covers.
 
-If you choose to add infrastructure, make sure that this all can be run locally with Docker. Update the `README.md` with additional local setup information.
+If you choose to add infrastructure, make sure that it can run locally with Docker. Update the `README.md` with additional local setup information.
 
 > Remember we want to understand your thought process, so if you are unable to complete the changes please note down what has been attempted and what is left to complete.
 
