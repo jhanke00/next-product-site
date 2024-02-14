@@ -4,7 +4,7 @@ Mock NextJS Product Application for Testing
 
 ## Context
 
-This is a dummy product site that needs help adding new features and maturing the project. We are looking for developers who want to help improve various aspects of the site: adding new features, updating the APIs, or improving the project's CI/CD just to name a few. With your help, we are looking to make this site performant, stable, and feature-rich.
+This is a dummy product site that needs help adding new features and maturing the project. We are looking for developers who want to help improve various aspects of the site: adding new features, updating the APIs, or improving the project's CI/CD just to name a few.
 
 ### What is Current State
 
@@ -48,9 +48,9 @@ Codespaces is also available and is pre-configured with node and pnpm.
 
 ## Areas of Focus
 
-Select one of the three areas to contribute to and help enhance the application with features that might not be present. Look at the [GitHub Issues](https://github.com/jhanke00/next-product-site/issues) for capabilities to work on. Feature requests will have the `feature request` label associated with the GitHub Issue and may encompass one or multiple areas of focus. Setup your PRs based on the following areas of focus. For all changes, please detail what you planned on doing to make those changes in the `/docs` folder and define the MVP for those changes so it is clear what changes were planned.
+Select one of the four areas to contribute to and help enhance the application with features that might not be present. Look at the [GitHub Issues](https://github.com/jhanke00/next-product-site/issues) for capabilities to work on. Feature requests will have the `feature request` label associated with the GitHub Issue and may encompass one or multiple areas of focus. Setup your PRs based on the following areas of focus. For all changes, please detail what you planned on doing to make those changes in the `/docs` folder and define the MVP for those changes so it is clear what changes were planned.
 
-If you choose to add infrastructure, make sure that this all can be run locally with Docker. Update the README with additional local setup information.
+If you choose to add infrastructure, make sure that this all can be run locally with Docker. Update the `README.md` with additional local setup information.
 
 > Remember we want to understand your thought process, so if you are unable to complete the changes please note down what has been attempted and what is left.
 
