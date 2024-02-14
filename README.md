@@ -35,9 +35,22 @@ This is a dummy product site that needs help adding new features and maturing th
 3. Run `pnpm dev` to start application.
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+Codespaces is also available and is pre-configured with node and pnpm.
+
+### Storybook
+
+1. Run `pnpm storybook`
+2. Open [http://localhost:6006/](http://localhost:6006/) with your browser to see the result.
+
+### Jest
+
+1. Run `pnpm test`
+
 ## Areas of Focus
 
-Select one of the three areas to contribute to and help enhance the application with features that might not be present. Look at the [GitHub Issues](https://github.com/jhanke00/next-product-site/issues) for capabilities to work on. Feature requests will have the `feature request` label associated with the GitHub Issue and may encompass one or multiple areas of focus. Setup your PRs based on the following areas of focus. For all changes, please detail what you planned on doing to make those changes in the `/docs` folder and define the MVP for those changes so it is clear what changes were planned. If infrastructure is needed, make sure that this all can be run locally with Docker.
+Select one of the three areas to contribute to and help enhance the application with features that might not be present. Look at the [GitHub Issues](https://github.com/jhanke00/next-product-site/issues) for capabilities to work on. Feature requests will have the `feature request` label associated with the GitHub Issue and may encompass one or multiple areas of focus. Setup your PRs based on the following areas of focus. For all changes, please detail what you planned on doing to make those changes in the `/docs` folder and define the MVP for those changes so it is clear what changes were planned.
+
+If you choose to add infrastructure, make sure that this all can be run locally with Docker. Update the README with additional local setup information.
 
 > Remember we want to understand your thought process, so if you are unable to complete the changes please note down what has been attempted and what is left.
 
