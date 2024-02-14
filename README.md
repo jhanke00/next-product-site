@@ -4,7 +4,7 @@ Mock NextJS Product Application for Testing
 
 ## Context
 
-This is a dummy product site that needs help adding new features and maturing the project. We are looking for developers who want to help improve various aspects of the site: adding new features, updating the APIs, or improving the project's CI/CD just to name a few. Currently, the project is a basic NextJS application with some tooling built into the project's setup. There are three types of mock data provided: product, users, and orders. Orders link users to products that they purchased. They come in two sizes in JSON format: large (1000+ entries) and small (<= 100 entries).
+This is a dummy product site that needs help adding new features and maturing the project. We are looking for developers who want to help improve various aspects of the site: adding new features, updating the APIs, or improving the project's CI/CD just to name a few. Currently, the project is a basic NextJS application with some tooling built into the project's setup. There are three types of mock data provided: products, users, and orders. Orders link users to products that they have purchased. There are two sizes in JSON format: large (1000+ entries) and small (<= 100 entries).
 
 ### What is Current State
 
@@ -15,6 +15,7 @@ This is a dummy product site that needs help adding new features and maturing th
 - Storybook (`/.storybook`)
 - Husky (`/.husky`)
 - Docs (`/docs`)
+- Types (`/src/type`)
 - Prettier
 - ESLint
 - Folder Structure
