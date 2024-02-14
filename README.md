@@ -16,6 +16,7 @@ This is a dummy product site that needs help adding new features and maturing th
 - Husky (`/.husky`)
 - Docs (`/docs`)
 - Types (`/src/type`)
+- Environment Variables (`.env.local`)
 - Prettier
 - ESLint
 - Folder Structure
