@@ -1,0 +1,28 @@
+@tailwind utilities;
+
+@layer utilities {
+  .h-viewport {
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+  }
+}
+
+.bg-feedback-green {
+  --tw-bg-opacity: 1;
+  background-color: rgb(86 196 144 / var(--tw-bg-opacity));
+}
+
+.bg-feedback-red {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 106 102 / var(--tw-bg-opacity));
+}
+
+.bg-result-blue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 76 183 / var(--tw-bg-opacity));
+}
+
+.bg-default-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
