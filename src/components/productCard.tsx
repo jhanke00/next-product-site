@@ -22,13 +22,14 @@ const ProductCard = (card: Product) => {
   return (
     <div className='relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md'>
       <a className='relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl' href={`/product-details?product-id=${id}`}>
-        <Image
+        {/* <Image
           className='object-cover hover:scale-125 ease-in duration-300'
           width={300}
           height={400}
           src={image}
           alt='product image'
-        />
+        /> */}
+        <img className='object-cover' src={image} alt='product image' />
       </a>
       <div className='mt-4 px-5 pb-5'>
         <a href={`/product-details?product-id=${id}`}>
