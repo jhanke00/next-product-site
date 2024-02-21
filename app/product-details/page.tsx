@@ -9,6 +9,7 @@ import { notFound } from 'next/navigation';
 import { Price } from '@/src/type/price';
 import { Rating } from '@/src/type/starRating';
 import ProductData from '../../src/mock/small/products-new.json';
+import Image from 'next/image';
 export default function ProductDetails() {
   const searchParams = useSearchParams();
   const search = searchParams && searchParams.get('product-id');
@@ -54,21 +55,25 @@ export default function ProductDetails() {
   };
   return (
     <main className='flex min-h-screen flex-col items-center p-24'>
-      {selectedProduct.image && (
+      {image && (
         <>
           <div className='bg-gray-100 dark:bg-gray-800 py-8 min-w-full'>
             <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
               <div className='flex flex-col md:flex-row -mx-4'>
                 <div className='md:flex-1 px-4'>
                   <div className='h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4'>
-                    <img
-                      className='w-full h-full object-cover hover:scale-125 ease-in duration-300'
-                      src={image}
-                      alt='Product Image'
-                    />
+                    <div className='w-full h-full relative'>
+                      <Image
+                        className='object-cover hover:scale-125 ease-in duration-300'
+                        layout='fill'
+                        objectFit='cover'
+                        src={image}
+                        priority={true}
+                        alt='product image'
+                      />
+                    </div>
                   </div>
                 </div>
-
                 <div className='md:flex-1 px-4'>
                   <div className='my-2'>
                     <span className='text-red-500 dark:text-red-200 text-sm'>{category}</span>
