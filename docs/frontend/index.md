@@ -7,20 +7,20 @@ Documentation on any Frontend capabilities or changes made.
 Product Listing Page is one of the page offering a user-friendly interface, organized product display with Name, Price, Discount Price and Star Ratings. Developers can find related code, styling, and documentation in this section, contributing to an engaging shopping experience for users.
 This page is containing Three reusable components (ProductCard, PriceTag and StarRating).
 
-## Folder Structure
+### Folder Structure
 
 - `app/products/layout.tsx` - Layout for this module
 - `app/products/page.tsx` - Main Page for this module
 - `public/images` - Contains sample image used for this module
 - `src/mock/small/products-new.json` - Mock JSON for Prodcut list
 
-## Components
+### Components
 
-ProductCard
+#### ProductCard
 
-## Folder Structure - `src/components/productCard.tsx`
+##### Folder Structure - `src/components/productCard.tsx`
 
-## Example Usage
+##### Example Usage
 
 ```tsx
 import ProductCard from '@/src/components/productCard';
