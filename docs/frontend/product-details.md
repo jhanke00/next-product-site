@@ -1,4 +1,4 @@
-# Prodcuts Page Module
+# Prodcuts Details Page Module
 
 Product Details is one of the page offering a user-friendly interface, organized Product Image with Name, Price, Discount Price , Description, Count in Stock , Number of Reviewers and Star Ratings. Developers can find related code, styling, and documentation in this section, contributing to an engaging shopping experience for users.
 This page is containing Three reusable components (ProductCard, PriceTag and StarRating).
