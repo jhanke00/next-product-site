@@ -4,7 +4,6 @@ import { Product } from '@/src/type/products';
 export default function Products() {
   return (
     <main className='flex min-h-screen flex-col items-center p-24'>
-      <h1 className='text-4xl font-bold my-3'>Today's Deals</h1>
       <div className='z-10 max-w-5xl w-full items-center justify-between text-sm lg:flex'>
         <div className='grid lg:max-w-5xl lg:w-full lg:grid-cols-3 lg:text-left'>
           <>
