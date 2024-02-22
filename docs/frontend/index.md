@@ -18,7 +18,9 @@ This page is containing Three reusable components (ProductCard, PriceTag and Sta
 
 #### ProductCard
 
-##### Folder Structure - `src/components/productCard.tsx`
+##### Folder Structure
+
+- `src/components/productCard.tsx`
 
 ##### Example Usage
 
@@ -29,11 +31,11 @@ import ProductCard from '@/src/components/productCard';
 <ProductCard key={product.id} {...product} />;
 ```
 
-StarRating
+#### StarRating
 
-## Folder Structure - `src/components/starRating.tsx`
+##### Folder Structure - `src/components/starRating.tsx`
 
-## Example Usage
+##### Example Usage
 
 ```tsx
 import StarRating from '@/src/components/starRating';
@@ -42,11 +44,11 @@ import StarRating from '@/src/components/starRating';
 <StartRating {...starRating} />;
 ```
 
-PriceTag
+#### PriceTag
 
-## Folder Structure - `src/components/priceTag.tsx`
+##### Folder Structure - `src/components/priceTag.tsx`
 
-## Example Usage
+##### Example Usage
 
 ```tsx
 import PriceTag from '@/src/components/priceTag';
@@ -55,13 +57,13 @@ import PriceTag from '@/src/components/priceTag';
 <PriceTag {...productPrice} />;
 ```
 
-## Types:
+### Types:
 
-Product
+#### Product
 
-## Folder Structure - `src/type/products`
+##### Folder Structure - `src/type/products`
 
-## Example Usage
+##### Example Usage
 
 ```tsx
 
@@ -84,11 +86,11 @@ import { Product } from '@/src/type/products';
 
 ```
 
-Price
+#### Price
 
-## Folder Structure - `src/type/price`
+##### Folder Structure - `src/type/price`
 
-## Example Usage
+##### Example Usage
 
 ```tsx
 import { Price } from '@/src/type/price';
@@ -104,11 +106,11 @@ import { Price } from '@/src/type/price';
 
 ```
 
-StarRating
+#### StarRating
 
-## Folder Structure - `src/type/price`
+##### Folder Structure - `src/type/price`
 
-## Example Usage
+##### Example Usage
 
 ```tsx
 import { Rating } from '@/src/type/price';
