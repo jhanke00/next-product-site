@@ -64,11 +64,11 @@ export default function ProductDetails() {
                   <div className='h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4'>
                     <div className='w-full h-full relative'>
                       <Image
-                        className='object-cover hover:scale-125 ease-in duration-300'
-                        layout='fill'
-                        objectFit='cover'
+                        className='hover:scale-125 ease-in duration-300'
+                        fill
                         src={image}
                         priority={true}
+                        sizes={'100%'}
                         alt='product image'
                       />
                     </div>
