@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Ray-Ban Men Square Sunglasses - 0RB4165",
+    "price": 300,
+    "description": "All Ray-Ban lenses have UV protection, but the exact level varies among the types of lenses. Here's what Ray-Ban offers: Classic lenses absorb 85% of visible light and block most blue light while providing a natural vision because they don't alter the colors you see around you.",
+    "category": "Eyewear",
+    "rating": 3.6,
+    "numReviews": 10,
+    "countInStock": 6,
+    "originalPrice":800,
+    "image":"/images/product1.png"
+  },
+  {
+    "id": 2,
+    "name": "JBL Tune 770NC Wireless Over Ear ANC Headphones",
+    "price": 200,
+    "description": "Adaptive Noise Cancelling with Smart Ambient :Adaptive Noise Cancelling means zero distractions when it’s time to focus on your studies—or get your groove on. And if you want to hear the world around you without removing your headphones, Ambient Aware and Talk Thru sharpen the sounds of your surroundings or voices. Easily activate these Ambient Sound Control modes through the JBL Headphones app",
+    "category": "Electronics",
+    "rating": 4.0,
+    "numReviews": 9,
+    "countInStock":  15,
+    "originalPrice":400,
+    "image":"/images/product2.png"
+  },
+  {
+    "id": 3,
+    "name": "Lipstick",
+    "price": 300,
+    "description": "Lipstick is a cosmetic product used to apply coloration and texture to lips, often made of wax and oil. Different pigments are used to produce color, and minerals such as silica may be used to provide texture.",
+    "category": "Beauty",
+    "rating": 3,
+    "numReviews": 3,
+    "countInStock": 12,
+    "originalPrice":500,
+    "image":"/images/product3.png"
+  },
+  {
+    "id": 4,
+    "name": "Pepsi",
+    "price": 400,
+    "description": "n Blink, a book about decision making and thinking, by author, journalist and podcaster, Malcolm Gladwell, he writes, “Pepsi is sweeter than Coke and is also characterized by a citrusy flavor burst, unlike the more raisiny-vanilla taste of Coke.” Don't miss how we settled the cola taste-test debate.",
+    "category": "Beverages",
+    "rating": 1.7,
+    "numReviews": 2,
+    "countInStock": 5,
+    "originalPrice":500,
+    "image":"/images/product4.png"
+  },
+  {
+    "id": 5,
+    "name": "Nike Air MX Super 2500 - Red",
+    "price": 500,
+    "description": "Nike Air technology consists of pressurised air inside a tough yet flexible bag, and provides more flexibility and spring without compromising structure. The Air-Sole units maintain their given form with elasticity, reduce impact and keep the shoe snug and lightweight.",
+    "category": "Foot wear",
+    "rating": 4.9,
+    "numReviews": 30,
+    "originalPrice":900,
+    "countInStock": 6,
+    "image":"/images/product5.png"
+  },
+  {
+    "id": 6,
+    "name": "Apple watch series 3",
+    "price": 1200,
+    "description": "Apple Watch Series 3 (GPS) lets you send and receive text messages, answer phone calls, and receive notifications when it's connected to your iPhone via Bluetooth and Wi-Fi. The built-in GPS works independently of your iPhone for distance, pace, and route mapping in workouts..",
+    "category": "Electronics",
+    "rating": 4.9,
+    "numReviews": 30,
+    "originalPrice":1400,
+    "countInStock": 6,
+    "image":"/images/product6.png"
+  },
+  {
+    "id": 7,
+    "name": "Men's trail running short-sleeved zip t-shirt - kakhi",
+    "price": 399,
+    "description": "The slim-fit zipped trail running T-shirt is great for your short and long distance trail runs (training/competition).",
+    "category": "Cloths",
+    "rating": 4.6,
+    "numReviews": 643,
+    "originalPrice":599,
+    "countInStock": 6,
+    "image":"/images/product7.png"
+  },
+  {
+    "id": 8,
+    "name": "Ergonomic Cotton Hat",
+    "price": 264,
+    "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+    "category": "Cloth",
+    "rating": 1.25,
+    "numReviews": 8,
+    "countInStock": 48,
+    "originalPrice":534,
+    "image":"/images/product8.png"
+  },
+  {
+    "id": 9,
+    "name": "Ergonomic Concrete Table",
+    "price": 299.00,
+    "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+    "category": "Furn",
+    "rating": 2.38,
+    "numReviews": 13,
+    "countInStock": 65,
+    "originalPrice":344,
+    "image":"/images/product9.png"
+  },
+  {
+    "id": 10,
+    "name": "Alstoy Car for Kids M4 with Rechargeable",
+    "price": 1399,
+    "description": "Ride with Safety: Kids car This electric toy car having slow pickup consider to considering kids safety and sudden acceleration, Forward/backward movement with powerful mortar, Rear and back LED on toy car, Bluetooth, Mp3/USB Etc | Europian Cerified standard.",
+    "category": "Electronics",
+    "rating": 4.75,
+    "numReviews": 97,
+    "countInStock": 36,
+    "originalPrice":2999,
+    "image":"/images/product10.png"
+  }
+]
