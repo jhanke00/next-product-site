@@ -51,6 +51,35 @@ const Quiz = () => {
     });
     setQuestions(handleQuestions);
   };
+
+  let introProps = {
+    displayHandle: (screen: string) => {
+      setQuizDisplay(screen);
+    },
+  };
+
+  let questionnaireProps = {
+    questions: questions,
+    questionIndex: questionIndex,
+    displayHandle: (screen: string) => {
+      setQuizDisplay(screen);
+    },
+    answerHandle: (questionID: number, option: any) => {
+      handleAnswer(questionID, option);
+    },
+    resetHandle: resetQuiz,
+    scoreHandle: calculateScore,
+    changeQuestion: (flag: string) => {
+      setQuestionNumber(flag);
+    },
+  };
+
+  let summaryProps = {
+    questions: questions,
+    resetHandle: resetQuiz,
+    answeredCorrect: answeredCorrect,
+  };
+
   return (
     <>
       <Head>
@@ -60,31 +89,9 @@ const Quiz = () => {
         <div className='m-auto bg-cyan-50 pt-20 pb-20 overflow-hidden'>
           {
             {
-              intro: (
-                <QuizIntro
-                  displayHandle={(screen) => {
-                    setQuizDisplay(screen);
-                  }}
-                />
-              ),
-              quiz: (
-                <Questionnaire
-                  questions={questions}
-                  questionIndex={questionIndex}
-                  displayHandle={(screen) => {
-                    setQuizDisplay(screen);
-                  }}
-                  answerHandle={(questionID, option) => {
-                    handleAnswer(questionID, option);
-                  }}
-                  resetHandle={resetQuiz}
-                  scoreHandle={calculateScore}
-                  changeQuestion={(flag) => {
-                    setQuestionNumber(flag);
-                  }}
-                />
-              ),
-              summary: <Summary questions={questions} resetHandle={resetQuiz} answeredCorrect={answeredCorrect} />,
+              intro: <QuizIntro {...introProps} />,
+              quiz: <Questionnaire {...questionnaireProps} />,
+              summary: <Summary {...summaryProps} />,
             }[quizDisplay]
           }
         </div>

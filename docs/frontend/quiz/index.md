@@ -1,6 +1,6 @@
 # Quiz page
 
-[http://localhost:3000/quiz](http://localhost:3000/quiz)
+[Vercel URL](https://next-product-site-xi.vercel.app/quiz)
 
 Feature built against Issue Reference [#13 A Quiz](https://github.com/jhanke00/next-product-site/issues/13)
 
