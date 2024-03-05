@@ -2,27 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+input,
+textarea {
+  border-width: 2px !important;
+  border-color: #c2c7cf;
+  border-radius: 6px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+input {
+  padding: 8px 8px;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+input:focus {
+  border-width: 2px !important;
+  border-color: #0a1a5c;
+  border-radius: 6px;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.label-l {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.label-m {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
 }
