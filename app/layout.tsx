@@ -19,9 +19,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={titilium.className}>
-        <PrimaryHeader/>
+        <PrimaryHeader />
         {children}
-        </body>
+      </body>
     </html>
   );
 }

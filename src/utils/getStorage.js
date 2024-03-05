@@ -1,4 +1,4 @@
-export function getStorage({key, isLocal = true }) {
+export function getStorage({ key, isLocal = true }) {
   let storageVal;
   if (typeof window != undefined) {
     const storage = isLocal ? localStorage : sessionStorage;

@@ -1,11 +1,25 @@
 .contactus-form {
   border: 1px solid #a4a8ac;
   border-radius: 20px;
-  padding: 16px;
+  padding: 24px;
   margin: 24px;
+}
+
+.reusable-card {
+  width: 800px;
 }
 
 .contactus-form-heading {
   font-size: 24px;
   font-weight: 700;
+}
+
+.text-area-error {
+  border-color: #c91f00;
+}
+
+.contactus-form-button {
+  padding: 8px 32px;
+  border-radius: 16px;
+  color: white;
 }

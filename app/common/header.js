@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function PrimaryHeader() {
   return (
-    <nav className='navbar navbar-expand-md bg-body-tertiary'>
+    <nav className='navbar navbar-expand-md bg-body-tertiary p-3 label-m'>
       <div className='container-fluid '>
         <Link className='navbar-brand' href='#'>
           Navbar
