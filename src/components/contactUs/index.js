@@ -1,9 +1,8 @@
 'use client';
 
 //propTypes to be added for Javacript
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import { useState } from 'react';
 import Card from '../../reusable/card';
 import Alert from '../../reusable/alert';
 import InputText from '../../reusable/input';
@@ -27,11 +26,11 @@ export default function ContactUsForm() {
     message: '',
     subject: '',
   });
-  console.log('saveFormData', saveFormData);
+
   const [errorInputs, setErrorInputs] = useState([]);
   const [formSuccess, setFormSuccess] = useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = useState('');
-  const allSavedFormDetails = getStorage('formData', false) || {};
+  const allSavedFormDetails = getStorage('formData', false) || [];
 
   const handleInputChange = (e) => {
     // function for saving the form data
@@ -81,11 +80,10 @@ export default function ContactUsForm() {
       (o) => !saveFormData[o] && o !== 'addressLine2' && o !== 'middleName'
     );
     emailValidation === false && result.push('emailNotValid');
-    const storageKey = `formDetails-${saveFormData?.email}`;
+    result.length === 0 && setErrorInputs([]);
     result.length > 0
-      ? setErrorInputs(result)
-      : setStorage('formData', { ...allSavedFormDetails, [storageKey]: saveFormData }, false);
-    setFormSuccess(true);
+      ? (setErrorInputs(result), setFormSuccess(false))
+      : (setStorage('formData', [...allSavedFormDetails, saveFormData], false), setFormSuccess(true));
   };
 
   useEffect(() => {
@@ -94,6 +92,13 @@ export default function ContactUsForm() {
       setErrorInputs(neutralizeError);
     }
   }, [saveFormData.email]);
+
+  useEffect(() => {
+    if (saveFormData.zipCode != '') {
+      const neutralizeError = errorInputs.filter((error) => error != 'zipCode');
+      setErrorInputs(neutralizeError);
+    }
+  }, [saveFormData.zipCode]);
 
   const handleSubmitAnotherForm = () => {
     setFormSuccess(false);
@@ -110,18 +115,24 @@ export default function ContactUsForm() {
       message: '',
       subject: '',
     });
+    setErrorInputs([]);
+    setEmailErrorMessage('');
   };
 
   return (
     <>
       {(formSuccess || errorInputs.length > 0) && (
         <Alert
-          type={formSuccess && errorInputs.length === 0 ? 'success' : errorInputs.length > 0 ? 'danger' : ''}
-          title={formSuccess && errorInputs.length === 0 ? 'Success' : errorInputs.length > 0 ? 'Failed' : ''}
+          type={
+            formSuccess && errorInputs.length === 0 ? 'success' : errorInputs.length > 0 && !formSuccess ? 'danger' : ''
+          }
+          title={
+            formSuccess && errorInputs.length === 0 ? 'Success' : errorInputs.length > 0 && !formSuccess ? 'Failed' : ''
+          }
           description={
             formSuccess && errorInputs.length === 0
               ? 'Form Successfully Submitted'
-              : errorInputs.length > 0
+              : errorInputs.length > 0 && !formSuccess
                 ? 'Form Submission Failed'
                 : ''
           }
@@ -131,7 +142,7 @@ export default function ContactUsForm() {
         <h2 className='contactus-form-heading mb-3'>{LABELS.CONTACT_US_HEADING}</h2>
         {!formSuccess ? (
           <>
-            <div className='d-flex justify-content-start flex-column flex-md-row align-items-center my-2'>
+            <div className='d-flex justify-content-start flex-column flex-md-row my-2'>
               <span className='d-flex flex-column col-12 col-md-3 col-lg-4 text-start mx-1'>
                 <InputText
                   label='First Name:'
@@ -210,7 +221,7 @@ export default function ContactUsForm() {
                 value={saveFormData.addressLine2}
               />
             </div>
-            <div className='d-flex justify-content-start flex-column flex-md-row align-items-center my-2'>
+            <div className='d-flex justify-content-start flex-column flex-md-row my-2'>
               <span className='d-flex flex-column text-start col-12 col-md-3 col-lg-4 mx-1'>
                 <InputText
                   label='State:'
@@ -341,15 +352,15 @@ export default function ContactUsForm() {
             </div>
             <div className='text-start my-3'>
               <button className='btn btn-primary contactus-form-button label-l' onClick={handleSubmitForm}>
-                Submit
+                {LABELS.SUBMIT}
               </button>
             </div>
           </>
         ) : (
           <div className='text-center'>
-            <h2 className='label-l mb-2'>The Form has been Successfully Submitted</h2>
+            <h2 className='label-l mb-2'>{LABELS.SUCCESSFUL_FORM_HEADING}</h2>
             <button className='btn btn-primary contactus-form-button label-l' onClick={handleSubmitAnotherForm}>
-              Submit Another Form
+              {LABELS.SUBMIT_ANOTHER_FORM}
             </button>
           </div>
         )}
