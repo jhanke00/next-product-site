@@ -1,3 +1,5 @@
+//propTypes to be added for Javacript
+
 import FormElementError from '../formError';
 
 import './input.css';
@@ -12,6 +14,7 @@ export default function InputText({
   inputClassName = '',
   labelClassName = '',
   error = null,
+  ...restProps
 }) {
   return (
     <>
@@ -25,6 +28,7 @@ export default function InputText({
         onChange={onChange}
         value={value}
         required={required}
+        {...restProps}
       />
       {error?.type && <FormElementError error={error} errorId={`${name}_err_span`} />}
     </>

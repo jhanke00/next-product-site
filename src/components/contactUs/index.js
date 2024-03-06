@@ -1,5 +1,6 @@
 'use client';
 
+//propTypes to be added for Javacript
 import React, { useEffect } from 'react';
 
 import { useState } from 'react';
@@ -7,7 +8,7 @@ import Card from '../../reusable/card';
 import Alert from '../../reusable/alert';
 import InputText from '../../reusable/input';
 import FormError from '../../reusable/formError';
-import { setStorage } from '../../utils';
+import { getStorage, setStorage } from '../../utils';
 import { LABELS } from '../../constants';
 
 import './contactus.css';
@@ -26,19 +27,43 @@ export default function ContactUsForm() {
     message: '',
     subject: '',
   });
+  console.log('saveFormData', saveFormData);
   const [errorInputs, setErrorInputs] = useState([]);
   const [formSuccess, setFormSuccess] = useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = useState('');
+  const allSavedFormDetails = getStorage('formData', false) || {};
 
   const handleInputChange = (e) => {
     // function for saving the form data
     const { name, value } = e.target;
-    setSaveFormData((prevData) => {
-      return {
-        ...prevData,
-        [name]: value,
-      };
-    });
+    if (name === 'zipCode') {
+      const onlyNumberRegex = /^[0-9]*$/;
+      const validCode = onlyNumberRegex.test(value);
+      validCode &&
+        setSaveFormData((prevData) => {
+          return {
+            ...prevData,
+            zipCode: value,
+          };
+        });
+    } else if (name === 'city' || name === 'state') {
+      const onlyCharactersRegex = /^[a-zA-Z]+$/;
+      const validCity = onlyCharactersRegex.test(value);
+      (validCity === true || value === '') &&
+        setSaveFormData((prevData) => {
+          return {
+            ...prevData,
+            [name]: value,
+          };
+        });
+    } else {
+      setSaveFormData((prevData) => {
+        return {
+          ...prevData,
+          [name]: value,
+        };
+      });
+    }
   };
 
   const handleSubmitForm = () => {
@@ -56,8 +81,10 @@ export default function ContactUsForm() {
       (o) => !saveFormData[o] && o !== 'addressLine2' && o !== 'middleName'
     );
     emailValidation === false && result.push('emailNotValid');
-    console.log('result', result);
-    result.length > 0 ? setErrorInputs(result) : setStorage('formData', saveFormData, false);
+    const storageKey = `formDetails-${saveFormData?.email}`;
+    result.length > 0
+      ? setErrorInputs(result)
+      : setStorage('formData', { ...allSavedFormDetails, [storageKey]: saveFormData }, false);
     setFormSuccess(true);
   };
 
@@ -68,226 +95,264 @@ export default function ContactUsForm() {
     }
   }, [saveFormData.email]);
 
+  const handleSubmitAnotherForm = () => {
+    setFormSuccess(false);
+    setSaveFormData({
+      firstName: '',
+      middleName: '',
+      lastName: '',
+      email: '',
+      state: '',
+      city: '',
+      zipCode: '',
+      addressLine1: '',
+      addressLine2: '',
+      message: '',
+      subject: '',
+    });
+  };
+
   return (
     <>
       {(formSuccess || errorInputs.length > 0) && (
         <Alert
-          type={formSuccess && errorInputs.length === 0 ? 'success' : 'danger'}
-          title={formSuccess && errorInputs.length === 0 ? 'Success' : 'Failed'}
+          type={formSuccess && errorInputs.length === 0 ? 'success' : errorInputs.length > 0 ? 'danger' : ''}
+          title={formSuccess && errorInputs.length === 0 ? 'Success' : errorInputs.length > 0 ? 'Failed' : ''}
           description={
-            formSuccess && errorInputs.length === 0 ? 'Form Successfully Submitted' : 'Form Submission Failed'
+            formSuccess && errorInputs.length === 0
+              ? 'Form Successfully Submitted'
+              : errorInputs.length > 0
+                ? 'Form Submission Failed'
+                : ''
           }
         />
       )}
       <Card className='contactus-form text-center'>
         <h2 className='contactus-form-heading mb-3'>{LABELS.CONTACT_US_HEADING}</h2>
-        <div className='d-flex justify-content-start flex-column flex-md-row align-items-center my-2'>
-          <span className='d-flex flex-column col-12 col-md-3 text-start me-3 label-l'>
-            <InputText
-              label='First Name:'
-              type='text'
-              name='firstName'
-              onChange={(e) => handleInputChange(e)}
-              value={saveFormData.firstName}
-              required
-              error={
-                errorInputs.length > 0 && errorInputs?.includes('firstName')
-                  ? {
-                      type: 'error',
-                      message: 'Please enter your First Name',
-                    }
-                  : {}
-              }
-            />
-          </span>
-          <span className='d-flex flex-column col-12 col-md-3 text-start me-3 label-l'>
-            <InputText
-              label='Middle Name:'
-              type='text'
-              name='middleName'
-              onChange={(e) => handleInputChange(e)}
-              value={saveFormData.middleName}
-            />
-          </span>
-          <span className='d-flex flex-column col-12 col-md-3 text-start label-l'>
-            <InputText
-              label='Last Name:'
-              type='text'
-              name='lastName'
-              onChange={(e) => handleInputChange(e)}
-              value={saveFormData.lastName}
-              required
-              error={
-                errorInputs.length > 0 && errorInputs?.includes('lastName')
-                  ? {
-                      type: 'error',
-                      message: 'Please enter your Last Name',
-                    }
-                  : {}
-              }
-            />
-          </span>
-        </div>
-        <div className='d-flex flex-column text-start'>
-          <InputText
-            label='Address Line 1:'
-            labelClassName='label-l'
-            type='text'
-            name='addressLine1'
-            onChange={(e) => handleInputChange(e)}
-            value={saveFormData.addressLine1}
-            required
-            error={
-              errorInputs.length > 0 && errorInputs?.includes('addressline1')
-                ? {
-                    type: 'error',
-                    message: 'Please enter a Valid Address',
+        {!formSuccess ? (
+          <>
+            <div className='d-flex justify-content-start flex-column flex-md-row align-items-center my-2'>
+              <span className='d-flex flex-column col-12 col-md-3 col-lg-4 text-start mx-1'>
+                <InputText
+                  label='First Name:'
+                  type='text'
+                  labelClassName='label-l'
+                  name='firstName'
+                  onChange={(e) => handleInputChange(e)}
+                  value={saveFormData.firstName}
+                  required
+                  error={
+                    errorInputs.length > 0 && errorInputs?.includes('firstName')
+                      ? {
+                          type: 'error',
+                          message: 'Please enter your First Name',
+                        }
+                      : {}
                   }
-                : {}
-            }
-          />
-        </div>
-        <div className='d-flex flex-column text-start'>
-          <InputText
-            label='Address Line 2:'
-            labelClassName='label-l'
-            type='text'
-            name='addressLine2'
-            onChange={(e) => handleInputChange(e)}
-            value={saveFormData.addressLine2}
-          />
-        </div>
-        <div className='d-flex justify-content-start flex-column flex-md-row align-items-center my-2'>
-          <span className='d-flex flex-column text-start col-12 col-md-3 me-3 label-l'>
-            <InputText
-              label='State:'
-              labelClassName='label-l'
-              type='text'
-              name='state'
-              onChange={(e) => handleInputChange(e)}
-              onKeyPress={(e) => !/^[a-zA-Z]+$/.test(e.key) && e.preventDefault()}
-              value={saveFormData.state}
-              required
-              error={
-                errorInputs.length > 0 && errorInputs?.includes('state')
-                  ? {
-                      type: 'error',
-                      message: 'Please enter State',
-                    }
-                  : {}
-              }
-            />
-          </span>
-          <span className='d-flex flex-column col-12 col-md-3 text-start me-3 label-l'>
-            <InputText
-              label='City:'
-              type='text'
-              name='city'
-              onChange={(e) => handleInputChange(e)}
-              onKeyPress={(e) => !/^[a-zA-Z]+$/.test(e.key) && e.preventDefault()}
-              value={saveFormData.city}
-              required
-              error={
-                errorInputs.length > 0 && errorInputs?.includes('city')
-                  ? {
-                      type: 'error',
-                      message: 'Please enter city',
-                    }
-                  : {}
-              }
-            />
-          </span>
-          <span className='d-flex flex-column col-12 col-md-3 text-start label-l'>
-            <InputText
-              label='Zip Code:'
-              type='text'
-              name='zipCode'
-              onChange={(e) => handleInputChange(e)}
-              onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
-              value={saveFormData.zipCode}
-              required
-              error={
-                errorInputs.length > 0 && errorInputs?.includes('zipCode')
-                  ? {
-                      type: 'error',
-                      message: 'Please enter Zip Code',
-                    }
-                  : {}
-              }
-            />
-          </span>
-        </div>
-        <div className='my-2 d-flex flex-column text-start label-l'>
-          <InputText
-            label='E-mail:'
-            type='text'
-            name='email'
-            onChange={(e) => handleInputChange(e)}
-            value={saveFormData.email}
-            required
-            error={
-              errorInputs.length > 0 && errorInputs?.includes('email')
-                ? {
-                    type: 'error',
-                    message: 'Please enter a Valid Email',
+                />
+              </span>
+              <span className='d-flex flex-column col-12 col-md-3 col-lg-4 text-start mx-1'>
+                <InputText
+                  label='Middle Name:'
+                  type='text'
+                  labelClassName='label-l'
+                  name='middleName'
+                  onChange={(e) => handleInputChange(e)}
+                  value={saveFormData.middleName}
+                />
+              </span>
+              <span className='d-flex flex-column col-12 col-md-3 col-lg-4 text-start mx-1'>
+                <InputText
+                  label='Last Name:'
+                  type='text'
+                  name='lastName'
+                  labelClassName='label-l'
+                  onChange={(e) => handleInputChange(e)}
+                  value={saveFormData.lastName}
+                  required
+                  error={
+                    errorInputs.length > 0 && errorInputs?.includes('lastName')
+                      ? {
+                          type: 'error',
+                          message: 'Please enter your Last Name',
+                        }
+                      : {}
                   }
-                : errorInputs.includes('emailNotValid')
-                  ? {
-                      type: 'error',
-                      message: emailErrorMessage,
-                    }
-                  : {}
-            }
-          />
-        </div>
-        <div className='my-2 d-flex flex-column text-start label-l'>
-          <InputText
-            label='Subject:'
-            type='text'
-            name='subject'
-            onChange={(e) => handleInputChange(e)}
-            value={saveFormData.subject}
-            required
-            error={
-              errorInputs.length > 0 && errorInputs?.includes('subject')
-                ? {
-                    type: 'error',
-                    message: 'Please enter Subject',
+                />
+              </span>
+            </div>
+            <div className='d-flex flex-column text-start'>
+              <InputText
+                label='Address Line 1:'
+                labelClassName='label-l'
+                type='text'
+                name='addressLine1'
+                onChange={(e) => handleInputChange(e)}
+                value={saveFormData.addressLine1}
+                required
+                error={
+                  errorInputs.length > 0 && errorInputs?.includes('addressLine1')
+                    ? {
+                        type: 'error',
+                        message: 'Please enter a Valid Address',
+                      }
+                    : {}
+                }
+              />
+            </div>
+            <div className='d-flex flex-column text-start'>
+              <InputText
+                label='Address Line 2:'
+                labelClassName='label-l'
+                type='text'
+                name='addressLine2'
+                onChange={(e) => handleInputChange(e)}
+                value={saveFormData.addressLine2}
+              />
+            </div>
+            <div className='d-flex justify-content-start flex-column flex-md-row align-items-center my-2'>
+              <span className='d-flex flex-column text-start col-12 col-md-3 col-lg-4 mx-1'>
+                <InputText
+                  label='State:'
+                  labelClassName='label-l'
+                  type='text'
+                  name='state'
+                  onChange={(e) => handleInputChange(e)}
+                  value={saveFormData.state}
+                  required
+                  error={
+                    errorInputs.length > 0 && errorInputs?.includes('state')
+                      ? {
+                          type: 'error',
+                          message: 'Please enter State',
+                        }
+                      : {}
                   }
-                : {}
-            }
-          />
-        </div>
-        <div className='my-2 d-flex flex-column text-start label-l'>
-          <label htmlFor='message' className='my-1'>
-            Please Enter Your message:
-          </label>
-          <textarea
-            type='text'
-            maxLength={250}
-            name='message'
-            className={`p-2 message-box w-50 ${errorInputs.length > 0 && errorInputs?.includes('message') ? 'text-area-error' : ''}`}
-            rows={5}
-            cols={10}
-            onChange={(e) => handleInputChange(e)}
-            value={saveFormData.message}
-            required
-          />
-          {errorInputs.length > 0 && errorInputs?.includes('message') && (
-            <FormError
-              error={{
-                type: 'error',
-                message: 'Please enter message',
-              }}
-              errorId={'textArea-error'}
-            />
-          )}
-        </div>
-        <div className='text-start my-3'>
-          <button className='btn btn-primary contactus-form-button label-l' onClick={handleSubmitForm}>
-            Submit
-          </button>
-        </div>
+                />
+              </span>
+              <span className='d-flex flex-column col-12 col-md-3 col-lg-4 text-start mx-1'>
+                <InputText
+                  label='City:'
+                  type='text'
+                  name='city'
+                  labelClassName='label-l'
+                  onChange={(e) => handleInputChange(e)}
+                  value={saveFormData.city}
+                  required
+                  error={
+                    errorInputs.length > 0 && errorInputs?.includes('city')
+                      ? {
+                          type: 'error',
+                          message: 'Please enter city',
+                        }
+                      : {}
+                  }
+                />
+              </span>
+              <span className='d-flex flex-column col-12 col-md-3 col-lg-4 text-start mx-1'>
+                <InputText
+                  label='Zip Code:'
+                  type='text'
+                  name='zipCode'
+                  maxlength='5'
+                  labelClassName='label-l'
+                  onChange={(e) => handleInputChange(e)}
+                  onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
+                  value={saveFormData.zipCode}
+                  required
+                  error={
+                    errorInputs.length > 0 && errorInputs?.includes('zipCode')
+                      ? {
+                          type: 'error',
+                          message: 'Please enter Zip Code',
+                        }
+                      : {}
+                  }
+                />
+              </span>
+            </div>
+            <div className='my-2 d-flex flex-column text-start'>
+              <InputText
+                label='E-mail:'
+                type='text'
+                name='email'
+                labelClassName='label-l'
+                onChange={(e) => handleInputChange(e)}
+                value={saveFormData.email}
+                required
+                error={
+                  errorInputs.length > 0 && errorInputs?.includes('email')
+                    ? {
+                        type: 'error',
+                        message: 'Please enter a Valid Email',
+                      }
+                    : errorInputs.includes('emailNotValid')
+                      ? {
+                          type: 'error',
+                          message: emailErrorMessage,
+                        }
+                      : {}
+                }
+              />
+            </div>
+            <div className='my-2 d-flex flex-column text-start'>
+              <InputText
+                label='Subject:'
+                type='text'
+                name='subject'
+                labelClassName='label-l'
+                onChange={(e) => handleInputChange(e)}
+                value={saveFormData.subject}
+                required
+                error={
+                  errorInputs.length > 0 && errorInputs?.includes('subject')
+                    ? {
+                        type: 'error',
+                        message: 'Please enter Subject',
+                      }
+                    : {}
+                }
+              />
+            </div>
+            <div className='my-2 d-flex flex-column text-start'>
+              <label htmlFor='message' className='my-1 label-l'>
+                Please Enter Your message:
+              </label>
+              <textarea
+                type='text'
+                maxLength={250}
+                name='message'
+                className={`p-2 message-box w-50 ${errorInputs.length > 0 && errorInputs?.includes('message') ? 'text-area-error' : ''}`}
+                rows={5}
+                cols={10}
+                onChange={(e) => handleInputChange(e)}
+                value={saveFormData.message}
+                required
+              />
+              {errorInputs.length > 0 && errorInputs?.includes('message') && (
+                <FormError
+                  error={{
+                    type: 'error',
+                    message: 'Please enter message',
+                  }}
+                  errorId={'textArea-error'}
+                />
+              )}
+            </div>
+            <div className='text-start my-3'>
+              <button className='btn btn-primary contactus-form-button label-l' onClick={handleSubmitForm}>
+                Submit
+              </button>
+            </div>
+          </>
+        ) : (
+          <div className='text-center'>
+            <h2 className='label-l mb-2'>The Form has been Successfully Submitted</h2>
+            <button className='btn btn-primary contactus-form-button label-l' onClick={handleSubmitAnotherForm}>
+              Submit Another Form
+            </button>
+          </div>
+        )}
       </Card>
     </>
   );

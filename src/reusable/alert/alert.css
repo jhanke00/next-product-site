@@ -1,0 +1,6 @@
+.reusable-alert {
+  max-width: 480px !important;
+  min-width: 320px !important;
+  display: flex;
+  flex-direction: column;
+}
