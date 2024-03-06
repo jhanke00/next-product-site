@@ -52,8 +52,9 @@ export default function ContactUsForm() {
       : `Please include an '@' in the email address. '${saveFormData.email} is missing and '@'`;
     setEmailErrorMessage(emailErrorMessage);
 
-    let result =
-      Object.keys(saveFormData).filter((o) => !saveFormData[o]) && o !== 'addressLine2' && o !== 'middleName';
+    let result = Object.keys(saveFormData).filter(
+      (o) => !saveFormData[o] && o !== 'addressLine2' && o !== 'middleName'
+    );
     emailValidation === false && result.push('emailNotValid');
     console.log('result', result);
     result.length > 0 ? setErrorInputs(result) : setStorage('formData', saveFormData, false);
@@ -80,8 +81,8 @@ export default function ContactUsForm() {
       )}
       <Card className='contactus-form text-center'>
         <h2 className='contactus-form-heading mb-3'>{LABELS.CONTACT_US_HEADING}</h2>
-        <div className='d-flex justify-content-start my-2'>
-          <span className='d-flex flex-column text-start me-3 label-l'>
+        <div className='d-flex justify-content-start flex-column flex-md-row align-items-center my-2'>
+          <span className='d-flex flex-column col-12 col-md-3 text-start me-3 label-l'>
             <InputText
               label='First Name:'
               type='text'
@@ -99,7 +100,7 @@ export default function ContactUsForm() {
               }
             />
           </span>
-          <span className='d-flex flex-column text-start me-3 label-l'>
+          <span className='d-flex flex-column col-12 col-md-3 text-start me-3 label-l'>
             <InputText
               label='Middle Name:'
               type='text'
@@ -108,7 +109,7 @@ export default function ContactUsForm() {
               value={saveFormData.middleName}
             />
           </span>
-          <span className='d-flex flex-column text-start label-l'>
+          <span className='d-flex flex-column col-12 col-md-3 text-start label-l'>
             <InputText
               label='Last Name:'
               type='text'
@@ -156,8 +157,8 @@ export default function ContactUsForm() {
             value={saveFormData.addressLine2}
           />
         </div>
-        <div className='d-flex justify-content-start my-2'>
-          <span className='d-flex flex-column text-start me-3 label-l'>
+        <div className='d-flex justify-content-start flex-column flex-md-row align-items-center my-2'>
+          <span className='d-flex flex-column text-start col-12 col-md-3 me-3 label-l'>
             <InputText
               label='State:'
               labelClassName='label-l'
@@ -177,7 +178,7 @@ export default function ContactUsForm() {
               }
             />
           </span>
-          <span className='d-flex flex-column text-start me-3 label-l'>
+          <span className='d-flex flex-column col-12 col-md-3 text-start me-3 label-l'>
             <InputText
               label='City:'
               type='text'
@@ -196,7 +197,7 @@ export default function ContactUsForm() {
               }
             />
           </span>
-          <span className='d-flex flex-column text-start label-l'>
+          <span className='d-flex flex-column col-12 col-md-3 text-start label-l'>
             <InputText
               label='Zip Code:'
               type='text'

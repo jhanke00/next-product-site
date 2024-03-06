@@ -3,3 +3,9 @@
   border: 1px solid #c2c7cf;
   box-shadow: 0 4px 5px rgba(97 103 110 / 10%);
 }
+
+@media screen and (max-width: 767px) {
+  .reusable-card {
+    width: 100%;
+  }
+}

@@ -6,7 +6,7 @@
 }
 
 .reusable-card {
-  width: 800px;
+  max-width: 800px;
 }
 
 .contactus-form-heading {
@@ -22,4 +22,13 @@
   padding: 8px 32px;
   border-radius: 16px;
   color: white;
+}
+
+.contact-route {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  left: 0;
+  right: 0;
 }

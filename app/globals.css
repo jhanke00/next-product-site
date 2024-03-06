@@ -11,6 +11,9 @@ textarea {
 
 body {
   line-height: 24px;
+  position: relative;
+  left: 0;
+  right: 0;
 }
 
 input {
