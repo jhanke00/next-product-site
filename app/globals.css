@@ -26,6 +26,7 @@ input:focus {
   border-radius: 6px;
 }
 
+/* Global custom css for text */
 .label-l {
   color: #0a1a5c;
   font-size: 18px;
@@ -33,6 +34,7 @@ input:focus {
   line-height: 20px;
 }
 
+/* Global custom css for text */
 .label-m {
   color: #0a1a5c;
   font-size: 16px;
