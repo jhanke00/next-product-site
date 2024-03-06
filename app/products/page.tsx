@@ -1,4 +1,10 @@
+'use client';
 import type { Product } from '@type/products';
+import largeData from './../../src/mock/large/products.json';
+import smallData from './../../src/mock/small/products.json';
+import { useState } from 'react';
+
+const PAGE_SIZE = 20;
 
 export default function Products() {
   const products: Array<Product> = [
@@ -54,11 +60,27 @@ export default function Products() {
     },
   ];
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const data = [...largeData, ...smallData];
+  const startIndex = (currentPage - 1) * PAGE_SIZE;
+  const endIndex = startIndex + PAGE_SIZE;
+  const productData = data.slice(startIndex, endIndex);
+
+  const totalPages = Math.ceil(data.length / PAGE_SIZE);
+
+  const nextPage = () => {
+    setCurrentPage(currentPage + 1);
+  };
+
+  const prevPage = () => {
+    setCurrentPage(currentPage - 1);
+  };
+
   return (
     <main className='flex min-h-screen flex-col items-center p-24'>
       <div className='z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex'>
         <div className='grid lg:max-w-5xl lg:w-full lg:grid-cols-2 lg:text-left'>
-          {products.map((product) => (
+          {productData.map((product) => (
             <div
               key={product.id}
               className='group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30'
@@ -73,6 +95,17 @@ export default function Products() {
             </div>
           ))}
         </div>
+      </div>
+      <div className='flex justify-around w-full border-t-2 pt-4'>
+        <button onClick={prevPage} disabled={currentPage === 1}>
+          Previous
+        </button>
+        <span>
+          Page {currentPage} of {totalPages}
+        </span>
+        <button onClick={nextPage} disabled={currentPage === totalPages}>
+          Next
+        </button>
       </div>
     </main>
   );
