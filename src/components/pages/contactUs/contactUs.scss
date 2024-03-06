@@ -1,0 +1,14 @@
+.contact-form {
+  min-height: 600px;
+  background-color: white;
+
+  &-container {
+    max-width: 850px;
+    border: 1px solid #c2c7cf;
+    border-radius: 12px;
+
+    input {
+      margin-bottom: 22px;
+    }
+  }
+}
