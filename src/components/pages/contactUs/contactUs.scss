@@ -7,8 +7,19 @@
     border: 1px solid #c2c7cf;
     border-radius: 12px;
 
-    input {
+    .form-group {
       margin-bottom: 22px;
     }
+
+    .error {
+      color: red;
+      padding-left: 10px;
+    }
   }
+}
+
+.submit-success {
+  background-color: #14a44d;
+  color: white;
+  padding: 5px;
 }
