@@ -18,11 +18,124 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  background: #dbe0e1;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.contact-form {
+  width: 55%;
+  border: 1px solid #d6d7da;
+  padding: 0px 15px 15px 15px;
+  border-radius: 5px;
+  font-family: arial;
+  line-height: 16px;
+  color: #333333;
+  font-size: 16px;
+  background: #ffffff;
+  margin: auto;
+}
+
+.contact-form form label,
+.contact-form form input {
+  display: block;
+  width: 100%;
+}
+
+.contact-form form label {
+  padding: 5px 0;
+}
+
+.contact-form form input {
+  padding: 10px;
+  border: solid 1px #bdc7d8;
+  height: 45px;
+}
+
+.contact-form form textarea {
+  padding: 10px;
+  border: solid 1px #bdc7d8;
+  height: 100px;
+  width: 100%;
+}
+
+.contact-form .form-button {
+  background-color: #624963;
+  border-color: #624963;
+  font-weight: bold;
+  padding: 12px 15px;
+  color: #ffffff;
+  width: auto;
+  display: inline-block;
+}
+
+.contact-form .error-message {
+  color: #cc0000;
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.contact-form .sucess-message {
+  color: #476807;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.contact-form h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.contact-form .form-field {
+  margin-bottom: 10px;
+}
+
+.message-list {
+  width: 75%;
+  margin: auto;
+}
+
+.message-list h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.message {
+  width: 96%;
+  border: 1px solid slategrey;
+  border-radius: 14px;
+  font-size: 16px;
+  margin: 2%;
+  padding: 5px;
+  float: left;
+  word-wrap: break-word;
+}
+
+@media only screen and (min-width: 1024px) {
+  .message {
+    width: 46%;
+  }
+}
+
+.message label {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.no-message {
+  width: 100%;
+  height: 400px;
+  border-radius: 14px;
+  font-size: 16px;
+  margin: auto;
+  margin-left: 20px;
 }
