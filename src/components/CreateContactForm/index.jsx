@@ -87,12 +87,13 @@ const CreateContactFrom = () => {
         [name]: formFiledErrorMessages[name],
       };
       setErrorMessage(newErrorMessage);
+    } else {
+      delete errorMessage[name];
     }
   };
 
   const handleBlur = (fieldName) => {
     isFormFieldValueEmpty(fieldName);
-    console.log('value+++' + fieldName);
   };
 
   return (
@@ -106,6 +107,7 @@ const CreateContactFrom = () => {
             name='name'
             id='name'
             onBlur={() => handleBlur('name')}
+            autoFocus
             placeholder={formFiledErrorMessages.name}
             value={formData.name}
             onChange={(e) => handleChange(e)}

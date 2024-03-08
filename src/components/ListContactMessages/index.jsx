@@ -1,11 +1,22 @@
+import { useEffect, useState } from 'react';
 import ShowContactMessages from '../ShowContactMessages';
 
-const ListContactMessages = ({ messages }) => {
+const ListContactMessages = () => {
+  let [messageList, serMessageList] = useState([]);
+
+  useEffect(() => {
+    let messages = JSON.parse(localStorage.getItem('messages')) || [];
+    serMessageList(messages);
+  }, []);
+
   let showMessages = '';
-  if (messages.length > 0) {
-    showMessages = messages.map((message, index) => {
-      return <ShowContactMessages key={index} message={message} />;
-    });
+  if (messageList && messageList.length > 0) {
+    showMessages = messageList
+      .sort()
+      .reverse()
+      .map((message, index) => {
+        return <ShowContactMessages key={index} message={message} />;
+      });
   } else {
     showMessages = <div className='no-message'>No user message found.</div>;
   }
