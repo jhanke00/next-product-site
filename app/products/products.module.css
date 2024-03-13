@@ -1,0 +1,29 @@
+.arrowLeft {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.arrowRight {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.flex50 {
+  flex: 1 1;
+}
+
+.pr8 {
+  padding-right: 8px;
+}
+
+.pl8 {
+  padding-left: 8px;
+}

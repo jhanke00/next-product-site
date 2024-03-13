@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import '@/app/products/products.module.css';
 
 export const metadata: Metadata = {
   title: 'Products',
