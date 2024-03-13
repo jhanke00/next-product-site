@@ -9,6 +9,7 @@ The ProductList component is responsible for displaying all the large products d
 ## Code Explanation
 
 ### Link
+![image](https://github.com/divya-12m/react-product-site/assets/46180437/6f591950-240a-4344-8872-0bbb96e4a391)
 
 Updated a Link 'Product List' and specified the route path in the app/page.tsx.
 
