@@ -10,12 +10,13 @@ const ProductList = () => {
   const [currentPage, setCurrentPage] = React.useState(1);
   const [searchQuery, setSearchQuery] = React.useState('');
 
-  const products: Product[] = largeProductData.map((product) => ({
-    ...product,
-
-    id: Number(product.id),
-    price: Number(product.price),
-  }));
+  const products: Product[] = largeProductData.map((product) => {
+    return {
+      ...product,
+      id: product.id,
+      price: Number(product.price),
+    };
+  });
 
   //Filter products based on search query
   const filteredProducts = products.filter((product) => {
@@ -103,9 +104,9 @@ const ProductList = () => {
   const startIndex = (currentPage - 1) * PAGE_SIZE;
   const endIndex = startIndex + PAGE_SIZE;
   const paginatedProducts = filteredProducts.slice(startIndex, endIndex);
+
   const handleProductClick = (product: Product) => {
     setSelectedProduct(product);
-    setCurrentPage(1);
   };
 
   const handleCloseModal = () => {
@@ -118,7 +119,7 @@ const ProductList = () => {
         <input
           type='text'
           placeholder='Search Products'
-          style={{ padding: '10px', margin: '20px 20px 20px 20px', width: '300px' }}
+          style={{ padding: '10px', margin: '10px 20px 5px 20px', width: '300px' }}
           value={searchQuery}
           onChange={(e) => handleSearch(e.target.value)}
         />
@@ -130,7 +131,7 @@ const ProductList = () => {
             style={{
               border: '1px solid #ddd',
               borderRadius: '8px',
-              padding: '15px',
+              padding: '10px',
               width: '300px',
               cursor: 'pointer',
             }}
@@ -148,15 +149,26 @@ const ProductList = () => {
                 <strong style={{ fontSize: 'small' }}>Category: </strong>
                 {product.category}
               </p>
+              <p style={{ fontSize: 'small' }}>
+                <strong style={{ fontSize: 'small' }}>Rating: </strong>
+                {product.rating.toFixed(1)}
+              </p>
+              <p style={{ fontSize: 'small' }}>
+                <strong style={{ fontSize: 'small' }}>Reviews: </strong>
+                {product.numReviews}
+              </p>
+              <p style={{ fontSize: 'small' }}>
+                <strong style={{ fontSize: 'small' }}>Stock: </strong>
+                {product.countInStock}
+              </p>
             </div>
             <div>
-              <h3 style={{ color: 'darkblue' }}>Price:{product.price}</h3>
+              <h3 style={{ color: 'darkblue' }}>Price: Rs.{product.price}</h3>
             </div>
           </div>
         ))}
 
         {selectedProduct && (
-          // <div style ={{position:'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', padding: '50px', backgroundColor: '#fff', border: '2px solid #444'}}>
           <div
             style={{
               position: 'fixed',
@@ -171,13 +183,15 @@ const ProductList = () => {
             }}
           >
             <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', maxWidth: '600px' }}>
-              <h3 style={{ color: 'darkblue', textAlign: 'center' }}>Product Details</h3>
+              <h4 style={{ color: 'darkblue', textAlign: 'center' }}>Product Details</h4>
+              <h3 style={{ fontSize: 'small' }}>ID: {selectedProduct.id}</h3>
               <h4>{selectedProduct.name}</h4>
               <p> Description: {selectedProduct.description}</p>
               <p> Category: {selectedProduct.category}</p>
-              <p> Rating: {selectedProduct.rating}</p>
+              <p> Rating: {selectedProduct.rating.toFixed(1)}</p>
               <p>No. of Reviews: {selectedProduct.numReviews}</p>
-              <p> Price: {selectedProduct.price}</p>
+              <p>Stock: {selectedProduct.countInStock}</p>
+              <p> Price: Rs. {selectedProduct.price}</p>
               <button
                 style={{ float: 'right', color: 'white', backgroundColor: 'darkblue' }}
                 onClick={handleCloseModal}
@@ -188,15 +202,12 @@ const ProductList = () => {
           </div>
         )}
       </div>
-      {/* <div style={{display:'flex',flex:'wrap', marginBottom:'10px',position:'relative'}}> */}
 
       {renderPagination()}
-
-      {/* </div> */}
     </div>
   );
 };
-export const handleCardHover = (e: React.MouseEvent, id: number | null) => {
+export const handleCardHover = (e: React.MouseEvent, id: number | string | null) => {
   const card = e.currentTarget as HTMLDivElement;
   card.style.boxShadow = id !== null ? '0 0 10px 0 #000' : 'none';
 };

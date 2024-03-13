@@ -4,10 +4,10 @@ import ProductList from '../../src/components/ProductList';
 
 const Products = () => {
   return (
-    <div>
+    <>
       <h1 style={{ marginLeft: '20px' }}>Product List</h1>
       <ProductList />
-    </div>
+    </>
   );
 };
 
