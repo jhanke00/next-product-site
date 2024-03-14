@@ -27,3 +27,25 @@
 .pl8 {
   padding-left: 8px;
 }
+
+.loadStyle:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis 2s infinite;
+  animation: ellipsis 2s infinite;
+  content: '\2026';
+  width: 0px;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 40px;
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 40px;
+  }
+}

@@ -1,8 +1,10 @@
 'use client';
+import { Product } from '@/src/type/products';
 import smallAmtProducts from '@/src/mock/small/products.json';
 import largeAmtProducts from '@/src/mock/large/products.json';
 import Link from 'next/link';
 import styles from '@/app/products/products.module.css';
+import ProductDetails from '@/src/components/Products/productDetails';
 
 export default function ProductDetail({ params }: { params: { productId: string } }) {
   const products = [...smallAmtProducts, ...largeAmtProducts];
@@ -15,17 +17,7 @@ export default function ProductDetail({ params }: { params: { productId: string 
           Go to Products
         </Link>
       </div>
-      {product && (
-        <div>
-          <h3 className={`mb-3 text-2xl font-semibold`}>{product.name}</h3>
-          <p className={`m-0 text-sm opacity-50`}>Price: {product.price}</p>
-          <p className={`m-0 text-sm opacity-50`}>Description: {product.description}</p>
-          <p className={`m-0 text-sm opacity-50`}>Category: {product.category}</p>
-          <p className={`m-0 text-sm opacity-50`}>Rating: {product.rating}</p>
-          <p className={`m-0 text-sm opacity-50`}>Reviews: {product.numReviews}</p>
-          <p className={`m-0 text-sm opacity-50`}>Stock: {product.countInStock}</p>
-        </div>
-      )}
+      {product && <ProductDetails product={product} />}
       {!product && <h3 className={`mb-3 text-2xl font-semibold`}>Invalid Product</h3>}
     </div>
   );
