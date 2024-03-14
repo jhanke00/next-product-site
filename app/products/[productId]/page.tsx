@@ -8,7 +8,7 @@ import ProductDetails from '@/src/components/Products/productDetails';
 
 export default function ProductDetail({ params }: { params: { productId: string } }) {
   const products = [...smallAmtProducts, ...largeAmtProducts];
-  const product = products.find((i) => i.id === params.productId);
+  const selectedProduct = products.find((i) => i.id === params.productId);
   return (
     <div className='flex min-h-screen flex-col p-24 font-mono'>
       <div className='mb-32'>
@@ -17,8 +17,8 @@ export default function ProductDetail({ params }: { params: { productId: string 
           Go to Products
         </Link>
       </div>
-      {product && <ProductDetails product={product} />}
-      {!product && <h3 className={`mb-3 text-2xl font-semibold`}>Invalid Product</h3>}
+      {selectedProduct && <ProductDetails product={selectedProduct} />}
+      {!selectedProduct && <h3 className={`mb-3 text-2xl font-semibold`}>Invalid Product</h3>}
     </div>
   );
 }
