@@ -19,32 +19,32 @@ When the user clicks on any product, the user will be redirected to a details pa
 
 app\products\page.tsx :
 
-> Displaying list of products from 'src/mock/small/products.json' & 'src/mock/large/products.json'.
-> Assuming the page size as 10 and current page number as 1, calculated the first product index & last product index of the page. Calculated total pages and products to be displayed per page.
-> Using a map function displayed all the products for the page.
-> For any product details that is shown here is imported from component '/src/components/Products/productDetails'.
-> Provided a route to the product, on clicking it will redirect to product details screen 'app\products\[productId]\page.tsx'.
+1. Displaying list of products from 'src/mock/small/products.json' & 'src/mock/large/products.json'.
+2. Assuming the page size as 10 and current page number as 1, calculated the first product index & last product index of the page. Calculated total pages and products to be displayed per page.
+3. Using a map function displayed all the products for the page.
+4. For any product details that is shown here is imported from component '/src/components/Products/productDetails'.
+5. Provided a route to the product, on clicking it will redirect to product details screen 'app\products\[productId]\page.tsx'.
 
 app\products\[productId]\page.tsx :
 
-> Displaying the product details here which is again imported from component '/src/components/Products/productDetails'.
-> Since we are sending dynamic productId in params from the previous screen, here we are finding the product id from the mock data and fetching the product information from the mock data. This way we can determine any 'Invalid product'.
-> The user can also go back to the 'List of products' screen from this page as it has a 'Go to Products' link.
+1. Displaying the product details here which is again imported from component '/src/components/Products/productDetails'.
+2. Since we are sending dynamic productId in params from the previous screen, here we are finding the product id from the mock data and fetching the product information from the mock data. This way we can determine any 'Invalid product'.
+3. The user can also go back to the 'List of products' screen from this page as it has a 'Go to Products' link.
 
 src\components\Products\productDetails.tsx :
 
-> Component displays all the information of the particular product.
-> Displays only Product name & Product price for the list screen.
-> Displays all the information of the product for the details screen.
+1. Component displays all the information of the particular product.
+2. Displays only Product name & Product price for the list screen.
+3. Displays all the information of the product for the details screen.
 
 app\products\products.module.css :
 
-> Some custom styles are written for the UI
+1. Some custom styles are written for the UI
 
 public\next.png :
 
-> Imported icon for pagination
+1. Imported icon for pagination
 
 public\previous.png :
 
-> Imported icon for pagination
+1. Imported icon for pagination
