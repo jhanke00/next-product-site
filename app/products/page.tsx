@@ -41,13 +41,17 @@ export default function Products() {
           Showing {firstProductIndexOfPage + 1}-{lastProductIndexOfPage} of {products.length}
         </div>
         <div>
-          <button onClick={() => setCurrentPage(currentPage - 1)} className={styles.pr8}>
-            {currentPage !== 1 && <Image src='/previous.png' width={10} height={10} alt='Navigate to previous page' />}
-          </button>
+          {currentPage !== 1 && (
+            <button onClick={() => setCurrentPage(currentPage - 1)} className={styles.pr8}>
+              <Image src='/previous.png' width={10} height={10} alt='Navigate to previous page' />
+            </button>
+          )}
           Page {currentPage} of {totalPages}
-          <button onClick={() => setCurrentPage(currentPage + 1)} className={styles.pl8}>
-            {currentPage !== totalPages && <Image src='/next.png' width={10} height={10} alt='Navigate to next page' />}
-          </button>
+          {currentPage !== totalPages && (
+            <button onClick={() => setCurrentPage(currentPage + 1)} className={styles.pl8}>
+              <Image src='/next.png' width={10} height={10} alt='Navigate to next page' />
+            </button>
+          )}
         </div>
       </div>
     </main>
