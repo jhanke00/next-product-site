@@ -1,5 +1,5 @@
+'use client';
 import type { Product } from '@type/products';
-('use client');
 import largeData from '@/src/mock/large/products.json';
 import { useState } from 'react';
 import Link from 'next/link';
@@ -41,11 +41,11 @@ export default function Products() {
         </div>
       </div>
       <div className='flex w-full border-t-2 pt-4' style={{ justifyContent: 'space-evenly' }}>
-        {currentPage !== 1 && <button onClick={prevPage}> Previous </button>}
+        {currentPage !== 1 && <button onClick={prevPage}> &lt; </button>}
         <span>
           Page {currentPage} of {totalPages}
         </span>
-        {currentPage !== totalPages && <button onClick={nextPage}> Next </button>}
+        {currentPage !== totalPages && <button onClick={nextPage}> &gt; </button>}
       </div>
     </main>
   );

@@ -2,8 +2,9 @@
 import largeData from '@/src/mock/large/products.json';
 import { useRouter } from 'next/navigation';
 
-const productDetail = ({ params }: { params: { productId: string } }) => {
+const skuDetail = ({ params }: { params: { productId: string } }) => {
   const data = [...largeData];
+  const router = useRouter();
   let product;
   for (let i = 0; i < data.length; i++) {
     if (data[i].id === params.productId) {
@@ -11,7 +12,7 @@ const productDetail = ({ params }: { params: { productId: string } }) => {
       break;
     }
   }
-  const router = useRouter();
+
   if (!product) {
     return <p>No products are active now</p>;
   }
@@ -32,4 +33,4 @@ const productDetail = ({ params }: { params: { productId: string } }) => {
   );
 };
 
-export default productDetail;
+export default skuDetail;
