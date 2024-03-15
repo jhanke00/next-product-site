@@ -8,6 +8,7 @@ const sku_per_page = 10;
 
 export default function Products() {
   const [currentPage, setCurrentPage] = useState(1);
+  const [categoryFilter, setCategoryFilter] = useState('');
   const data = [...largeData];
   const startPos = (currentPage - 1) * sku_per_page;
   const endPos = startPos + sku_per_page;
@@ -17,12 +18,23 @@ export default function Products() {
   const nextPage = () => setCurrentPage(currentPage + 1);
 
   const prevPage = () => setCurrentPage(currentPage - 1);
+  const filteredProducts = skuData.filter((product) =>
+    product.category.toLowerCase().includes(categoryFilter.toLowerCase())
+  );
 
   return (
     <main className='flex min-h-screen flex-col items-center p-24'>
+      <div className='filter' style={{ border: '1px solid #555' }}>
+        <input
+          type='text'
+          placeholder='Filter by category'
+          value={categoryFilter}
+          onChange={(e) => setCategoryFilter(e.target.value)}
+        />
+      </div>
       <div className='z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex'>
         <div className='grid lg:max-w-5xl lg:w-full lg:grid-cols-2 lg:text-left'>
-          {skuData.map((product) => (
+          {filteredProducts.map((product) => (
             <div
               key={product.id}
               className='group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30'
