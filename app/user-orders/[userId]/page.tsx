@@ -13,10 +13,10 @@ export default function UserOrders({ params }: UserOrdersProps) {
   const [userData, setUserData] = useState({ firstName: '', lastName: '' });
 
   useEffect(() => {
-    const userOrders = orders.filter(({ user }) => user.toLowerCase() === params.userId.toLowerCase());
-    const userData = users.filter((user) => user.id.toLowerCase() === params.userId.toLowerCase());
+    const filteredUserOrders = orders.filter(({ user }) => user.toLowerCase() === params.userId.toLowerCase());
+    const filteredUserData = users.find((user) => user.id.toLowerCase() === params.userId.toLowerCase());
 
-    const itemDictionary = userOrders
+    const itemDictionary = filteredUserOrders
       .flatMap(({ items }) => items)
       .reduce((dictionary: any, item) => {
         const { id } = item;
@@ -24,9 +24,9 @@ export default function UserOrders({ params }: UserOrdersProps) {
         return dictionary;
       }, {});
 
-    const ordersList = Object.values(itemDictionary);
-    setUserOrders(ordersList as Item[]);
-    setUserData(userData[0]);
+    const ordersList: Item[] = Object.values(itemDictionary);
+    setUserOrders(ordersList);
+    setUserData(filteredUserData || { firstName: '', lastName: '' });
   }, [params?.userId]);
 
   return (

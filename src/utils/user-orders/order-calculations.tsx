@@ -2,7 +2,7 @@ import { DELIVERY_CHARGE, TAXES } from '@/src/constants/user-orders';
 import { Item } from '@/src/type/orders';
 
 export const getProductCost = (data: Item[]) => {
-  return data?.reduce((sum: number, item: any) => {
+  return data?.reduce((sum: number, item: Item) => {
     const price = Number(item.price);
     const count = item.count;
     const itemTotal = price * count;
