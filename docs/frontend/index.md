@@ -14,21 +14,15 @@ Documentation on any Frontend capabilities or changes made.
 8.    ProductCard – To Display product details
 9.    ProductSkeleton – For product page load 10. ProductCardSkeleton – for product details page load
 
-
-
 ## Utils (@/src/utils)
 
 1.    breadcrumbsUtils.ts – To manage breadcrumbs across the application
 2.    commonUtils.ts  - To manage common utility methods
 3.    ProductUtils.ts – To manage product utility methods
 
-
-
 ## Types (@src/types)
 
 1.    Updated types in Common and products
-
-
 
 ## Other Details
 
@@ -39,3 +33,4 @@ Documentation on any Frontend capabilities or changes made.
 5.    The category search will filter results based on the selection made.
 6.    The search will always take into account the category and search query to retrieve data; at least one must be selected or entered.
 7.    Pagination has a dropdown to navigate to any page number.
+
