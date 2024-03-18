@@ -31,7 +31,7 @@ Headers:
 user-id: c12f95dd-9446-48bc-b124-9e0142d53820
 ```
 
-Response
+### Response
 
 ```bash
 
