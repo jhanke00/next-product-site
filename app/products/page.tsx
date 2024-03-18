@@ -1,65 +1,92 @@
 'use client';
-import largeData from '@/src/mock/large/products.json';
-import smallData from '@/src/mock/small/products.json';
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
+import type { NextPage } from 'next';
+import type { ProductType } from '@type/products';
+import Table from '@components/Table';
+import Search from '@components/Search';
+import Breadcrumbs from '@components/Breadcrumbs';
+import Pagination from '@components/Pagination';
+import Skeleton from '@components/ProductSkeleton';
+import { productBreadcrumbs } from '@utils/breadcrumbsUtils';
+import { productTableHeaders, fetchProducts, searchProducts, productPageConfig } from '@utils/productUtils';
+import { getPageSliceData, usePagination } from '@utils/commonUtils';
 
-const PAGE_SIZE = 20;
-
-export default function Products() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const data = [...largeData, ...smallData];
-  const startIndex = (currentPage - 1) * PAGE_SIZE;
-  const endIndex = startIndex + PAGE_SIZE;
-  const productData = data.slice(startIndex, endIndex);
-  const totalPages = Math.ceil(data.length / PAGE_SIZE);
-
-  const nextPage = () => {
-    setCurrentPage(currentPage + 1);
-  };
-
-  const prevPage = () => {
-    setCurrentPage(currentPage - 1);
-  };
+const ProductHome: NextPage = () => {
+  const [products, setProducts] = useState<ProductType[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [currentPage, getPageChange] = usePagination(1);
+  const rowsPerPage = productPageConfig.rowCount;
+  const redirectUrl = productPageConfig.redirectUrl;
+  const paginatedProducts = getPageSliceData(products, currentPage, rowsPerPage);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [currentPage]);
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    setIsLoading(true);
+    try {
+      const data = await fetchProducts();
+      setProducts(data);
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleSearch = async (query: string, category: string) => {
+    setIsLoading(true);
+    getPageChange(1);
+    try {
+      const data = await searchProducts(query, category);
+      setProducts(data);
+    } catch (error) {
+      console.error('Error searching products:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleReset = async () => {
+    setSearchQuery('');
+    setSelectedCategory('');
+    await fetchData();
+  };
 
   return (
-    <main className='flex min-h-screen flex-col items-center p-24'>
-      <div className='z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex'>
-        <div className='grid lg:max-w-5xl lg:w-full lg:grid-cols-2 lg:text-left'>
-          {productData.map((product) => (
-            <div
-              key={product.id}
-              className='group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30'
-            >
-              <Link href={`/products/${product.id}`}>
-                <h3 className={`mb-3 text-2xl font-semibold`}>{product.name}</h3>
-                <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Price: {product.price}</p>
-                <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Description: {product.description}</p>
-                <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Category: {product.category}</p>
-                <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Rating: {product.rating}</p>
-                <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Reviews: {product.numReviews}</p>
-                <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Stock: {product.countInStock}</p>
-              </Link>
-            </div>
-          ))}
-        </div>
+    <main className='flex flex-col items-left'>
+      <Breadcrumbs breadcrumbs={productBreadcrumbs} />
+      <div>
+        <Search
+          searchQuery={searchQuery}
+          selectedCategory={selectedCategory}
+          onSearch={(query, category) => {
+            setSearchQuery(query);
+            setSelectedCategory(category);
+            handleSearch(query, category);
+          }}
+          onReset={handleReset}
+          onCategoryChange={setSelectedCategory}
+        />
+        {isLoading ? (
+          <Skeleton />
+        ) : (
+          <Table products={paginatedProducts} headers={productTableHeaders} redirectUrl={redirectUrl} />
+        )}
       </div>
-
-      <div className='flex justify-around w-full border-t-2 pt-4'>
-        <button onClick={prevPage} disabled={currentPage === 1}>
-          Previous
-        </button>
-        <span>
-          Page {currentPage} of {totalPages}
-        </span>
-        <button onClick={nextPage} disabled={currentPage === totalPages}>
-          Next
-        </button>
-      </div>
+      {!isLoading && products.length > rowsPerPage && (
+        <Pagination
+          totalItems={products.length}
+          rowsPerPage={rowsPerPage}
+          currentPage={currentPage}
+          onPageChange={getPageChange}
+        />
+      )}
     </main>
   );
-}
+};
+
+export default ProductHome;

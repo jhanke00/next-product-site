@@ -25,4 +25,111 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .app-bg-color1 {
+    @apply bg-slate-700;
+  }
+
+  .app-bg-color2 {
+    @apply bg-gray-50;
+  }
+
+  .app-bg-color3 {
+    @apply bg-gray-500;
+  }
+
+  .app-font-color1 {
+    @apply text-green-100;
+  }
+
+  .app-font-color2 {
+    @apply text-white;
+  }
+
+  .app-bg-color4 {
+    @apply bg-blue-50;
+  }
+
+  .app-box {
+    @apply w-full items-center rounded-md;
+  }
+}
+
+@layer components {
+  .app-layout-body {
+    @apply flex flex-col min-h-full;
+  }
+
+  .app-header {
+    @apply w-full h-40 flex flex-col justify-center items-center text-center shadow-md;
+    @apply bg-slate-700 text-green-100;
+  }
+
+  .app-leftnav {
+    @apply flex-none w-full md:w-64 overflow-auto p-2;
+    @apply bg-slate-700;
+  }
+
+  .app-leftnav-container {
+    @apply flex flex-grow overflow-hidden;
+  }
+
+  .app-root-container {
+    @apply flex-grow p-6 pl-10 md:overflow-auto;
+  }
+
+  .app-menu-item {
+    @apply flex h-[48px] mb-2 gap-2 p-3 hover:text-green-500 hover:bg-sky-200 md:justify-start text-5xl;
+    @apply w-full items-center rounded-md bg-gray-50;
+  }
+
+  .app-table-row {
+    @apply flex py-4 px-4 hover:bg-green-50 cursor-pointer border-b-2 border-blue-300;
+  }
+
+  .app-page-container {
+    @apply flex flex-col md:flex-row md:overflow-hidden;
+  }
+
+  .app-page-content {
+    @apply flex-grow md:overflow-y-auto;
+  }
+
+  .min-h-svh-200 {
+    min-height: calc(100vh - 200px);
+  }
+
+  /* Product Card */
+
+  .cardTitle {
+    @apply text-3xl text-white py-4 px-4 font-semibold bg-gray-800 w-1/2;
+  }
+
+  .cardBody {
+    @apply w-1/2 bg-white;
+  }
+
+  .cardContent {
+    @apply flex py-4 px-4;
+  }
+
+  .cardContentText {
+    @apply whitespace-pre-wrap text-2xl;
+  }
+
+  .cardInfo {
+    @apply flex justify-between bg-blue-200 p-3;
+  }
+
+  .cardInfoNeutral {
+    @apply flex justify-between p-3;
+  }
+
+  .infoLabel {
+    @apply font-semibold text-xl text-gray-800;
+  }
+
+  .infoValue {
+    @apply text-xl pr-5;
+  }
 }
