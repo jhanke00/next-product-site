@@ -3,7 +3,7 @@ import { Item, CardProps } from '@/src/type/orders';
 import Image from 'next/image';
 
 export const Card = ({ data }: CardProps) => {
-  const { name, price, count } = data;
+  const { name, price, count, id } = data;
 
   return (
     <div className='rounded-3xl p-6 bg-gray-100 border border-gray-100 flex flex-col md:flex-row md:items-center gap-5 transition-all duration-500 hover:border-gray-400'>
@@ -15,6 +15,7 @@ export const Card = ({ data }: CardProps) => {
           <h2 className='font-medium text-xl leading-8 text-black mb-3'>{name}</h2>
           <p className='font-normal text-lg leading-8 text-gray-500 '>{`${PRICE}: ${price.toLocaleString()}`}</p>
           <p className='font-normal text-lg leading-8 text-gray-500 '>{`${QUANTITY}: ${count}`}</p>
+          <p className='font-normal text-xs leading-8 text-black mb-3'>Order #: {id}</p>
         </div>
 
         <div className='flex items-center justify-between gap-8'>

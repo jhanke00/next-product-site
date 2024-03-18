@@ -1,7 +1,7 @@
 export type Item = {
   id: string;
   name: string;
-  price: number | string;
+  price: number;
   count: number;
 };
 

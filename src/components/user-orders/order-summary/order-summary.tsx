@@ -13,7 +13,7 @@ import { OrderSummaryProps } from '@/src/type/orders';
 
 export const OrderSummary = ({ data }: OrderSummaryProps) => {
   const productCost = useMemo(() => getProductCost(data), [data]);
-  const subTotal = useMemo(() => getSubTotal(data), [data]);
+  const subTotal = useMemo(() => getSubTotal(productCost), [productCost]);
 
   return (
     <div className='w-full max-w-sm md:max-w-3xl xl:max-w-sm flex items-start flex-col gap-8 max-xl:mx-auto'>
@@ -26,19 +26,19 @@ export const OrderSummary = ({ data }: OrderSummaryProps) => {
             <p className='font-normal text-lg leading-8 text-gray-400 transition-all duration-500 group-hover:text-gray-700'>
               {PRODUCT_COST_LBL}
             </p>
-            <p className='font-medium text-lg leading-8 text-white-900'>{productCost.toFixed(2)}</p>
+            <p className='font-medium text-lg leading-8 text-white-900'>{productCost.toLocaleString()}</p>
           </div>
           <div className='flex items-center justify-between gap-4 mb-5'>
             <p className='font-normal text-lg leading-8 text-gray-400 transition-all duration-500 group-hover:text-gray-700'>
               {SHIPPING_LBL}
             </p>
-            <p className='font-medium text-lg leading-8 text-white-600'>{DELIVERY_CHARGE.toFixed(2)}</p>
+            <p className='font-medium text-lg leading-8 text-white-600'>{DELIVERY_CHARGE}</p>
           </div>
           <div className='flex items-center justify-between gap-4 '>
             <p className='font-normal text-lg leading-8 text-gray-400 transition-all duration-500 group-hover:text-gray-700 '>
               {TAXES_LBL}
             </p>
-            <p className='font-medium text-lg leading-8 text-white-600'>{TAXES.toFixed(2)}</p>
+            <p className='font-medium text-lg leading-8 text-white-600'>{TAXES}</p>
           </div>
         </div>
         <div className='total flex items-center justify-between pt-6'>
