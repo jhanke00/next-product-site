@@ -9,3 +9,8 @@ export const productDetailsBreadcrumbs: BreadcrumbType[] = [
   { label: 'Products', href: '/products', active: false },
   { label: 'Product Details', href: '#', active: true },
 ];
+
+export const OrderBreadcrumbs: BreadcrumbType[] = [
+  { label: 'Home', href: '/' },
+  { label: 'Orders', href: '/orders', active: false },
+];

@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className='app-leftnav'>
             <LeftNavigation />
           </div>
-          <div className='app-root-container'>{children}</div>
+          <div className='app-root-container min-h-svh-200'>{children}</div>
         </div>
       </body>
     </html>
