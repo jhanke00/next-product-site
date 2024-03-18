@@ -33,4 +33,3 @@ Documentation on any Frontend capabilities or changes made.
 5.    The category search will filter results based on the selection made.
 6.    The search will always take into account the category and search query to retrieve data; at least one must be selected or entered.
 7.    Pagination has a dropdown to navigate to any page number.
-
