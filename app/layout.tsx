@@ -1,9 +1,8 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Head from 'next/head';
 import Header from '@components/Header';
-import LeftNavigation from '@components/left-navigation';
+import LeftNavigation from '@components/LeftNavigation';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -16,9 +15,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <Head>
-        <title>Bayer Next-Product-Site</title>
-      </Head>
       <body className={`${inter.className} antialiased app-layout-body`}>
         <header className='app-header'>
           <Header />
