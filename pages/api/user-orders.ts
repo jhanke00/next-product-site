@@ -9,7 +9,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
-  const { userId } = req.query;
+  // const { userId } = req.query;
+  const userId = req.headers['user-id'];
 
   if (!userId) {
     return res.status(400).json({ message: 'User ID is required' });
