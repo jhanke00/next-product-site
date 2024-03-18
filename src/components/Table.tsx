@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import type { ProductType, ProductTablePropsType, HeaderType } from '@type/products';
-import { roundNumber } from '@utils/common';
+import { roundNumber } from '@utils/commonUtils';
 import { getAddonProductValue } from '@utils/productUtils';
 
 const Table: React.FC<ProductTablePropsType> = ({ products, headers, redirectUrl }) => {

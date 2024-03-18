@@ -9,7 +9,7 @@ import Pagination from '@components/Pagination';
 import Skeleton from '@components/ProductSkeleton';
 import { productBreadcrumbs } from '@utils/breadcrumbsUtils';
 import { productTableHeaders, fetchProducts, searchProducts, productPageConfig } from '@utils/productUtils';
-import { getPageSliceData, usePagination } from '@utils/common';
+import { getPageSliceData, usePagination } from '@utils/commonUtils';
 
 const ProductHome: NextPage = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
