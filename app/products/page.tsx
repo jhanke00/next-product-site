@@ -1,79 +1,92 @@
-import type { Product } from '@type/products';
+'use client';
+import React, { useState, useEffect } from 'react';
+import type { NextPage } from 'next';
+import type { ProductType } from '@type/products';
+import Table from '@components/Table';
+import Search from '@components/Search';
+import Breadcrumbs from '@components/Breadcrumbs';
+import Pagination from '@components/Pagination';
+import Skeleton from '@components/ProductSkeleton';
+import { productBreadcrumbs } from '@utils/breadcrumbsUtils';
+import { productTableHeaders, fetchProducts, searchProducts, productPageConfig } from '@utils/productUtils';
+import { getPageSliceData, usePagination } from '@utils/common';
 
-export default function Products() {
-  const products: Array<Product> = [
-    {
-      id: 1,
-      name: 'Product 1',
-      price: 100,
-      description: 'This is a product',
-      category: 'Category 1',
-      rating: 4.5,
-      numReviews: 10,
-      countInStock: 6,
-    },
-    {
-      id: 2,
-      name: 'Product 2',
-      price: 200,
-      description: 'This is a product',
-      category: 'Category 2',
-      rating: 4.0,
-      numReviews: 10,
-      countInStock: 6,
-    },
-    {
-      id: 3,
-      name: 'Product 3',
-      price: 300,
-      description: 'This is a product',
-      category: 'Category 3',
-      rating: 3.5,
-      numReviews: 10,
-      countInStock: 6,
-    },
-    {
-      id: 4,
-      name: 'Product 4',
-      price: 400,
-      description: 'This is a product',
-      category: 'Category 4',
-      rating: 3.0,
-      numReviews: 10,
-      countInStock: 6,
-    },
-    {
-      id: 5,
-      name: 'Product 5',
-      price: 500,
-      description: 'This is a product',
-      category: 'Category 5',
-      rating: 2.5,
-      numReviews: 10,
-      countInStock: 6,
-    },
-  ];
+const ProductHome: NextPage = () => {
+  const [products, setProducts] = useState<ProductType[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [currentPage, getPageChange] = usePagination(1);
+  const rowsPerPage = productPageConfig.rowCount;
+  const redirectUrl = productPageConfig.redirectUrl;
+  const paginatedProducts = getPageSliceData(products, currentPage, rowsPerPage);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    setIsLoading(true);
+    try {
+      const data = await fetchProducts();
+      setProducts(data);
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleSearch = async (query: string, category: string) => {
+    setIsLoading(true);
+    getPageChange(1);
+    try {
+      const data = await searchProducts(query, category);
+      setProducts(data);
+    } catch (error) {
+      console.error('Error searching products:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleReset = async () => {
+    setSearchQuery('');
+    setSelectedCategory('');
+    await fetchData();
+  };
 
   return (
-    <main className='flex min-h-screen flex-col items-center p-24'>
-      <div className='z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex'>
-        <div className='grid lg:max-w-5xl lg:w-full lg:grid-cols-2 lg:text-left'>
-          {products.map((product) => (
-            <div
-              key={product.id}
-              className='group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30'
-            >
-              <h3 className={`mb-3 text-2xl font-semibold`}>{product.name}</h3>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Price: {product.price}</p>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Description: {product.description}</p>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Category: {product.category}</p>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Rating: {product.rating}</p>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Reviews: {product.numReviews}</p>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Stock: {product.countInStock}</p>
-            </div>
-          ))}
-        </div>
+    <main className='flex flex-col items-left'>
+      <Breadcrumbs breadcrumbs={productBreadcrumbs} />
+      <div>
+        <Search
+          searchQuery={searchQuery}
+          selectedCategory={selectedCategory}
+          onSearch={(query, category) => {
+            setSearchQuery(query);
+            setSelectedCategory(category);
+            handleSearch(query, category);
+          }}
+          onReset={handleReset}
+          onCategoryChange={setSelectedCategory}
+        />
+        {isLoading ? (
+          <Skeleton />
+        ) : (
+          <Table products={paginatedProducts} headers={productTableHeaders} redirectUrl={redirectUrl} />
+        )}
       </div>
+      {!isLoading && products.length > rowsPerPage && (
+        <Pagination
+          totalItems={products.length}
+          rowsPerPage={rowsPerPage}
+          currentPage={currentPage}
+          onPageChange={getPageChange}
+        />
+      )}
     </main>
   );
-}
+};
+
+export default ProductHome;

@@ -3,7 +3,6 @@ import { HomeIcon, QueueListIcon, ShoppingCartIcon } from '@heroicons/react/24/o
 import { usePathname } from 'next/navigation';
 import { clsx } from 'clsx';
 
-//move this to util later - vineesh
 const links = [
   { name: 'Home', href: '/', icon: HomeIcon },
   { name: 'Products', href: '/products', icon: QueueListIcon },

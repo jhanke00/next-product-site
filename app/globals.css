@@ -57,7 +57,7 @@ body {
 
 @layer components {
   .app-layout-body {
-    @apply flex flex-col min-h-screen;
+    @apply flex flex-col min-h-full;
   }
 
   .app-header {
@@ -93,5 +93,39 @@ body {
 
   .app-page-content {
     @apply flex-grow md:overflow-y-auto;
+  }
+
+  /* Product Card */
+
+  .cardTitle {
+    @apply text-3xl text-white py-4 px-4 font-semibold bg-gray-800 w-1/2;
+  }
+
+  .cardBody {
+    @apply w-1/2 bg-white;
+  }
+
+  .cardContent {
+    @apply flex py-4 px-4;
+  }
+
+  .cardContentText {
+    @apply whitespace-pre-wrap text-2xl;
+  }
+
+  .cardInfo {
+    @apply flex justify-between bg-blue-200 p-3;
+  }
+
+  .cardInfoNeutral {
+    @apply flex justify-between p-3;
+  }
+
+  .infoLabel {
+    @apply font-semibold text-xl text-gray-800;
+  }
+
+  .infoValue {
+    @apply text-xl pr-5;
   }
 }
