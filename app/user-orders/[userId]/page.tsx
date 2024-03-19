@@ -33,17 +33,19 @@ export default function UserOrders({ params }: UserOrdersProps) {
     <div>
       <section className='py-24 relative'>
         <h2 className='font-bold pb-6 pl-14 text-2xl leading-8 text-white mb-3'>Your Orders</h2>
-        <h2 className='font-medium pl-14 text-xl leading-8 text-white mb-3'>
+        <h2 className='font-medium pl-14 pb-6 text-xl leading-8 text-white mb-3'>
           Hi, {`${userData.firstName} ${userData.lastName}`}
         </h2>
         <div className='w-full max-w-7xl px-4 md:px-5 lg-6 mx-auto'>
           <div className='flex items-start flex-col gap-6 xl:flex-row '>
-            <div className='w-full max-w-sm md:max-w-3xl max-xl:mx-auto'>
-              <div className='grid grid-cols-1 gap-6'>
+            <div className='w-full max-w-sm md:max-w-3xl max-xl:mx-auto overflow-auto h-[500px]'>
+              <div className='grid grid-cols-1 gap-2'>
                 {userOrders?.map((item: Item) => <Card key={item.id} data={item} />)}
               </div>
             </div>
-            <OrderSummary data={userOrders} />
+            <div className='w-full max-w-sm md:max-w-3xl xl:max-w-sm flex items-start flex-col gap-8 max-xl:mx-auto'>
+              <OrderSummary data={userOrders} />
+            </div>
           </div>
         </div>
       </section>
