@@ -39,7 +39,7 @@ This is a dummy product site that needs help adding new features and maturing th
 
 Codespaces is also available and is pre-configured with node and pnpm.
 
-### Storybook
+#### Storybook
 
 1. Run `pnpm storybook`
 2. Open [http://localhost:6006/](http://localhost:6006/) with your browser to see the result.
