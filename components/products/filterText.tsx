@@ -7,7 +7,7 @@ export default function Filter({
   title,
 }: Readonly<{
   searchKey: string;
-  setSearchKey: Function;
+  setSearchKey: React.Dispatch<React.SetStateAction<string>>;
   title: string;
 }>) {
   return (

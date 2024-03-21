@@ -6,15 +6,42 @@ export default function Filter({
   selectedFilter,
   handleFilter,
   title,
+  setSelectedFilter,
 }: Readonly<{
   filters: Array<Product>;
   selectedFilter: Array<string | number>;
-  handleFilter: Function;
+  handleFilter: React.ChangeEventHandler;
   title: string;
+  setSelectedFilter: Function;
 }>) {
   return (
     <div className='relative mb-3'>
-      <h6 className='mb-0'>{title}</h6>
+      <h6 className='flex flex-row gap-2 justify-between'>
+        <span>{title}</span>
+        {selectedFilter.length > 0 && (
+          <div className='relative grid select-none items-center whitespace-nowrap rounded-lg bg-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white'>
+            <button
+              className='flex items-center gap-1 px-1/2 py-1/2 font-sans text-xs font-bold text-center text-white align-middle transition-all rounded-lg select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-white-10 active:bg-white-30'
+              type='button'
+              onClick={() => setSelectedFilter([])}
+            >
+              <div>Clear</div>
+              <div>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                  className='w-4 h-4'
+                  stroke-width='2'
+                >
+                  <path stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12'></path>
+                </svg>
+              </div>
+            </button>
+          </div>
+        )}
+      </h6>
       <ul className='mb-8 list-none pt-2'>
         {filters.map((category, index) => {
           return (

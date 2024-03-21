@@ -105,10 +105,10 @@ export default function Products() {
   };
 
   return (
-    <main className='h-[calc(100vh-120px)] w-full absolute top-14'>
+    <main className='w-full py-4'>
       <aside
         id='sidebar'
-        className='w-[60px] lg:w-[240px] h-[calc(100vh-120px)] whitespace-nowrap fixed shadow overflow-x-hidden transition-all duration-500 ease-in-out'
+        className='w-[60px] lg:w-[240px] h-[calc(100vh-120px)] whitespace-nowrap fixed shadow overflow-x-hidden transition-all duration-500 ease-in-out px-1'
       >
         <FilterText searchKey={searchKey} setSearchKey={setSearchKey} title='Search' />
         <Filter
@@ -116,8 +116,15 @@ export default function Products() {
           selectedFilter={selCategories}
           handleFilter={handleCategoryFilter}
           title='Categories'
+          setSelectedFilter={setSelCategories}
         />
-        <Filter filters={ratings} selectedFilter={selRatings} handleFilter={handleRatingsFilter} title='Ratings' />
+        <Filter
+          filters={ratings}
+          selectedFilter={selRatings}
+          handleFilter={handleRatingsFilter}
+          title='Ratings'
+          setSelectedFilter={setSelRatings}
+        />
       </aside>
       <section
         id='content'
