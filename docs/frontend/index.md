@@ -2,7 +2,7 @@
 
 Documentation on any Frontend capabilities or changes made.
 
-# Prodcuts Listing Page
+# Products Listing Page
 
 - Displaying All Products from Mock Data:
   We have implemented a feature that enables the display of all products available in our mock data. Users can now easily browse through the entire product catalog, providing them with a comprehensive view of our offerings.
