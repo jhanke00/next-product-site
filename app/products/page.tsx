@@ -70,10 +70,10 @@ export default function Products() {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
-  if (searchedData.length === 0) {
+  if (productData.length === 0) {
     return (
       <div className='min-h-screen text-center pt-24'>
-        <p>There is no searched data with &quot;{value}&quot;.</p>
+        <p>There is no searched data with the search and filter criteria.</p>
       </div>
     );
   }
