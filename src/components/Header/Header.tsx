@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import TextField from '../TextField/TextField';
+import TextField from '../ReusableComponents/TextField/TextField';
 import Link from 'next/link';
 import SearchField from './SearchField';
 

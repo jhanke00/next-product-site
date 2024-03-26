@@ -1,7 +1,7 @@
 import { useDebounce } from '@/src/hooks/useDebounce';
 import { useSearch } from '@/src/providers/SearchProvider';
 import React, { useEffect, useState } from 'react';
-import TextField from '../TextField/TextField';
+import TextField from '../ReusableComponents/TextField/TextField';
 
 const SearchField = () => {
   const [value, setValue] = useState('');

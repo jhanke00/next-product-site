@@ -9,9 +9,9 @@ const TextField: React.FC<TextFieldProps> = ({ label, error, ...inputProps }) =>
   const hasError = !!error;
 
   return (
-    <div className='w-48 px-3 md:mb-0'>
+    <div className='md:mb-0'>
       {label && (
-        <label htmlFor={inputProps.name} className='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>
+        <label htmlFor={inputProps.name} className='block tracking-wide mb-2'>
           {label}
         </label>
       )}
