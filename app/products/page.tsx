@@ -1,18 +1,33 @@
 'use client';
 import largeData from '@/src/mock/large/products.json';
 import smallData from '@/src/mock/small/products.json';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
+import { useSearch } from '@/src/providers/SearchProvider';
+import { Product } from '@/src/type/products';
 
 const PAGE_SIZE = 20;
 
 export default function Products() {
   const [currentPage, setCurrentPage] = useState(1);
-  const data = [...largeData, ...smallData];
+  const { value } = useSearch();
+
+  const searchedData = useMemo(() => {
+    const data: Product[] = [...largeData, ...smallData];
+    return value
+      ? data.filter((product) => {
+          return Object.keys(product).some((key) =>
+            product[key as keyof Product].toString().toLowerCase().includes(value.toLowerCase())
+          );
+        })
+      : data;
+  }, [value]);
+
   const startIndex = (currentPage - 1) * PAGE_SIZE;
   const endIndex = startIndex + PAGE_SIZE;
-  const productData = data.slice(startIndex, endIndex);
-  const totalPages = Math.ceil(data.length / PAGE_SIZE);
+  const productData = searchedData.slice(startIndex, endIndex);
+
+  const totalPages = Math.ceil(searchedData.length / PAGE_SIZE);
 
   const nextPage = () => {
     setCurrentPage(currentPage + 1);
@@ -25,6 +40,14 @@ export default function Products() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage]);
+
+  if (searchedData.length === 0) {
+    return (
+      <div className='min-h-screen text-center pt-24'>
+        <p>There is no searched data with &quot;{value}&quot;.</p>
+      </div>
+    );
+  }
 
   return (
     <main className='flex min-h-screen flex-col items-center p-24'>
