@@ -7,14 +7,19 @@ Documentation on any Frontend capabilities or changes made.
 - Displaying All Products from Mock Data:
   We have implemented a feature that enables the display of all products available in our mock data. Users can now easily browse through the entire product catalog, providing them with a comprehensive view of our offerings.
 
+  ![Product page](./imgs/Picture1.png)
+
   - Search functionality
 
     - If you search on the header, this will update search query praram in Url and searches product according to the search term. (This will search all values of product like title, description, category)
+      ![Search Header](./imgs/Picture2.png)
     - If the user update search query itself directly, it will automatically fill out the search input field and update search.
+      ![Search Header](./imgs/Picture3.png)
     - If the user refresh the page this will preserve the search key in both url and search box and update the product list.
 
   - Filter functionality
     - All filter functionalities are same as Search and this is located in left side and this will dynamically update url and form fields.
+      ![Filter](./imgs/Picture4.png)
 
 - Pagination for Improved Navigation:
   To enhance user experience and prevent issues associated with infinite scrolling, we have introduced pagination functionality. Users can now navigate through the product list more efficiently by moving between different pages, allowing for smoother and more organized browsing.
