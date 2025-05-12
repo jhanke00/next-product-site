@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  nextjs:
+    build: .
+    container_name: next-product-site
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/app
+      - /app/node_modules
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
