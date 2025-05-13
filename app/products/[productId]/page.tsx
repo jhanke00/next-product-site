@@ -1,5 +1,5 @@
-import largeData from '@/src/mock/large/products.json';
-import smallData from '@/src/mock/small/products.json';
+import largeData from '@/mock/large/products.json';
+import smallData from '@/mock/small/products.json';
 
 const productDetail = ({ params }: { params: { productId: string } }) => {
   const data = [...largeData, ...smallData];

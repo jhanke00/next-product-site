@@ -1,2 +1,4 @@
-pnpm format
-git add .
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+
+pnpm lint && pnpm format && pnpm test

@@ -22,3 +22,9 @@ Documentation on any Frontend capabilities or changes made.
 - `app/products/[productId]/page.tsx` - Page for the single page description
 - `src/mock/small/products-new.json` - Mock JSON for Prodcut list
 - `src/mock/large/products-new.json` - Mock JSON for Prodcut list
+
+## Orders
+
+- Order Section Integration: Added a new section in page.tsx to interface with the Orders API and display relevant order data.
+
+- User-Specific Order Listing: On the application’s homepage, users can now view a list of their associated orders, fetched dynamically based on their identity.

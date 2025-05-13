@@ -12,7 +12,7 @@
     "test": "jest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "husky",
+    "prepare": "husky install",
     "generate-large-data": "node ./scripts/generateLargeData.js",
     "generate-small-data": "node ./scripts/generateSmallData.js"
   },
@@ -22,9 +22,11 @@
   },
   "dependencies": {
     "fs": "0.0.1-security",
+    "mongoose": "^8.14.3",
     "next": "14.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "zod": "^3.24.4"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
@@ -41,10 +43,10 @@
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "autoprefixer": "^10.4.17",
-    "eslint": "^8.56.0",
+    "eslint": "^8.57.0",
     "eslint-config-next": "14.1.0",
     "eslint-plugin-storybook": "^0.6.15",
-    "husky": "^9.0.10",
+    "husky": "^8.0.0",
     "jest": "^29.7.0",
     "only-allow": "^1.2.1",
     "postcss": "^8.4.35",
