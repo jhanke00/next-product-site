@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id           String   @id @default(uuid())
+  name         String
+  price        String
+  description  String
+  category     Category
+  rating       Float
+  numReviews   Int
+  countInStock Int
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+enum Category {
+  Electronics
+  Jewelery
+  Games
+  Books
+  Toys
+  Health
+  Automotive
+  Sports
+  Grocery
+  Computers
+  Baby
+  Kids
+  Beauty
+  Outdoors
+  Music
+  Garden
+  Industrial
+  Shoes
+  Home
+  Movies
+  Clothing
+  Tools
+}

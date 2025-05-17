@@ -22,3 +22,22 @@ Documentation on any Frontend capabilities or changes made.
 - `app/products/[productId]/page.tsx` - Page for the single page description
 - `src/mock/small/products-new.json` - Mock JSON for Prodcut list
 - `src/mock/large/products-new.json` - Mock JSON for Prodcut list
+
+### Issues
+
+Issues related 73, 91, 82, 57 -> https://github.com/jhanke00/next-product-site/pull/148
+
+- configured PSQL DB using prisma ORM.
+- added Dockefile and docker-compose for local development(db) and Jest tests on local development and CI(test-db)
+- modified CI to also runs all backend tests
+- added sample unit test
+- seed mock products to db before app starts
+- sample getProducts endpoint (API route) with pagination
+- updated package.json to easily work locally, running ci script, seed etc.
+- updated products page. Data now are served from db (and keeping existing mock logic for storybook users)
+- fixed storybook issue related to imports
+
+### Frontend
+
+- served production data from db
+- make posibble to work using storybook (mock product data)

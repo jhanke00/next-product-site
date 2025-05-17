@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:14
+    container_name: db
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=db
+
+  test-db:
+    image: postgres:14
+    container_name: test-db
+    restart: always
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=test-db
+
+  test-runner:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    container_name: test-runner
+    restart: always
+    env_file:
+      - ../.env.ci
+    depends_on:
+      test-db:
+        condition: service_started
+    command: pnpm test

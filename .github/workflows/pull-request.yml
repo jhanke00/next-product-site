@@ -32,7 +32,7 @@ jobs:
         uses: ./.github/actions/configure
 
       - name: Build Project
-        run: pnpm test
+        run: pnpm test-ci
 
   lint:
     runs-on: ubuntu-latest
