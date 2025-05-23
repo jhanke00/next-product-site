@@ -3,13 +3,17 @@ import { pathsToModuleNameMapper } from 'ts-jest';
 import { compilerOptions } from './tsconfig.json';
 
 const config: Config = {
-  setupFiles: ['<rootDir>/tests/setupJest.ts'],
-  moduleFileExtensions: ['ts', 'js', 'json'],
+  setupFilesAfterEnv: ['<rootDir>/tests/setupJest.ts'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }),
-  transform: { '^.+\\.ts$': 'ts-jest' },
+  transform: {
+    '^.+\\.(tsx|jsx)$': ['babel-jest', { presets: ['next/babel'] }],
+    '^.+\\.ts$': 'ts-jest',
+  },
+  testEnvironment: 'jest-environment-jsdom',
   verbose: true,
   passWithNoTests: true,
-  collectCoverageFrom: ['src/**/*.ts'],
+  collectCoverageFrom: ['src/**/*.{ts,tsx,js,jsx}'],
   collectCoverage: true,
 };
 
