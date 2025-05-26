@@ -1,7 +1,9 @@
 import { initTRPC } from '@trpc/server';
 import superjson from 'superjson';
 import { ZodError } from 'zod';
-import { cache } from '@/src/server/config/cache';
+import { EMITTER_EVENTS } from '@/src/server/constants/events';
+import { eventEmitter } from '@/src/server/config/event-emitter';
+import { Cache } from '@/src/server/config/cache';
 
 /**
  * 1. CONTEXT
@@ -16,6 +18,10 @@ import { cache } from '@/src/server/config/cache';
  * @see https://trpc.io/docs/server/context
  */
 export const createTRPCContext = async (opts: { headers: Headers }) => {
+  eventEmitter.emit(EMITTER_EVENTS.contextCreated);
+
+  const cache = Cache.instance;
+
   return {
     cache,
     ...opts,

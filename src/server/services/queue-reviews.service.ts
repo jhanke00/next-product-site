@@ -6,7 +6,7 @@ import { DeleteMessageBatchCommand, ReceiveMessageCommand, SendMessageCommand } 
 import { Message as SQSMessage } from '@aws-sdk/client-sqs/dist-types/models/models_0';
 import { retryWithExponentialBackoffUtil } from '@/src/server/utils/retry-with-exponential-backoff.util';
 import { db } from '@/src/server/config/db';
-import { cache } from '@/src/server/config/cache';
+import { Cache } from '@/src/server/config/cache';
 import { reviewsTable } from '@/src/server/repositories/review/review.schema';
 import { avg, count, eq, sql } from 'drizzle-orm';
 import { productsTable } from '@/src/server/repositories/product/product.schema';
@@ -85,6 +85,8 @@ class QueueReviewsService {
     const productsCacheKeys = successfullyProcessedMessages.map((value) => {
       return cacheKeys.generateProductKey(value.product);
     });
+
+    const cache = Cache.instance;
 
     await cache.del(productsCacheKeys);
 

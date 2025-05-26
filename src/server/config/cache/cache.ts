@@ -1,7 +1,9 @@
 import { env } from '@/src/config/env';
 import Redis from 'ioredis';
 
-class Cache {
+export class Cache {
+  private static instanceCache: Cache;
+
   private cache = new Redis({
     host: env.REDIS_HOST,
     port: env.REDIS_PORT,
@@ -16,10 +18,18 @@ class Cache {
     seconds_5: 5,
   };
 
-  constructor() {
+  private constructor() {
     this.cache.on('error', (err) => {
       console.error('Cache error', err);
     });
+  }
+
+  public static get instance(): Cache {
+    if (!Cache.instanceCache) {
+      Cache.instanceCache = new Cache();
+    }
+
+    return Cache.instanceCache;
   }
 
   get(key: string) {
@@ -62,13 +72,3 @@ class Cache {
     return newValue;
   }
 }
-
-const globalForDb = globalThis as unknown as {
-  cache: Cache | undefined;
-};
-
-const cache = globalForDb.cache ?? new Cache();
-
-if (env.NODE_ENV !== 'production') globalForDb.cache = cache;
-
-export { cache };

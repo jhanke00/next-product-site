@@ -3,6 +3,8 @@ import { productRouter } from '@/src/server/api/routers/product.route';
 import { userRoute } from '@/src/server/api/routers/user.route';
 import { reviewRouter } from '@/src/server/api/routers/review.route';
 import { sqsReviewsService } from '@/src/server/services/queue-reviews.service';
+import { eventEmitter } from '@/src/server/config/event-emitter';
+import { EMITTER_EVENTS } from '@/src/server/constants/events';
 
 /**
  * This is the primary router for your server.
@@ -27,6 +29,10 @@ export type AppRouter = typeof appRouter;
  */
 export const createCaller = createCallerFactory(appRouter);
 
+eventEmitter.once(EMITTER_EVENTS.contextCreated, () => {
+  sqsReviewsService.subscribe();
+});
+
 process.on('SIGINT', () => {
   sqsReviewsService.unsubscribe();
 
@@ -44,5 +50,3 @@ process.on('uncaughtException', () => {
 
   process.exit(1);
 });
-
-sqsReviewsService.subscribe();
