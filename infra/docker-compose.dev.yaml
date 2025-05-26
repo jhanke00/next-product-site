@@ -1,0 +1,116 @@
+name: product
+
+volumes:
+  postgres_data:
+  redis_data:
+
+services:
+  web:
+    container_name: 'web_product'
+    build:
+      context: ..
+      dockerfile: ./infra/dev.Dockerfile
+      args:
+        PORT: ${PORT}
+    ports:
+      - '${PORT}:${PORT}'
+    restart: always
+    networks:
+      - product-network
+    environment:
+      CHOKIDAR_USEPOLLING: true
+      WATCHPACK_POLLING: true
+    volumes:
+      - ../:/app
+      - /app/node_modules
+      - /app/.next
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      localstack:
+        condition: service_healthy
+
+  postgres:
+    container_name: postgres
+    image: postgres:17.5
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - '${POSTGRES_PORT}:${POSTGRES_PORT}'
+    restart: unless-stopped
+    networks:
+      - product-network
+    healthcheck:
+      test: ['CMD', 'pg_isready', '-d', '${POSTGRES_DB}', '-U', '${POSTGRES_USER}']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    container_name: redis
+    image: redis:latest
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+      - REDIS_USER=${REDIS_USER}
+      - REDIS_USER_PASSWORD=${REDIS_USER_PASSWORD}
+    ports:
+      - '${REDIS_PORT}:${REDIS_PORT}'
+    volumes:
+      - redis_data:/data
+    command: >
+      sh -c '
+        mkdir -p /usr/local/etc/redis &&
+        echo "requirepass $REDIS_PASSWORD" >> /usr/local/etc/redis/redis.conf &&
+        echo "appendonly yes" >> /usr/local/etc/redis/redis.conf &&
+        echo "appendfsync everysec" >> /usr/local/etc/redis/redis.conf &&
+        echo "user default on nopass ~* +@all" > /usr/local/etc/redis/users.acl &&
+        echo "user $REDIS_USER on >$REDIS_USER_PASSWORD ~* +@all" >> /usr/local/etc/redis/users.acl &&
+        redis-server /usr/local/etc/redis/redis.conf --aclfile /usr/local/etc/redis/users.acl
+      '
+    healthcheck:
+      test: ['CMD', 'redis-cli', '-a', '$REDIS_PASSWORD', 'ping']
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - product-network
+    tty: true
+    stdin_open: true
+
+  localstack:
+    container_name: '${LOCALSTACK_DOCKER_NAME:-localstack-main}'
+    image: localstack/localstack
+    ports:
+      - '127.0.0.1:4566:${LOCALSTACK_HOST_PORT}' # LocalStack Gateway
+      - '127.0.0.1:4510-4559:4510-4559' # external services port range
+    environment:
+      # LocalStack configuration: https://docs.localstack.cloud/references/configuration/
+      - DEBUG=${DEBUG:-0}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
+    volumes:
+      - './scripts/init-aws.sh:/etc/localstack/init/ready.d/init-aws.sh'
+      - './cloudformation:/usr/cloudformation'
+      - '${LOCALSTACK_VOLUME_DIR:-./.volume}:/var/lib/localstack'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+    networks:
+      - product-network
+    healthcheck:
+      test: ['CMD', 'curl', 'http://localhost:${LOCALSTACK_HOST_PORT}/_localstack/health']
+      interval: 5s
+      timeout: 10s
+      start_period: 10s
+      retries: 5
+
+networks:
+  product-network:
+    driver: bridge
+    name: product-network
