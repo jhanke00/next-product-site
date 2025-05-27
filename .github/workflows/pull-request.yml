@@ -1,14 +1,9 @@
 name: Pull Request
 
-#on:
-#  pull_request:
-#    types: [opened, synchronize]
-#    branches: [main]
-
 on:
-  push:
-    branches:
-      - build-2
+  pull_request:
+    types: [opened, synchronize]
+    branches: [main]
 
 env:
   NODE_VERSION: 18.x
