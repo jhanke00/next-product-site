@@ -1,5 +1,5 @@
 import { ReviewInsert } from '@/src/server/repositories/review/types';
-import { env } from '@/src/config/env';
+import { serverEnv } from '@/src/config/env';
 import { from, Observable, repeat, Subscription, tap } from 'rxjs';
 import { sqsClient } from '@/src/server/config/sqs';
 import { DeleteMessageBatchCommand, ReceiveMessageCommand, SendMessageCommand } from '@aws-sdk/client-sqs';
@@ -15,7 +15,7 @@ import { cacheKeys } from '@/src/server/utils/cache-keys.util';
 type ReviewMessage = Required<Pick<ReviewInsert, 'review' | 'product' | 'rating' | 'user' | 'id'>>;
 
 class QueueReviewsService {
-  private SQS_QUEUE_URL = env.AWS_SQS_REVIEWS_QUEUE_URL;
+  private SQS_QUEUE_URL = serverEnv.AWS_SQS_REVIEWS_QUEUE_URL;
   private observable: Observable<void> = new Observable<void>();
   private subscriber: Subscription | null = null;
 
@@ -25,11 +25,11 @@ class QueueReviewsService {
 
       const message = await sqsClient.send(
         new ReceiveMessageCommand({
-          MaxNumberOfMessages: env.AWS_SQS_REVIEWS_MAX_NUMBER_OF_MESSAGES,
+          MaxNumberOfMessages: serverEnv.AWS_SQS_REVIEWS_MAX_NUMBER_OF_MESSAGES,
           MessageAttributeNames: ['All'],
           QueueUrl: this.SQS_QUEUE_URL,
-          WaitTimeSeconds: env.AWS_SQS_REVIEWS_WAIT_TIME_SECONDS,
-          VisibilityTimeout: env.AWS_SQS_REVIEWS_VISIBILITY_TIMEOUT,
+          WaitTimeSeconds: serverEnv.AWS_SQS_REVIEWS_WAIT_TIME_SECONDS,
+          VisibilityTimeout: serverEnv.AWS_SQS_REVIEWS_VISIBILITY_TIMEOUT,
         })
       );
 

@@ -3,16 +3,16 @@ import productsData from '@/src/mock/small/products.json';
 import { productsTable } from '@/src/server/repositories/product/product.schema';
 import { usersTable } from '@/src/server/repositories/user/user.schema';
 import { drizzle } from 'drizzle-orm/postgres-js';
-import { env } from '@/src/config/env';
+import { serverEnv } from '@/src/config/env';
 import postgres from 'postgres';
 
 async function main() {
-  const connectionString = `postgres://${env.POSTGRES_USER}:${env.POSTGRES_PASSWORD}@localhost:${env.POSTGRES_PORT}/${env.POSTGRES_DB}`;
+  const connectionString = `postgres://${serverEnv.POSTGRES_USER}:${serverEnv.POSTGRES_PASSWORD}@localhost:${serverEnv.POSTGRES_PORT}/${serverEnv.POSTGRES_DB}`;
 
   const connection = postgres(connectionString);
 
   const db = drizzle(connection, {
-    logger: env.NODE_ENV !== 'production',
+    logger: serverEnv.NODE_ENV !== 'production',
   });
 
   try {

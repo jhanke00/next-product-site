@@ -9,7 +9,7 @@ import SuperJSON from 'superjson';
 
 import { type AppRouter } from '@/src/server/api/root';
 import { createQueryClient } from './query-client';
-import { env } from '@/src/config/env';
+import { clientEnv, serverEnv } from '@/src/config/env';
 
 let clientQueryClientSingleton: QueryClient | undefined = undefined;
 const getQueryClient = () => {
@@ -47,7 +47,7 @@ export function TRPCReactProvider(props: { children: React.ReactNode }) {
       links: [
         loggerLink({
           enabled: (op) =>
-            process.env.NODE_ENV === 'development' || (op.direction === 'down' && op.result instanceof Error),
+            serverEnv.NODE_ENV === 'development' || (op.direction === 'down' && op.result instanceof Error),
         }),
         httpBatchStreamLink({
           transformer: SuperJSON,
@@ -72,7 +72,7 @@ export function TRPCReactProvider(props: { children: React.ReactNode }) {
 }
 
 function getUrl() {
-  const url = new URL('/api/trpc', env.NEXT_PUBLIC_APP_URL);
+  const url = new URL('/api/trpc', clientEnv.NEXT_PUBLIC_APP_URL);
 
   return url.href;
 }

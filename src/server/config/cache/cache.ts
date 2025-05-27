@@ -1,14 +1,14 @@
-import { env } from '@/src/config/env';
+import { serverEnv } from '@/src/config/env';
 import Redis from 'ioredis';
 
 export class Cache {
   private static instanceCache: Cache;
 
   private cache = new Redis({
-    host: env.REDIS_HOST,
-    port: env.REDIS_PORT,
-    password: env.REDIS_USER_PASSWORD,
-    username: env.REDIS_USER,
+    host: serverEnv.REDIS_HOST,
+    port: serverEnv.REDIS_PORT,
+    password: serverEnv.REDIS_USER_PASSWORD,
+    username: serverEnv.REDIS_USER,
   });
 
   EXPIRE_TIME = {
