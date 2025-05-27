@@ -1,0 +1,47 @@
+# Ignore pnpm and node_modules
+node_modules
+.pnpm
+.pnpm-store
+npm-debug.log
+
+# Ignore logs
+logs
+*.log
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore dotenv files (if you're using environment variables locally
+.env
+.env.local
+.env.*.local
+
+# Ignore Docker-related files
+.dockerignore
+infra
+
+# Ignore build artifacts
+.next
+
+# Ignore IDE files
+.idea
+
+# Ignore Git-related files
+.git
+.gitignore
+
+.github
+.husky
+.storybook
+docs
+scripts
+tests
+*.md
+.nvmrc
+LICENSE
+.eslintrc.json
+.prettierrc
+.prettierignore
+.editorconfig
+jest.config.ts

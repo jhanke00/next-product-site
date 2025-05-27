@@ -1,0 +1,53 @@
+export const serverEnv = {
+  NODE_ENV: process.env.NODE_ENV,
+
+  POSTGRES_USER: process.env.POSTGRES_USER,
+  POSTGRES_PASSWORD: process.env.POSTGRES_PASSWORD,
+  POSTGRES_DB: process.env.POSTGRES_DB,
+  POSTGRES_PORT: Number(process.env.POSTGRES_PORT),
+  POSTGRES_HOST: process.env.POSTGRES_HOST,
+
+  LOCALSTACK_HOST_PORT: process.env.LOCALSTACK_HOST_PORT,
+
+  AWS_DEFAULT_REGION: process.env.AWS_DEFAULT_REGION,
+  AWS_SQS_REVIEWS_QUEUE_URL: process.env.AWS_SQS_REVIEWS_QUEUE_URL,
+  AWS_SQS_REVIEWS_MAX_NUMBER_OF_MESSAGES: Number(process.env.AWS_SQS_REVIEWS_MAX_NUMBER_OF_MESSAGES),
+  AWS_SQS_REVIEWS_WAIT_TIME_SECONDS: Number(process.env.AWS_SQS_REVIEWS_WAIT_TIME_SECONDS),
+  AWS_SQS_REVIEWS_VISIBILITY_TIMEOUT: Number(process.env.AWS_SQS_REVIEWS_VISIBILITY_TIMEOUT),
+  AWS_ACCESS_KEY_ID: process.env.AWS_ACCESS_KEY_ID,
+  AWS_SECRET_ACCESS_KEY: process.env.AWS_SECRET_ACCESS_KEY,
+
+  REDIS_PASSWORD: process.env.REDIS_PASSWORD,
+  REDIS_USER: process.env.REDIS_USER,
+  REDIS_USER_PASSWORD: process.env.REDIS_USER_PASSWORD,
+  REDIS_HOST: process.env.REDIS_HOST,
+  REDIS_PORT: Number(process.env.REDIS_PORT),
+};
+
+declare global {
+  namespace NodeJS {
+    interface ProcessEnv {
+      REDIS_PASSWORD: string;
+      REDIS_USER: string;
+      REDIS_USER_PASSWORD: string;
+      REDIS_HOST: string;
+      REDIS_PORT: number;
+
+      LOCALSTACK_HOST_PORT: string;
+
+      AWS_DEFAULT_REGION: string;
+      AWS_SQS_REVIEWS_QUEUE_URL: string;
+      AWS_ACCESS_KEY_ID: string;
+      AWS_SECRET_ACCESS_KEY: string;
+      AWS_SQS_REVIEWS_MAX_NUMBER_OF_MESSAGES: number;
+      AWS_SQS_REVIEWS_WAIT_TIME_SECONDS: number;
+      AWS_SQS_REVIEWS_VISIBILITY_TIMEOUT: number;
+
+      POSTGRES_USER: string;
+      POSTGRES_HOST: string;
+      POSTGRES_PASSWORD: string;
+      POSTGRES_DB: string;
+      POSTGRES_PORT: number;
+    }
+  }
+}
