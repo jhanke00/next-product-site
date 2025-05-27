@@ -1,0 +1,31 @@
+Resources:
+  #If you change "SQSDeadLetterQueue" to another name, change the respective name in ./init-aws.sh
+  SQSDeadLetterQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      FifoQueue: true
+      QueueName: reviews-dlq.fifo
+      ContentBasedDeduplication: true # Use message content for deduplication
+      MessageRetentionPeriod: 1209600 # 14 days (maximum)
+
+  #If you change "SQSQueue" to another name, change the respective name in ./init-aws.sh
+  SQSQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      FifoQueue: true
+      ContentBasedDeduplication: true
+      QueueName: reviews-queue.fifo
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt SQSDeadLetterQueue.Arn
+        maxReceiveCount: 3
+      VisibilityTimeout: 180 # 180 seconds/3 minutes
+      DelaySeconds: 2 # 2 seconds
+      MessageRetentionPeriod: 1209600 # 14 days (maximum)
+
+Outputs:
+  SQSQueueUrl:
+    Description: FIFO SQS Queue URL
+    Value: !Ref SQSQueue
+  SQSDeadLetterQueueUrl:
+    Description: FIFO Dead Letter Queue URL
+    Value: !Ref SQSDeadLetterQueue
