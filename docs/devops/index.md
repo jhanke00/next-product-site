@@ -2,7 +2,9 @@
 
 Documentation on any DevOps changes made.
 
-## 1 - Setting a single source of truth for Node/pnpm version and updating it
+## [1 - Setting a single source of truth for Node/pnpm version and updating it](https://github.com/jhanke00/next-product-site/pull/155)
+
+In this PR, package manager versions are deduplicated, pinned and Node version is fixed.
 
 - Since currently configured Node version is deprecated and no longer supported with even maintenance updates, I updated Node to 22 LTS and set them on package.json.
 - I updated the pnpm and its lockfile version to pnpm@10 because previous value of pnpm version range includes versions that are incompatible with each other in terms of reading pnpm-lock.yaml files. By adding a `packageManager` config on package.json to set pnpm to a fixed version with a sha checksum, fixed it to a specific version as a best pratice for CI pipelines.
