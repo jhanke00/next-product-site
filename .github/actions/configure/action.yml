@@ -7,13 +7,11 @@ runs:
     - name: Setup Node
       uses: actions/setup-node@v4
       with:
-        node-version: ${{ env.NODE_VERSION }}
+        node-version-file: 'package.json'
 
     - name: Install PNPM
-      uses: pnpm/action-setup@v3
+      uses: pnpm/action-setup@v4.1.0
       id: pnpm-install
-      with:
-        version: ${{ env.PNPM_VERSION }}
 
     - name: Install Dependencies
       run: pnpm install

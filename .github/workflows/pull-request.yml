@@ -5,10 +5,6 @@ on:
     types: [opened, synchronize]
     branches: [main]
 
-env:
-  NODE_VERSION: 18.x
-  PNPM_VERSION: 8
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,7 +12,7 @@ jobs:
       - name: Checkout Git
         uses: actions/checkout@v4
 
-      - name: Configure Worflow
+      - name: Configure Workflow
         uses: ./.github/actions/configure
 
       - name: Build Project
@@ -28,7 +24,7 @@ jobs:
       - name: Checkout Git
         uses: actions/checkout@v4
 
-      - name: Configure Worflow
+      - name: Configure Workflow
         uses: ./.github/actions/configure
 
       - name: Build Project
@@ -40,7 +36,7 @@ jobs:
       - name: Checkout Git
         uses: actions/checkout@v4
 
-      - name: Configure Worflow
+      - name: Configure Workflow
         uses: ./.github/actions/configure
 
       - name: Build Project

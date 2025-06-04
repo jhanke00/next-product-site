@@ -26,8 +26,8 @@ This is a dummy product site that needs help adding new features and maturing th
 
 ### Prerequisite
 
-- [Install Node v18+](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)
-- [Install PNPM v8+](https://pnpm.io/installation)
+- [Install Node v22](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)
+- [Install PNPM v10+](https://pnpm.io/installation)
 - [Install Docker Desktop](https://www.docker.com/products/docker-desktop)
 
 ### Setup
