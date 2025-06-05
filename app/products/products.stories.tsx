@@ -19,4 +19,9 @@ export const Default: Story = {
     const productNames = canvas.getAllByRole('heading', { level: 3 });
     await expect(productNames).toHaveLength(5);
   },
+  args: {
+    searchParams: {
+      page: '1',
+    },
+  },
 };

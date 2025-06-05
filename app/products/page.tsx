@@ -1,30 +1,23 @@
-'use client';
+import Link from 'next/link';
+
 import largeData from '@/src/mock/large/products.json';
 import smallData from '@/src/mock/small/products.json';
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
 
 const PAGE_SIZE = 20;
 
-export default function Products() {
-  const [currentPage, setCurrentPage] = useState(1);
+type ProductsProps = {
+  searchParams: {
+    page?: string;
+  };
+};
+
+export default function Products({ searchParams }: ProductsProps) {
+  const currentPage = Number(searchParams.page) || 1;
   const data = [...largeData, ...smallData];
   const startIndex = (currentPage - 1) * PAGE_SIZE;
   const endIndex = startIndex + PAGE_SIZE;
   const productData = data.slice(startIndex, endIndex);
   const totalPages = Math.ceil(data.length / PAGE_SIZE);
-
-  const nextPage = () => {
-    setCurrentPage(currentPage + 1);
-  };
-
-  const prevPage = () => {
-    setCurrentPage(currentPage - 1);
-  };
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [currentPage]);
 
   return (
     <main className='flex min-h-screen flex-col items-center p-24'>
@@ -50,15 +43,15 @@ export default function Products() {
       </div>
 
       <div className='flex justify-around w-full border-t-2 pt-4'>
-        <button onClick={prevPage} disabled={currentPage === 1}>
-          Previous
-        </button>
+        {currentPage !== 1 && <Link href={{ pathname: '/products', query: { page: currentPage - 1 } }}>Previous</Link>}
+
         <span>
           Page {currentPage} of {totalPages}
         </span>
-        <button onClick={nextPage} disabled={currentPage === totalPages}>
-          Next
-        </button>
+
+        {currentPage !== totalPages && (
+          <Link href={{ pathname: '/products', query: { page: currentPage + 1 } }}>Next</Link>
+        )}
       </div>
     </main>
   );

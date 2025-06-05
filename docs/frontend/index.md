@@ -7,6 +7,8 @@ Documentation on any Frontend capabilities or changes made.
 - Displaying All Products from Mock Data:
   We have implemented a feature that enables the display of all products available in our mock data. Users can now easily browse through the entire product catalog, providing them with a comprehensive view of our offerings.
 
+  Product listing pages are server components that are server side rendered per user request.
+
 - Pagination for Improved Navigation:
   To enhance user experience and prevent issues associated with infinite scrolling, we have introduced pagination functionality. Users can now navigate through the product list more efficiently by moving between different pages, allowing for smoother and more organized browsing.
 
