@@ -1,0 +1,11 @@
+# Add files here to ignore them from ESLint
+
+/*.js
+/.next/
+/out/
+/build
+/node_modules
+/coverage
+*.css
+*.scss
+*.svg

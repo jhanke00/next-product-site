@@ -12,9 +12,12 @@
     "test": "jest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "test-storybook": "test-storybook",
     "prepare": "husky",
     "generate-large-data": "node ./scripts/generateLargeData.js",
-    "generate-small-data": "node ./scripts/generateSmallData.js"
+    "generate-small-data": "node ./scripts/generateSmallData.js",
+    "tsc": "tsc",
+    "knip": "knip"
   },
   "engines": {
     "node": ">=18",
@@ -27,15 +30,17 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1",
     "@faker-js/faker": "^8.4.1",
-    "@storybook/addon-essentials": "^7.6.15",
-    "@storybook/addon-interactions": "^7.6.15",
-    "@storybook/addon-links": "^7.6.15",
-    "@storybook/addon-onboarding": "^1.0.11",
-    "@storybook/blocks": "^7.6.15",
-    "@storybook/nextjs": "^7.6.15",
-    "@storybook/react": "^7.6.15",
-    "@storybook/test": "^7.6.15",
+    "@storybook/addon-essentials": "^8.2.9",
+    "@storybook/addon-interactions": "^8.2.9",
+    "@storybook/addon-links": "^8.2.9",
+    "@storybook/addon-onboarding": "^8.2.9",
+    "@storybook/blocks": "^8.2.9",
+    "@storybook/nextjs": "^8.2.9",
+    "@storybook/react": "^8.2.9",
+    "@storybook/test": "^8.2.9",
+    "@storybook/test-runner": "^0.19.1",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.17",
     "@types/react": "^18.2.55",
@@ -43,16 +48,20 @@
     "autoprefixer": "^10.4.17",
     "eslint": "^8.56.0",
     "eslint-config-next": "14.1.0",
-    "eslint-plugin-storybook": "^0.6.15",
+    "eslint-plugin-storybook": "^0.8.0",
+    "http-server": "^14.1.1",
     "husky": "^9.0.10",
     "jest": "^29.7.0",
+    "knip": "^5.26.0",
     "only-allow": "^1.2.1",
+    "playwright": "^1.46.1",
     "postcss": "^8.4.35",
     "prettier": "3.2.5",
-    "storybook": "^7.6.15",
+    "storybook": "^8.2.9",
     "tailwindcss": "^3.4.1",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "wait-on": "^7.2.0"
   }
 }

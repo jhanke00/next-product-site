@@ -4,7 +4,7 @@ import smallData from '@/src/mock/small/products.json';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const PAGE_SIZE = 20;
+const PAGE_SIZE = 5;
 
 export default function Products() {
   const [currentPage, setCurrentPage] = useState(1);
