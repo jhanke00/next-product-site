@@ -1,13 +1,19 @@
 name: Pull Request
 
 on:
-  pull_request:
-    types: [opened, synchronize]
-    branches: [main]
+  push:
+    branches:
+      - main
 
 env:
   NODE_VERSION: 18.x
   PNPM_VERSION: 8
+
+permissions:
+  contents: read
+  issues: read
+  checks: write
+  pull-requests: write
 
 jobs:
   build:
@@ -34,6 +40,17 @@ jobs:
       - name: Build Project
         run: pnpm test
 
+  typescript:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Git
+        uses: actions/checkout@v4
+
+      - name: Configure Worflow
+        uses: ./.github/actions/configure
+
+      - name: Check TypeScript
+        run: pnpm tsc
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -43,5 +60,59 @@ jobs:
       - name: Configure Worflow
         uses: ./.github/actions/configure
 
-      - name: Build Project
+      - name: Check ESLint
         run: pnpm lint
+
+  snyk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Git
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install PNPM
+        run: npm install -g pnpm@${{ env.PNPM_VERSION }}
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Install Snyk CLI
+        run: npm install -g snyk
+
+      - name: Authenticate Snyk
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        run: snyk auth $SNYK_TOKEN
+
+      - name: Run Snyk Test and Save Report
+        run: snyk test --all-projects --json > snyk-report.json || true
+
+      - name: Display Vulnerabilities by Severity
+        run: |
+          echo "Critical Issues:"
+          jq '.vulnerabilities[] | select(.severity=="critical") | {title: .title, severity: .severity, url: .url}' snyk-report.json
+          echo "High Issues:"
+          jq '.vulnerabilities[] | select(.severity=="high") | {title: .title, severity: .severity, url: .url}' snyk-report.json
+          echo "Medium Issues:"
+          jq '.vulnerabilities[] | select(.severity=="medium") | {title: .title, severity: .severity, url: .url}' snyk-report.json
+          echo "Low Issues:"
+          jq '.vulnerabilities[] | select(.severity=="low") | {title: .title, severity: .severity, url: .url}' snyk-report.json
+
+          echo "-----------------------------------"
+          echo "Summary of Vulnerabilities:"
+          echo "Critical: $(jq '[.vulnerabilities[] | select(.severity=="critical")] | length' snyk-report.json)"
+          echo "High: $(jq '[.vulnerabilities[] | select(.severity=="high")] | length' snyk-report.json)"
+          echo "Medium: $(jq '[.vulnerabilities[] | select(.severity=="medium")] | length' snyk-report.json)"
+          echo "Low: $(jq '[.vulnerabilities[] | select(.severity=="low")] | length' snyk-report.json)"
+
+      - name: Upload Snyk Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: snyk-report
+          path: snyk-report.json
+
+

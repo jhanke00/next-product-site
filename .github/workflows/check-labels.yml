@@ -1,0 +1,28 @@
+name: PR Label Check
+
+on:
+  pull_request:
+    types: [opened, synchronize, labeled]
+    branches: [main]
+
+jobs:
+  check-label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate required labels
+        run: |
+          REQUIRED_LABELS=("Feature request" "Infrastructure" "Backend" "Frontend" "DevOps")
+          LABELS=$(jq -r '.pull_request.labels[].name' "$GITHUB_EVENT_PATH")
+
+          for label in "${REQUIRED_LABELS[@]}"; do
+            if echo "$LABELS" | grep -qw "$label"; then
+              echo "Required label '$label' is present."
+              exit 0
+            fi
+          done
+
+          echo "Error: None of the required labels are present."
+          exit 1
