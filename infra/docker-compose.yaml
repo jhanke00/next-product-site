@@ -1,0 +1,32 @@
+services:
+  postgres:
+    image: postgres:16.6
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: next-app
+    ports:
+      - '5432:5432'
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 5s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+  frontend:
+    build:
+      context: ../
+      dockerfile: ./infra/Dockerfile
+      target: dev # Use the dev stage for local development
+    expose:
+      - '3000'
+    ports:
+      - '3000:3000'
+    environment:
+      NODE_ENV: development
+    env_file:
+      - ../.env
+    depends_on:
+      postgres:
+        condition: service_healthy

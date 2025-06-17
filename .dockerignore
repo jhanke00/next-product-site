@@ -1,0 +1,21 @@
+.github/
+.idea/
+node_modules/
+.dockerignore
+README.md
+.gitignore
+.env*
+.next
+.storybook
+generated
+
+
+# Ignore Dockerfiles
+**/Dockerfile
+
+# Ignore .git
+.git
+
+# Add other files/folders you want to ignore here
+.env.example
+.DS_Store

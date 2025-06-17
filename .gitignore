@@ -31,3 +31,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDE
+.idea/
+
+# storybook-static
+/storybook-static
+
+# dotenv
+.env
+
+# prisma
+/generated

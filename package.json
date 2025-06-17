@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev-prisma": "pnpm prisma:generate && pnpm sync-db && next dev",
     "lint": "next lint",
     "start": "next start",
     "build": "next build",
@@ -14,17 +15,24 @@
     "build-storybook": "storybook build",
     "prepare": "husky",
     "generate-large-data": "node ./scripts/generateLargeData.js",
-    "generate-small-data": "node ./scripts/generateSmallData.js"
+    "generate-small-data": "node ./scripts/generateSmallData.js",
+    "seed": "node prisma/seed.mjs",
+    "sync-db": "prisma db push --accept-data-loss --force-reset",
+    "prisma:generate": "prisma generate"
   },
   "engines": {
     "node": ">=18",
     "pnpm": ">=8"
   },
   "dependencies": {
+    "@prisma/client": "^5.19.0",
     "fs": "0.0.1-security",
+    "lodash": "^4.17.21",
     "next": "14.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-paginate": "^8.2.0",
+    "swr": "^2.2.5"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
@@ -37,6 +45,7 @@
     "@storybook/react": "^7.6.15",
     "@storybook/test": "^7.6.15",
     "@types/jest": "^29.5.12",
+    "@types/lodash": "^4.17.7",
     "@types/node": "^20.11.17",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
@@ -49,6 +58,7 @@
     "only-allow": "^1.2.1",
     "postcss": "^8.4.35",
     "prettier": "3.2.5",
+    "prisma": "^5.19.0",
     "storybook": "^7.6.15",
     "tailwindcss": "^3.4.1",
     "ts-jest": "^29.1.2",
