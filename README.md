@@ -34,8 +34,19 @@ This is a dummy product site that needs help adding new features and maturing th
 
 1. Clone the repository with `git clone` or fork the repository.
 2. Run `pnpm i` to install dependencies.
-3. Run `pnpm dev` to start application.
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Run `docker compose up` in `./infra/products` to start the mock product database.
+4. Create a `.env` file (required by Prisma) in the root of the project and add the following environment variables:
+
+   ```plaintext
+   DATABASE_URL=postgresql://user:password@localhost:5432/products
+   ```
+
+   > Note: The `DATABASE_URL` should match the connection string used in your Docker Compose file.
+
+5. Run `npx prisma migrate dev` to create the database and generate the Prisma client.
+6. Run `npx prisma db seed` to seed the database with mock data.
+7. Run `pnpm dev` to start application.
+8. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 Codespaces is also available and is pre-configured with node and pnpm.
 

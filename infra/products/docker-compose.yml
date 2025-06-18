@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17.5
+    container_name: products_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: products
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+volumes:
+  pgdata:

@@ -1,10 +1,17 @@
 export type Product = {
-  id: number;
+  id: string;
   name: string;
-  price: number;
+  price: string;
   description: string;
   category: string;
   rating: number;
   numReviews: number;
   countInStock: number;
 };
+
+export interface ProductsResponse {
+  products: Product[];
+  total: number;
+  offset: number;
+  limit: number;
+}
