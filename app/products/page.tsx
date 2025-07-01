@@ -27,13 +27,41 @@ export default function Products() {
   }, [currentPage]);
 
   return (
-    <main className='flex min-h-screen flex-col items-center p-24'>
-      <div className='z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex'>
+    <main className='flex min-h-screen flex-col items-center p-10'>
+      <h2 style={{ marginBottom: '10px' }}>Please select any roduct Items...</h2>
+      <div className='flex justify-around w-full border-t-2 pt-4 mb-5 '>
+        <button
+          onClick={prevPage}
+          disabled={currentPage === 1}
+          style={{ border: '1px solid white', padding: '5px', borderRadius: '5px' }}
+        >
+          Previous
+        </button>
+        <span>
+          Page {currentPage} of {totalPages}
+        </span>
+        <button
+          onClick={nextPage}
+          disabled={currentPage === totalPages}
+          style={{ border: '1px solid white', padding: '5px', borderRadius: '5px' }}
+        >
+          Next
+        </button>
+      </div>
+      <div className='z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex '>
         <div className='grid lg:max-w-5xl lg:w-full lg:grid-cols-2 lg:text-left'>
           {productData.map((product) => (
             <div
               key={product.id}
-              className='group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30'
+              className='group 
+              rounded-lg 
+              border 
+              border-transparent 
+              px-5 py-4 
+              transition-colors 
+              hover:border-gray-300
+               hover:bg-white-600 
+                '
             >
               <Link href={`/products/${product.id}`}>
                 <h3 className={`mb-3 text-2xl font-semibold`}>{product.name}</h3>

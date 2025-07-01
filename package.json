@@ -21,10 +21,16 @@
     "pnpm": ">=8"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.8.2",
+    "@stripe/stripe-js": "^7.4.0",
     "fs": "0.0.1-security",
+    "micro": "^10.0.1",
     "next": "14.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.2.0",
+    "resend": "^4.6.0",
+    "stripe": "^12.16.0"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
