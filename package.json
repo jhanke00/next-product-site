@@ -21,6 +21,7 @@
     "pnpm": ">=8"
   },
   "dependencies": {
+    "dotenv": "^17.0.0",
     "fs": "0.0.1-security",
     "next": "14.1.0",
     "react": "^18.2.0",
@@ -37,8 +38,8 @@
     "@storybook/react": "^7.6.15",
     "@storybook/test": "^7.6.15",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.11.17",
-    "@types/react": "^18.2.55",
+    "@types/node": "^20.19.1",
+    "@types/react": "^18.3.23",
     "@types/react-dom": "^18.2.19",
     "autoprefixer": "^10.4.17",
     "eslint": "^8.56.0",
@@ -53,6 +54,6 @@
     "tailwindcss": "^3.4.1",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.8.3"
   }
 }
