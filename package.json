@@ -10,6 +10,8 @@
     "format": "prettier . --write",
     "preinstall": "only-allow pnpm",
     "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepare": "husky",
@@ -53,6 +55,7 @@
     "tailwindcss": "^3.4.1",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "whatwg-fetch": "^3.6.20"
   }
 }
