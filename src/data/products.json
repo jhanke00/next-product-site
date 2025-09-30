@@ -1,0 +1,202 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Actonifen",
+      "price": 89.99,
+      "description": "Active ingredients for pharmaceutical applications. High quality compound for Bayer Vapi operations.",
+      "category": "Active Ingredients",
+      "rating": 4.8,
+      "numReviews": 124,
+      "countInStock": 50,
+      "imageUrl": "/media/bayer.png"
+    },
+    {
+      "id": 2,
+      "name": "Aspirin®",
+      "price": 15.99,
+      "description": "Active pharmaceutical ingredient for pain relief and anti-inflammatory applications.",
+      "category": "Active Ingredients",
+      "rating": 4.9,
+      "numReviews": 2847,
+      "countInStock": 200,
+      "imageUrl": "/media/bayer.png"
+    },
+    {
+      "id": 3,
+      "name": "Adalat®",
+      "price": 45.99,
+      "description": "Active ingredient for cardiovascular pharmaceutical formulations and treatments.",
+      "category": "Active Ingredients",
+      "rating": 4.7,
+      "numReviews": 456,
+      "countInStock": 85,
+      "imageUrl": "/media/bayer.png"
+    },
+    {
+      "id": 4,
+      "name": "Admire®",
+      "price": 129.99,
+      "description": "Crop Protection - Herbicides. Advanced herbicide solution for effective crop protection and enhanced yield.",
+      "category": "Crop Protection",
+      "rating": 4.6,
+      "numReviews": 89,
+      "countInStock": 25,
+      "imageUrl": "/media/bayer-ace.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Adora®",
+      "price": 99.99,
+      "description": "Crop Protection - Herbicides. Specialized herbicide formulation for targeted weed control and crop safety.",
+      "category": "Crop Protection",
+      "rating": 4.7,
+      "numReviews": 156,
+      "countInStock": 30,
+      "imageUrl": "/media/bayer-ace.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Adue™",
+      "price": 149.99,
+      "description": "Crop Protection - Herbicides. Premium herbicide technology for comprehensive weed management solutions.",
+      "category": "Crop Protection",
+      "rating": 4.9,
+      "numReviews": 203,
+      "countInStock": 15,
+      "imageUrl": "/media/bayer-ace.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Alion®",
+      "price": 179.99,
+      "description": "Advanced crop protection solution with extended field performance and environmental safety profile.",
+      "category": "Crop Science",
+      "rating": 4.5,
+      "numReviews": 78,
+      "countInStock": 40,
+      "imageUrl": "/media/bayer-tonic.jpeg"
+    },
+    {
+      "id": 8,
+      "name": "Atlantis®",
+      "price": 189.99,
+      "description": "Innovative crop science technology for enhanced yield and sustainable farming practices.",
+      "category": "Crop Science",
+      "rating": 4.6,
+      "numReviews": 134,
+      "countInStock": 35,
+      "imageUrl": "/media/bayer-tonic.jpeg"
+    },
+    {
+      "id": 9,
+      "name": "Axiom®",
+      "price": 165.99,
+      "description": "Next-generation crop science solution for precision agriculture and optimal crop performance.",
+      "category": "Crop Science",
+      "rating": 4.8,
+      "numReviews": 98,
+      "countInStock": 28,
+      "imageUrl": "/media/bayer-tonic.jpeg"
+    },
+    {
+      "id": 10,
+      "name": "Balance®",
+      "price": 119.99,
+      "description": "Balanced nutrition solution for optimal plant growth and development across various crop types.",
+      "category": "Plant Nutrition",
+      "rating": 4.4,
+      "numReviews": 92,
+      "countInStock": 60,
+      "imageUrl": "/media/bayer.png"
+    },
+    {
+      "id": 11,
+      "name": "BioGro®",
+      "price": 85.99,
+      "description": "Organic plant nutrition formula promoting healthy root development and sustainable growth.",
+      "category": "Plant Nutrition",
+      "rating": 4.3,
+      "numReviews": 167,
+      "countInStock": 75,
+      "imageUrl": "/media/bayer.png"
+    },
+    {
+      "id": 12,
+      "name": "Booster™",
+      "price": 95.99,
+      "description": "Enhanced plant nutrition booster for increased yield and improved crop quality.",
+      "category": "Plant Nutrition",
+      "rating": 4.5,
+      "numReviews": 203,
+      "countInStock": 45,
+      "imageUrl": "/media/bayer.png"
+    },
+    {
+      "id": 13,
+      "name": "Confidor®",
+      "price": 139.99,
+      "description": "Systemic insecticide with broad spectrum control and excellent crop safety characteristics.",
+      "category": "Insecticides",
+      "rating": 4.8,
+      "numReviews": 267,
+      "countInStock": 45,
+      "imageUrl": "/media/bayer-ace.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Calypso®",
+      "price": 125.99,
+      "description": "Advanced insecticide technology for effective control of sucking and chewing insects.",
+      "category": "Insecticides",
+      "rating": 4.7,
+      "numReviews": 189,
+      "countInStock": 38,
+      "imageUrl": "/media/bayer-ace.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Connect®",
+      "price": 155.99,
+      "description": "Professional insecticide solution for comprehensive pest management in agriculture.",
+      "category": "Insecticides",
+      "rating": 4.6,
+      "numReviews": 145,
+      "countInStock": 32,
+      "imageUrl": "/media/bayer-ace.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Folicur®",
+      "price": 169.99,
+      "description": "Systemic fungicide with protective and curative action for cereal and specialty crops.",
+      "category": "Fungicides",
+      "rating": 4.6,
+      "numReviews": 178,
+      "countInStock": 28,
+      "imageUrl": "/media/bayer-tonic.jpeg"
+    },
+    {
+      "id": 17,
+      "name": "Flint®",
+      "price": 145.99,
+      "description": "Broad-spectrum fungicide for effective disease control in fruits and vegetables.",
+      "category": "Fungicides",
+      "rating": 4.5,
+      "numReviews": 134,
+      "countInStock": 42,
+      "imageUrl": "/media/bayer-tonic.jpeg"
+    },
+    {
+      "id": 18,
+      "name": "Fox®",
+      "price": 175.99,
+      "description": "Advanced fungicide technology for preventive and curative disease management.",
+      "category": "Fungicides",
+      "rating": 4.7,
+      "numReviews": 89,
+      "countInStock": 25,
+      "imageUrl": "/media/bayer-tonic.jpeg"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "assignments": [
+    {
+      "productId": 1,
+      "assignedResources": ["resource-2", "resource-1758906959440", "resource-4", "resource-1758909448952"],
+      "customGuide": "Apply Aclonifen before weed emergence at recommended rates. Follow all safety guidelines and local regulations. Use appropriate protective equipment during application.\n\nDosage: 2-3 liters per hectare\nTiming: Pre-emergence application\nWeather conditions: Apply during calm weather conditions\nSoil temperature: Above 10°C for optimal effectiveness",
+      "updatedAt": "2025-09-26T17:57:42.052Z"
+    },
+    {
+      "productId": 3,
+      "assignedResources": ["resource-1758906959440"],
+      "customGuide": "Custom product guide",
+      "updatedAt": "2025-09-26T17:56:45.959Z"
+    }
+  ]
+}

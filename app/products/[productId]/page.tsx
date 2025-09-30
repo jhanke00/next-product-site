@@ -1,26 +1,125 @@
-import largeData from '@/src/mock/large/products.json';
-import smallData from '@/src/mock/small/products.json';
+import React from 'react';
+import { ProductDetails, LearningResource, Product } from '@/src/type/products';
+import { View } from './view';
 
-const productDetail = async ({ params }: { params: Promise<{ productId: string }> }) => {
+// Function to transform basic product to detailed product
+function createProductDetails(baseProduct: Product): ProductDetails {
+  return {
+    ...baseProduct,
+    detailedDescription: `${baseProduct.description} This product is manufactured at our state-of-the-art facility with the highest quality standards and environmental safety protocols.`,
+    usageInstructions:
+      'Please follow all safety guidelines and local regulations when using this product. Consult with agricultural specialists for optimal application rates and timing.',
+    activeIngredients: [
+      {
+        name: baseProduct.name,
+        description: `Primary active component in ${baseProduct.name}`,
+        percentage: 85,
+      },
+    ],
+    manufacturingSite: {
+      name: 'Bayer Vapi',
+      location: 'Vapi, India',
+      plantsCount: 13,
+      activeIngredientsCount: 11,
+      intermediatesCount: 11,
+    },
+  };
+}
+
+async function getProduct(productId: string): Promise<Product | null> {
+  try {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+    const response = await fetch(`${baseUrl}/api/products/${productId}`, {
+      cache: 'no-store',
+    });
+
+    if (!response.ok) {
+      return null;
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching product:', error);
+    return null;
+  }
+}
+
+async function getAssignedResources(
+  productId: string
+): Promise<{ resources: LearningResource[]; customGuide: string }> {
+  try {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+
+    // Get assignments for the product
+    const assignmentResponse = await fetch(`${baseUrl}/api/products/${productId}/assignments`, {
+      cache: 'no-store',
+    });
+
+    if (!assignmentResponse.ok) {
+      return { resources: [], customGuide: '' };
+    }
+
+    const assignment = await assignmentResponse.json();
+
+    // Get all available resources
+    const resourcesResponse = await fetch(`${baseUrl}/api/learning-resources`, {
+      cache: 'no-store',
+    });
+
+    if (!resourcesResponse.ok) {
+      return { resources: [], customGuide: assignment.customGuide || '' };
+    }
+
+    const allResources = await resourcesResponse.json();
+
+    // Filter only assigned resources, exclude non-existing ones
+    const assignedResources = allResources.filter((resource: LearningResource) =>
+      assignment.assignedResources.includes(resource.id)
+    );
+
+    // Check for missing resources for debugging
+    const missingResources = assignment.assignedResources.filter(
+      (resourceId: string) => !allResources.some((resource: LearningResource) => resource.id === resourceId)
+    );
+
+    if (missingResources.length > 0) {
+      console.warn(`Product ${productId} has missing resources:`, missingResources);
+    }
+
+    return {
+      resources: assignedResources,
+      customGuide: assignment.customGuide || '',
+    };
+  } catch (error) {
+    console.error('Error fetching assigned resources:', error);
+    return { resources: [], customGuide: '' };
+  }
+}
+
+const ProductDetail = async ({ params }: { params: Promise<{ productId: string }> }) => {
   const resolvedParams = await params;
-  const data = [...largeData, ...smallData];
-  const product = data.find((item) => item.id === resolvedParams.productId);
-  if (!product) {
+
+  // Get basic product from API
+  const baseProduct = await getProduct(resolvedParams.productId);
+
+  if (!baseProduct) {
     return <p>Product not Found</p>;
   }
 
-  return (
-    <div className='flex min-h-screen flex-col p-24'>
-      <h1 className='text-2xl font-semibold'>Product Description</h1>
-      <h3 className={`mb-3 text-xl `}>{product.name}</h3>
-      <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Price: {product.price}</p>
-      <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Description: {product.description}</p>
-      <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Category: {product.category}</p>
-      <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Rating: {product.rating}</p>
-      <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Reviews: {product.numReviews}</p>
-      <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Stock: {product.countInStock}</p>
-    </div>
-  );
+  // Transform to detailed product
+  const detailedProduct = createProductDetails(baseProduct);
+
+  // Get assigned resources
+  const { resources, customGuide } = await getAssignedResources(resolvedParams.productId);
+
+  // Add resources to product
+  const productWithResources = {
+    ...detailedProduct,
+    learningResources: resources,
+    customGuide,
+  };
+
+  return <View product={productWithResources} />;
 };
 
-export default productDetail;
+export default ProductDetail;

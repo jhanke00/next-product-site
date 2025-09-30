@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  next-product-site:
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:3000/api/health || exit 1']
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Development service (optional)
+  next-product-site-dev:
+    build:
+      context: .
+      target: deps
+    ports:
+      - '3001:3000'
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: sh -c "corepack enable pnpm && pnpm run dev"
+    environment:
+      - NODE_ENV=development
+    profiles:
+      - dev
