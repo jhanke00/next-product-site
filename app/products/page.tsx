@@ -1,5 +1,4 @@
 'use client';
-import largeData from '@/src/mock/large/products.json';
 import smallData from '@/src/mock/small/products.json';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -8,7 +7,7 @@ const PAGE_SIZE = 20;
 
 export default function Products() {
   const [currentPage, setCurrentPage] = useState(1);
-  const data = [...largeData, ...smallData];
+  const data = smallData;
   const startIndex = (currentPage - 1) * PAGE_SIZE;
   const endIndex = startIndex + PAGE_SIZE;
   const productData = data.slice(startIndex, endIndex);

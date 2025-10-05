@@ -1,0 +1,76 @@
+[
+  {
+    "userId": "user_001",
+    "resourceId": "lr_1736088000000_abc123def",
+    "status": "completed",
+    "progressPercentage": 100,
+    "timeSpent": 45,
+    "lastAccessedAt": "2025-01-10T15:30:00.000Z",
+    "completedAt": "2025-01-10T15:30:00.000Z",
+    "rating": 5,
+    "review": "Excellent introduction to product management. Very clear explanations and practical examples.",
+    "bookmarked": true
+  },
+  {
+    "userId": "user_001",
+    "resourceId": "lr_1736088001000_def456ghi",
+    "status": "in_progress",
+    "progressPercentage": 65,
+    "timeSpent": 78,
+    "lastAccessedAt": "2025-01-12T10:15:00.000Z",
+    "bookmarked": true,
+    "notes": "Great content on custom hooks. Need to practice the performance optimization section more."
+  },
+  {
+    "userId": "user_002",
+    "resourceId": "lr_1736088000000_abc123def",
+    "status": "completed",
+    "progressPercentage": 100,
+    "timeSpent": 52,
+    "lastAccessedAt": "2025-01-08T14:20:00.000Z",
+    "completedAt": "2025-01-08T14:20:00.000Z",
+    "rating": 4,
+    "review": "Good overview but could use more real-world examples."
+  },
+  {
+    "userId": "user_002",
+    "resourceId": "lr_1736088002000_ghi789jkl",
+    "status": "in_progress",
+    "progressPercentage": 40,
+    "timeSpent": 120,
+    "lastAccessedAt": "2025-01-11T16:45:00.000Z",
+    "bookmarked": false
+  },
+  {
+    "userId": "user_003",
+    "resourceId": "lr_1736088003000_jkl012mno",
+    "status": "completed",
+    "progressPercentage": 100,
+    "timeSpent": 60,
+    "lastAccessedAt": "2025-01-09T11:30:00.000Z",
+    "completedAt": "2025-01-09T11:30:00.000Z",
+    "rating": 5,
+    "review": "Comprehensive security guide. Must-read for any API developer.",
+    "bookmarked": true
+  },
+  {
+    "userId": "user_003",
+    "resourceId": "lr_1736088004000_mno345pqr",
+    "status": "not_started",
+    "progressPercentage": 0,
+    "timeSpent": 0,
+    "lastAccessedAt": "2025-01-12T09:00:00.000Z",
+    "bookmarked": true
+  },
+  {
+    "userId": "user_004",
+    "resourceId": "lr_1736088005000_pqr678stu",
+    "status": "completed",
+    "progressPercentage": 100,
+    "timeSpent": 25,
+    "lastAccessedAt": "2025-01-07T13:15:00.000Z",
+    "completedAt": "2025-01-07T13:15:00.000Z",
+    "rating": 4,
+    "bookmarked": false
+  }
+]

@@ -1,16 +1,32 @@
 import type { Config } from 'jest';
 import { pathsToModuleNameMapper } from 'ts-jest';
-import { compilerOptions } from './tsconfig.json';
+import tsconfig from './tsconfig.json' with { type: 'json' };
 
 const config: Config = {
-  setupFiles: ['<rootDir>/tests/setupJest.ts'],
-  moduleFileExtensions: ['ts', 'js', 'json'],
-  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }),
-  transform: { '^.+\\.ts$': 'ts-jest' },
+  setupFilesAfterEnv: ['<rootDir>/tests/setupJest.ts'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
+  moduleNameMapper: {
+    ...pathsToModuleNameMapper(tsconfig.compilerOptions.paths, { prefix: '<rootDir>/' }),
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
+  transform: {
+    '^.+\\.(ts|tsx)$': [
+      'ts-jest',
+      {
+        tsconfig: {
+          jsx: 'react-jsx',
+        },
+      },
+    ],
+  },
+  testEnvironment: 'jsdom',
   verbose: true,
   passWithNoTests: true,
-  collectCoverageFrom: ['src/**/*.ts'],
+  collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/*.d.ts', '!src/**/*.stories.{ts,tsx}'],
   collectCoverage: true,
+  testMatch: ['<rootDir>/tests/**/*.test.{ts,tsx}'],
+  moduleDirectories: ['node_modules', '<rootDir>/'],
+  testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
 };
 
 export default config;
