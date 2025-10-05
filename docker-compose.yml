@@ -1,0 +1,83 @@
+version: '3.8'
+
+services:
+  # Next.js Application
+  nextjs-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runner
+    container_name: next-product-site
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+    volumes:
+      # Mount data directory for persistent JSON storage
+      - ./src/data:/app/src/data
+      # Mount public directory for media files
+      - ./public:/app/public
+    networks:
+      - learning-network
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:3000/api/health']
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Development Database (Optional - for future database integration)
+  # postgres:
+  #   image: postgres:15-alpine
+  #   container_name: learning-postgres
+  #   environment:
+  #     POSTGRES_DB: learning_resources
+  #     POSTGRES_USER: learning_user
+  #     POSTGRES_PASSWORD: learning_password
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #     - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+  #   ports:
+  #     - "5432:5432"
+  #   networks:
+  #     - learning-network
+  #   restart: unless-stopped
+
+  # Redis for caching (Optional - for future caching integration)
+  # redis:
+  #   image: redis:7-alpine
+  #   container_name: learning-redis
+  #   ports:
+  #     - "6379:6379"
+  #   volumes:
+  #     - redis_data:/data
+  #   networks:
+  #     - learning-network
+  #   restart: unless-stopped
+  #   command: redis-server --appendonly yes
+
+  # Nginx reverse proxy (Optional - for production deployment)
+  # nginx:
+  #   image: nginx:alpine
+  #   container_name: learning-nginx
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   volumes:
+  #     - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+  #     - ./nginx/ssl:/etc/nginx/ssl
+  #   depends_on:
+  #     - nextjs-app
+  #   networks:
+  #     - learning-network
+  #   restart: unless-stopped
+
+networks:
+  learning-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:

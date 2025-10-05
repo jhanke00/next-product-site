@@ -1,0 +1,89 @@
+[
+  {
+    "userId": "user_001",
+    "preferredLanguage": "en",
+    "preferredDifficulty": ["beginner", "intermediate"],
+    "interests": ["tutorial", "training", "guide"],
+    "learningGoals": [
+      "Master React development",
+      "Learn product management fundamentals",
+      "Improve API security knowledge"
+    ],
+    "totalResourcesCompleted": 3,
+    "totalTimeSpent": 180,
+    "currentStreak": 5,
+    "longestStreak": 12,
+    "certificates": [
+      {
+        "id": "cert_001",
+        "userId": "user_001",
+        "resourceId": "lr_1736088000000_abc123def",
+        "title": "Product Management Fundamentals",
+        "description": "Successfully completed the Product Management Introduction course",
+        "issuedAt": "2025-01-10T15:30:00.000Z",
+        "certificateHash": "pm_cert_hash_123",
+        "isVerified": true
+      }
+    ],
+    "badges": [
+      {
+        "id": "badge_001",
+        "name": "First Steps",
+        "description": "Completed your first learning resource",
+        "iconUrl": "/badges/first-steps.png",
+        "category": "completion",
+        "requirements": {
+          "type": "resources_completed",
+          "value": 1
+        },
+        "earnedAt": "2025-01-08T14:20:00.000Z"
+      },
+      {
+        "id": "badge_002",
+        "name": "Learning Streak",
+        "description": "Maintained a 5-day learning streak",
+        "iconUrl": "/badges/streak-5.png",
+        "category": "streak",
+        "requirements": {
+          "type": "streak_days",
+          "value": 5
+        },
+        "earnedAt": "2025-01-12T10:15:00.000Z"
+      }
+    ],
+    "emailNotifications": true,
+    "progressReminders": true,
+    "createdAt": "2025-01-01T12:00:00.000Z",
+    "updatedAt": "2025-01-12T10:15:00.000Z"
+  },
+  {
+    "userId": "user_002",
+    "preferredLanguage": "en",
+    "preferredDifficulty": ["intermediate", "advanced"],
+    "interests": ["training", "certification"],
+    "learningGoals": ["Get certified in data visualization", "Learn advanced security practices"],
+    "totalResourcesCompleted": 2,
+    "totalTimeSpent": 172,
+    "currentStreak": 2,
+    "longestStreak": 8,
+    "certificates": [],
+    "badges": [
+      {
+        "id": "badge_001",
+        "name": "First Steps",
+        "description": "Completed your first learning resource",
+        "iconUrl": "/badges/first-steps.png",
+        "category": "completion",
+        "requirements": {
+          "type": "resources_completed",
+          "value": 1
+        },
+        "earnedAt": "2025-01-08T14:20:00.000Z"
+      }
+    ],
+    "emailNotifications": false,
+    "progressReminders": true,
+    "createdAt": "2025-01-02T10:00:00.000Z",
+    "updatedAt": "2025-01-11T16:45:00.000Z"
+  }
+]
