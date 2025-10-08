@@ -1,0 +1,15 @@
+services:
+  next-product-site:
+    build:
+      context: ../..
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    environment:
+      NEXT_TELEMETRY_DISABLED: '1'
+      NODE_ENV: production
+    volumes:
+      - type: bind
+        source: ../../src/mock/resources.json
+        target: /app/src/mock/resources.json
+    restart: unless-stopped

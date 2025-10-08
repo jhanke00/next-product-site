@@ -1,0 +1,42 @@
+[
+  {
+    "id": "3a3a7830-6b34-4e82-8f33-f982e4e06451",
+    "productId": "0e5e5900-29dd-46d6-af40-f8be36445b81",
+    "title": "Getting Started with Luxurious Concrete Bacon",
+    "type": "Guide",
+    "url": "https://example.com/guides/luxurious-concrete-bacon",
+    "description": "Overview and first steps for onboarding new customers to the product.",
+    "estimatedMinutes": 15,
+    "createdAt": "2024-07-10T10:00:00.000Z"
+  },
+  {
+    "id": "186d4f52-4d81-4adb-b2df-5910294cf97a",
+    "productId": "0e5e5900-29dd-46d6-af40-f8be36445b81",
+    "title": "Luxurious Concrete Bacon Deep Dive Video",
+    "type": "Video",
+    "url": "https://video.example.com/watch/123",
+    "description": "30 minute walkthrough highlighting advanced use cases.",
+    "estimatedMinutes": 30,
+    "createdAt": "2024-08-15T14:30:00.000Z"
+  },
+  {
+    "id": "8604dade-b745-427b-b318-fbd1cab68a5b",
+    "productId": "059fa8ea-916e-4884-a3f1-ea59a04c7b91",
+    "title": "Plastic Bike Quick Start",
+    "type": "Article",
+    "url": "https://kb.example.com/plastic-bike-quick-start",
+    "description": "Short article covering initial setup.",
+    "estimatedMinutes": 10,
+    "createdAt": "2024-09-01T09:45:00.000Z"
+  },
+  {
+    "id": "d7ef5e40-75cb-436c-9ed6-42cf8cf4f3bd",
+    "productId": "cedfa1ce-568d-4431-8299-e8a22570094e",
+    "title": "Learning test",
+    "type": "Article",
+    "url": "https://abc.com",
+    "description": "This is an test",
+    "estimatedMinutes": 20,
+    "createdAt": "2025-10-08T01:36:56.798Z"
+  }
+]
