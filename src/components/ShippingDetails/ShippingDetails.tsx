@@ -57,9 +57,7 @@ const ShippingDetails: React.FC = () => {
 
     const resultData = await res.json();
 
-    const stripePromise = await loadStripe(
-        "pk_test_51SGBQcAQSjX3Bxi7B7VjnKm9GiZZSgiJK8YzdRNdVk1bPCwpZoHiT4X8UjYbpknCUdKY02Z0kgwWSXFKY7zNuz0N00K3Q78Rxm"
-      );
+    const stripePromise = await loadStripe(process.env.STRIPE_PUBLISH_KEY);
       const stripe = await stripePromise;
     
      if(resultData.url) {
