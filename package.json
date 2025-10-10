@@ -21,9 +21,24 @@
     "pnpm": ">=9"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@reduxjs/toolkit": "^2.9.0",
+    "@stripe/react-stripe-js": "^5.2.0",
+    "@stripe/stripe-js": "^8.0.0",
+    "@types/nodemailer": "^7.0.2",
+    "bootstrap": "^5.3.8",
     "next": "15.5.4",
+    "nodemailer": "^7.0.9",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-hook-form": "^7.64.0",
+    "react-redux": "^9.2.0",
+    "redux": "^5.0.1",
+    "redux-persist": "^6.0.0",
+    "resend": "^6.1.2",
+    "sass": "^1.93.2",
+    "stripe": "^19.1.0",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",

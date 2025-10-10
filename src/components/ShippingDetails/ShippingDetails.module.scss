@@ -1,0 +1,19 @@
+.myForm {
+    .fromGroup {
+        position: relative;
+        margin-bottom: 12px;
+    }
+    label {
+        min-width: 60px;
+        margin: 20px !important;
+      }
+    input {
+        border: 1px solid #000;
+    }
+    .errorSection {
+        bottom: -10px;
+        left: 0;
+        color: red;
+        position: absolute;
+    }
+}
