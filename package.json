@@ -14,7 +14,14 @@
     "build-storybook": "storybook build",
     "prepare": "husky",
     "generate-large-data": "node ./scripts/generateLargeData.js",
-    "generate-small-data": "node ./scripts/generateSmallData.js"
+    "generate-small-data": "node ./scripts/generateSmallData.js",
+    "docker-build": "docker-compose -f infra/docker-compose.yaml build --no-cache",
+    "docker-run": "docker-compose -f infra/docker-compose.yaml up -d",
+    "docker-build-run": "pnpm docker-build && pnpm docker-run",
+    "docker-stop": "docker-compose -f infra/docker-compose.yaml stop",
+    "docker-remove": "docker-compose -f infra/docker-compose.yaml down",
+    "docker-restart": "docker-compose -f infra/docker-compose.yaml restart app",
+    "docker-logs": "docker-compose -f infra/docker-compose.yaml logs app"
   },
   "engines": {
     "node": ">=22",
