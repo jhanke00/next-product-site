@@ -1,0 +1,8 @@
+node_modules
+.next
+.vscode
+dist
+coverage
+.env
+.env.local
+pnpm-lock.yaml

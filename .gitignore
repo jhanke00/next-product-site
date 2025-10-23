@@ -8,6 +8,17 @@
 
 # testing
 /coverage
+# Playwright reports
+playwright-report/
+# Playwright HTML report
+playwright-report/index.html
+# Other test reports
+test-report/
+# All test results
+test-results/
+
+# test results
+test-results/.last-run.json
 
 # next.js
 /.next/
@@ -19,6 +30,30 @@
 # misc
 .DS_Store
 *.pem
+
+# local env files
+.env
+.env.local
+.env.*.local
+
+# IDEs and editors
+/.vscode/
+.idea/
+
+# caches
+.cache/
+.parcel-cache/
+
+# pnpm
+/node_modules/.pnpm-debug.log
+
+# build outputs
+/dist/
+
+# npm lockfiles (this project uses pnpm)
+package-lock.json
+npm-shrinkwrap.json
+
 
 # debug
 npm-debug.log*

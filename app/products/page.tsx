@@ -1,6 +1,7 @@
 'use client';
 import largeData from '@/src/mock/large/products.json';
 import smallData from '@/src/mock/small/products.json';
+import BackButton from '@/src/components/BackButton';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
@@ -28,6 +29,7 @@ export default function Products() {
 
   return (
     <main className='flex min-h-screen flex-col items-center p-24'>
+      <BackButton label='Back to home' />
       <div className='z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex'>
         <div className='grid lg:max-w-5xl lg:w-full lg:grid-cols-2 lg:text-left'>
           {productData.map((product) => (

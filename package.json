@@ -9,7 +9,9 @@
     "build": "next build",
     "format": "prettier . --write",
     "preinstall": "only-allow pnpm",
-    "test": "jest",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:playwright": "playwright test",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepare": "husky",
@@ -26,6 +28,11 @@
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.6.1",
+    "jest-environment-jsdom": "^28.1.1",
     "@faker-js/faker": "^8.4.1",
     "@storybook/addon-jest": "~9.1.8",
     "@storybook/nextjs": "^9.1.8",

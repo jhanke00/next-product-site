@@ -96,3 +96,27 @@ To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+## Docker
+
+You can build and run the application with Docker (uses pnpm):
+
+1. Build the image:
+
+   docker build -t next-product-site .
+
+2. Run the container:
+
+   docker run -p 3000:3000 next-product-site
+
+The app will be available on http://localhost:3000.
+
+## Learning Resources feature
+
+Each product now supports one or more "Learning Resources" (guides, tutorials, videos).
+
+- View and add resources on a product's detail page (open a product from /products).
+- The UI uses a simple client component that talks to app route `GET /api/products/:productId/resources` and `POST` to create new resources (in-memory for demo).
+- Sample resources are in `src/mock/small/learning-resources.json`.
+
+If you want persistent storage, replace the in-memory handler in `app/api/products/[productId]/resources/route.ts` with calls to a database or file store.

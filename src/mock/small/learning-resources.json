@@ -1,0 +1,20 @@
+[
+  {
+    "id": "lr-1",
+    "productId": "272cc8e2-fc5c-4f8d-a196-011e223480cb",
+    "title": "Getting Started with Fantastic Steel Computer",
+    "type": "guide",
+    "url": "https://example.com/guides/fantastic-steel-computer",
+    "description": "A beginner's guide to setup and first steps.",
+    "createdAt": "2025-10-22T00:00:00.000Z"
+  },
+  {
+    "id": "lr-2",
+    "productId": "272cc8e2-fc5c-4f8d-a196-011e223480cb",
+    "title": "Advanced Tips & Tricks",
+    "type": "tutorial",
+    "url": "https://example.com/tutorials/fantastic-steel-computer-advanced",
+    "description": "Advanced configuration and performance tuning.",
+    "createdAt": "2025-10-22T00:00:00.000Z"
+  }
+]
