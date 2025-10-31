@@ -8,3 +8,7 @@ export type Product = {
   numReviews: number;
   countInStock: number;
 };
+
+export type ProductsSearchProps = {
+  initialQuery: string;
+};

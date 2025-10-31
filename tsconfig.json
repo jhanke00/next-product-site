@@ -23,10 +23,11 @@
       "@components/*": ["./src/components/*"],
       "@type/*": ["./src/type/*"],
       "@utils/*": ["./src/utils/*"],
-      "@mock/*": ["./src/mock/*"]
+      "@mock/*": ["./src/mock/*"],
+      "@server/*": ["./src/server/*"]
     },
     "target": "ES2017"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "jest.config.cjs"],
   "exclude": ["node_modules", "dist"]
 }
