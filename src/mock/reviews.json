@@ -1,0 +1,200 @@
+[
+  {
+    "id": "r-1",
+    "productId": "1",
+    "userId": "u-100",
+    "rating": 5,
+    "title": "Fantastic!",
+    "content": "Loved it. Great quality and fast delivery.",
+    "helpfulCount": 3,
+    "createdAt": "2024-10-01T12:00:00.000Z",
+    "status": "approved"
+  },
+  {
+    "id": "r-2",
+    "productId": "1",
+    "userId": "u-101",
+    "rating": 4,
+    "title": "Solid value",
+    "content": "Good product, would recommend.",
+    "helpfulCount": 1,
+    "createdAt": "2024-10-02T12:00:00.000Z",
+    "status": "approved"
+  },
+  {
+    "id": "r-3",
+    "productId": "2",
+    "userId": "u-102",
+    "rating": 2,
+    "title": "Not what I expected",
+    "content": "Quality could be better.",
+    "helpfulCount": 0,
+    "createdAt": "2024-10-03T12:00:00.000Z",
+    "status": "pending"
+  },
+  {
+    "id": "r-dcsd0b34",
+    "productId": "adb19614-84c9-459f-9acc-bc6e4d19d525",
+    "userId": "u-mftp3x",
+    "rating": 4,
+    "title": "good one",
+    "content": "everyone can opt this its good",
+    "helpfulCount": 2,
+    "createdAt": "2025-10-29T19:23:18.344Z",
+    "status": "approved"
+  },
+  {
+    "id": "r-7qpsxh2k",
+    "productId": "adb19614-84c9-459f-9acc-bc6e4d19d525",
+    "userId": "u-mftp3x",
+    "rating": 1,
+    "title": "bad",
+    "content": "not that good",
+    "helpfulCount": 0,
+    "createdAt": "2025-10-29T19:23:54.870Z",
+    "status": "approved"
+  },
+  {
+    "id": "r-7et090lc",
+    "productId": "1",
+    "userId": "u-1",
+    "rating": 5,
+    "title": "GraphQL",
+    "content": "GraphQL test review",
+    "helpfulCount": 1,
+    "createdAt": "2025-10-29T19:37:14.008Z",
+    "status": "rejected"
+  },
+  {
+    "id": "r-xpwb60wk",
+    "productId": "cedfa1ce-568d-4431-8299-e8a22570094e",
+    "userId": "u-mftp3x",
+    "rating": 3,
+    "title": "good shoes",
+    "content": "good one",
+    "helpfulCount": 0,
+    "createdAt": "2025-10-29T19:40:59.361Z",
+    "status": "approved"
+  },
+  {
+    "id": "r-5s43fjqn",
+    "productId": "cedfa1ce-568d-4431-8299-e8a22570094e",
+    "userId": "u-mftp3x",
+    "rating": 2,
+    "title": "bad",
+    "content": "bad",
+    "helpfulCount": 1,
+    "createdAt": "2025-10-29T19:47:48.764Z",
+    "status": "approved"
+  },
+  {
+    "id": "r-czi24xkr",
+    "productId": "cedfa1ce-568d-4431-8299-e8a22570094e",
+    "userId": "u-mftp3x",
+    "rating": 5,
+    "title": "good n best",
+    "content": "best",
+    "helpfulCount": 4,
+    "createdAt": "2025-10-29T19:51:29.014Z",
+    "status": "approved"
+  },
+  {
+    "id": "r-kch83vj7",
+    "productId": "fac8e572-8c72-4ee0-aa98-657f8111cb79",
+    "userId": "u-mftp3x",
+    "rating": 2,
+    "title": "good ",
+    "content": "one can buy this",
+    "helpfulCount": 0,
+    "createdAt": "2025-10-30T11:16:31.823Z",
+    "status": "approved"
+  },
+  {
+    "id": "r-8jo035p4",
+    "productId": "fac8e572-8c72-4ee0-aa98-657f8111cb79",
+    "userId": "u-mftp3x",
+    "rating": 5,
+    "title": "good one ",
+    "content": "good one",
+    "helpfulCount": 0,
+    "createdAt": "2025-10-30T11:16:49.474Z",
+    "status": "approved"
+  },
+  {
+    "id": "r-6zdqfedl",
+    "productId": "ff8cf8ba-a844-4c8a-ab50-c9605d7701f4",
+    "userId": "u-mftp3x",
+    "rating": 2,
+    "title": "medium",
+    "content": "medium",
+    "helpfulCount": 0,
+    "createdAt": "2025-10-30T11:34:52.367Z",
+    "status": "approved"
+  },
+  {
+    "id": "r-1k472ck5",
+    "productId": "ff8cf8ba-a844-4c8a-ab50-c9605d7701f4",
+    "userId": "u-mftp3x",
+    "rating": 1,
+    "title": "bad",
+    "content": "bad",
+    "helpfulCount": 0,
+    "createdAt": "2025-10-30T11:35:10.089Z",
+    "status": "approved"
+  },
+  {
+    "id": "r-bjw7jmy7",
+    "productId": "ff8cf8ba-a844-4c8a-ab50-c9605d7701f4",
+    "userId": "u-mftp3x",
+    "rating": 5,
+    "title": "good",
+    "content": "good one",
+    "helpfulCount": 0,
+    "createdAt": "2025-10-30T11:35:21.546Z",
+    "status": "approved"
+  },
+  {
+    "id": "r-8cdeplzr",
+    "productId": "1",
+    "userId": "u-200",
+    "rating": 5,
+    "title": "MongoDB",
+    "content": "Testing Mongo-backed create",
+    "helpfulCount": 1,
+    "createdAt": "2025-10-31T12:43:54.166Z",
+    "status": "rejected"
+  },
+  {
+    "id": "r-82olhskq",
+    "productId": "1",
+    "userId": "u-300",
+    "rating": 4,
+    "title": "GraphQL-Mongo",
+    "content": "Create via GraphQL",
+    "helpfulCount": 1,
+    "createdAt": "2025-10-31T12:46:59.104Z",
+    "status": "rejected"
+  },
+  {
+    "id": "r-5o9s8nfw",
+    "productId": "adb19614-84c9-459f-9acc-bc6e4d19d525",
+    "userId": "f0861c87-54e6-40df-b9c4-82c925c67363",
+    "rating": 5,
+    "title": "all good",
+    "content": "good",
+    "helpfulCount": 0,
+    "createdAt": "2025-10-31T14:17:15.645Z",
+    "status": "approved"
+  },
+  {
+    "id": "r-222k2q95",
+    "productId": "0707e363-ebf9-408f-889b-c0b0802d94f4",
+    "userId": "f0861c87-54e6-40df-b9c4-82c925c67363",
+    "rating": 5,
+    "title": "sss",
+    "content": "ssss",
+    "helpfulCount": 0,
+    "createdAt": "2025-10-31T15:05:19.598Z",
+    "status": "approved"
+  }
+]

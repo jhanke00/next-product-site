@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "bad51172-9683-4ac5-9cfc-4170c5e9fe6f",
+    "email": "demo.user@example.com",
+    "passwordHash": "9bb7468bdf379989fbaf01394431559420f139897bee488d2b0b83e4e3773bdb",
+    "createdAt": "2025-10-31T14:12:06.222Z",
+    "updatedAt": "2025-10-31T14:12:06.222Z"
+  },
+  {
+    "_id": "f0861c87-54e6-40df-b9c4-82c925c67363",
+    "email": "supreeth_bs@epam.com",
+    "passwordHash": "2839412a1c6c9b71cb901bdff6729b76c0f2730ee67118fce697f697d532fe43",
+    "createdAt": "2025-10-31T14:13:06.467Z",
+    "updatedAt": "2025-10-31T14:13:06.467Z"
+  },
+  {
+    "_id": "23366c13-ba3c-4405-bc8e-bd4f91625536",
+    "email": "net.error@example.com",
+    "passwordHash": "9bb7468bdf379989fbaf01394431559420f139897bee488d2b0b83e4e3773bdb",
+    "createdAt": "2025-10-31T14:15:52.863Z",
+    "updatedAt": "2025-10-31T14:15:52.863Z"
+  },
+  {
+    "_id": "e91ca1c7-fd9a-46d7-8a29-6ac8970c37b0",
+    "email": "supreethbs1991@gmail.com",
+    "passwordHash": "2839412a1c6c9b71cb901bdff6729b76c0f2730ee67118fce697f697d532fe43",
+    "createdAt": "2025-10-31T14:19:15.055Z",
+    "updatedAt": "2025-10-31T14:19:15.055Z"
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "1": {
+    "rating": 4.5,
+    "numReviews": 2
+  },
+  "adb19614-84c9-459f-9acc-bc6e4d19d525": {
+    "rating": 3.3333333333333335,
+    "numReviews": 3
+  },
+  "cedfa1ce-568d-4431-8299-e8a22570094e": {
+    "rating": 3.3333333333333335,
+    "numReviews": 3
+  },
+  "fac8e572-8c72-4ee0-aa98-657f8111cb79": {
+    "rating": 3.5,
+    "numReviews": 2
+  },
+  "ff8cf8ba-a844-4c8a-ab50-c9605d7701f4": {
+    "rating": 2.6666666666666665,
+    "numReviews": 3
+  },
+  "0707e363-ebf9-408f-889b-c0b0802d94f4": {
+    "rating": 5,
+    "numReviews": 1
+  }
+}
