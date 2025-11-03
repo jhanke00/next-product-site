@@ -1,0 +1,101 @@
+[
+  {
+    "id": "ORD-1762082690169-8a3l3h3l1",
+    "orderNumber": "PS6901692UF7",
+    "items": [
+      {
+        "id": "964e4714-8777-4ebc-8965-25db5c98c60f",
+        "name": "Bronze Computer",
+        "price": "952.00",
+        "quantity": 1,
+        "category": "Beauty",
+        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200&h=200&fit=crop&crop=center&sig=964e4714-8777-4ebc-8965-25db5c98c60f"
+      }
+    ],
+    "shippingAddress": {
+      "firstName": "Shiva",
+      "lastName": "Kumar",
+      "email": "shivakumar.nayini123@gmail.com",
+      "phone": "32423432434",
+      "address": "dsfdsf",
+      "city": "dfsdf",
+      "state": "fsdfdsf",
+      "zipCode": "4355345",
+      "country": "United States"
+    },
+    "paymentMethod": "cod",
+    "subtotal": 952,
+    "shipping": 0,
+    "tax": 76.16,
+    "total": 1028.16,
+    "status": "pending",
+    "createdAt": "2025-11-02T11:24:50.169Z",
+    "updatedAt": "2025-11-02T11:24:50.169Z"
+  },
+  {
+    "id": "ORD-1762082711388-xhxwej8yf",
+    "orderNumber": "PS711388PL5E",
+    "items": [
+      {
+        "id": "1438143f-6c78-44c9-b57a-4caf2eff1ff4",
+        "name": "Bronze Bacon",
+        "price": "754.00",
+        "quantity": 1,
+        "category": "Health",
+        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200&h=200&fit=crop&crop=center&sig=1438143f-6c78-44c9-b57a-4caf2eff1ff4"
+      }
+    ],
+    "shippingAddress": {
+      "firstName": "Shiva",
+      "lastName": "Kumar",
+      "email": "shivakumar.nayini123@gmail.com",
+      "phone": "32423432434",
+      "address": "dsfdsf",
+      "city": "dfsdf",
+      "state": "fsdfdsf",
+      "zipCode": "4355345",
+      "country": "United States"
+    },
+    "paymentMethod": "cod",
+    "subtotal": 754,
+    "shipping": 0,
+    "tax": 60.32,
+    "total": 814.32,
+    "status": "pending",
+    "createdAt": "2025-11-02T11:25:11.388Z",
+    "updatedAt": "2025-11-02T11:25:11.388Z"
+  },
+  {
+    "id": "ORD-1762083502844-mr31outau",
+    "orderNumber": "PS502844S8CH",
+    "items": [
+      {
+        "id": "7d688b73-a636-424d-8910-93ace307fec9",
+        "name": "Bronze Bacon",
+        "price": "176.00",
+        "quantity": 8,
+        "category": "Industrial",
+        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200&h=200&fit=crop&crop=center&sig=7d688b73-a636-424d-8910-93ace307fec9"
+      }
+    ],
+    "shippingAddress": {
+      "firstName": "Shiva",
+      "lastName": "Kumar",
+      "email": "shivakumar.nayini123@gmail.com",
+      "phone": "32423432434",
+      "address": "dsfdsf",
+      "city": "dfsdf",
+      "state": "fsdfdsf",
+      "zipCode": "4355345",
+      "country": "United States"
+    },
+    "paymentMethod": "cod",
+    "subtotal": 1408,
+    "shipping": 0,
+    "tax": 112.64,
+    "total": 1520.64,
+    "status": "pending",
+    "createdAt": "2025-11-02T11:38:22.844Z",
+    "updatedAt": "2025-11-02T11:38:22.844Z"
+  }
+]

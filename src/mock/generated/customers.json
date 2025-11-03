@@ -1,0 +1,22 @@
+[
+  {
+    "id": "3ecdfe2b-29d7-456e-90f6-c867a900fcdb",
+    "firstName": "Shiva",
+    "lastName": "Kumar",
+    "email": "shivakumar.nayini123@gmail.com",
+    "phone": "32423432434",
+    "address": "dsfdsf",
+    "city": "dfsdf",
+    "state": "fsdfdsf",
+    "zipCode": "4355345",
+    "country": "United States",
+    "lastOrderId": "ORD-1762083502844-mr31outau",
+    "orderHistory": [
+      "ORD-1762082690169-8a3l3h3l1",
+      "ORD-1762082711388-xhxwej8yf",
+      "ORD-1762083502844-mr31outau"
+    ],
+    "createdAt": "2025-11-02T11:24:50.170Z",
+    "updatedAt": "2025-11-02T11:38:22.845Z"
+  }
+]

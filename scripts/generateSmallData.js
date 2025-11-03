@@ -2,13 +2,20 @@ const { faker } = require('@faker-js/faker');
 const { randomInt } = require('crypto');
 const fs = require('fs');
 
+function cleanProductName(name) {
+  return name
+    .replace(/\bBespoke\s*/g, '')
+    .trim()
+    .replace(/\s{2,}/g, ' ');
+}
+
 function generateProducts() {
   const products = [];
 
   for (let i = 0; i < 50; i++) {
     const product = {
       id: faker.string.uuid(),
-      name: faker.commerce.productName(),
+      name: cleanProductName(faker.commerce.productName()),
       price: faker.commerce.price(),
       description: faker.commerce.productDescription(),
       category: faker.commerce.department(),

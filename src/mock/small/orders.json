@@ -79,13 +79,13 @@
     "items": [
       {
         "id": "2a495c99-bbfa-4ddb-b27a-7365f3402a77",
-        "name": "Bespoke Plastic Car",
+        "name": "Plastic Car",
         "price": "713.00",
         "count": 3
       },
       {
         "id": "f3cf04d0-9edf-438e-8dd4-540b7e74352d",
-        "name": "Awesome Plastic Cheese",
+        "name": "Plastic Cheese",
         "price": "771.00",
         "count": 4
       }
@@ -98,7 +98,7 @@
     "items": [
       {
         "id": "686b9253-68f0-43aa-bfd3-903e8b98dd66",
-        "name": "Bespoke Plastic Salad",
+        "name": "Plastic Salad",
         "price": "677.00",
         "count": 3
       },
@@ -159,7 +159,7 @@
       },
       {
         "id": "f3cf04d0-9edf-438e-8dd4-540b7e74352d",
-        "name": "Awesome Plastic Cheese",
+        "name": "Plastic Cheese",
         "price": "771.00",
         "count": 4
       },
@@ -209,7 +209,7 @@
       },
       {
         "id": "4fd223da-c797-4ad2-9846-eeba95c138f7",
-        "name": "Awesome Fresh Chicken",
+        "name": "Fresh Chicken",
         "price": "351.00",
         "count": 4
       }
@@ -340,7 +340,7 @@
       },
       {
         "id": "2a495c99-bbfa-4ddb-b27a-7365f3402a77",
-        "name": "Bespoke Plastic Car",
+        "name": "Plastic Car",
         "price": "713.00",
         "count": 1
       },
@@ -371,7 +371,7 @@
       },
       {
         "id": "4fd223da-c797-4ad2-9846-eeba95c138f7",
-        "name": "Awesome Fresh Chicken",
+        "name": "Fresh Chicken",
         "price": "351.00",
         "count": 4
       },
@@ -559,7 +559,7 @@
       },
       {
         "id": "686b9253-68f0-43aa-bfd3-903e8b98dd66",
-        "name": "Bespoke Plastic Salad",
+        "name": "Plastic Salad",
         "price": "677.00",
         "count": 4
       }
@@ -646,7 +646,7 @@
       },
       {
         "id": "4fd223da-c797-4ad2-9846-eeba95c138f7",
-        "name": "Awesome Fresh Chicken",
+        "name": "Fresh Chicken",
         "price": "351.00",
         "count": 4
       },
@@ -658,7 +658,7 @@
       },
       {
         "id": "686b9253-68f0-43aa-bfd3-903e8b98dd66",
-        "name": "Bespoke Plastic Salad",
+        "name": "Plastic Salad",
         "price": "677.00",
         "count": 3
       },
@@ -727,7 +727,7 @@
     "items": [
       {
         "id": "686b9253-68f0-43aa-bfd3-903e8b98dd66",
-        "name": "Bespoke Plastic Salad",
+        "name": "Plastic Salad",
         "price": "677.00",
         "count": 4
       },
@@ -894,7 +894,7 @@
       },
       {
         "id": "2a495c99-bbfa-4ddb-b27a-7365f3402a77",
-        "name": "Bespoke Plastic Car",
+        "name": "Plastic Car",
         "price": "713.00",
         "count": 3
       },
@@ -974,7 +974,7 @@
       },
       {
         "id": "686b9253-68f0-43aa-bfd3-903e8b98dd66",
-        "name": "Bespoke Plastic Salad",
+        "name": "Plastic Salad",
         "price": "677.00",
         "count": 3
       }
@@ -1069,7 +1069,7 @@
     "items": [
       {
         "id": "2a495c99-bbfa-4ddb-b27a-7365f3402a77",
-        "name": "Bespoke Plastic Car",
+        "name": "Plastic Car",
         "price": "713.00",
         "count": 1
       },
@@ -1192,7 +1192,7 @@
       },
       {
         "id": "4fd223da-c797-4ad2-9846-eeba95c138f7",
-        "name": "Awesome Fresh Chicken",
+        "name": "Fresh Chicken",
         "price": "351.00",
         "count": 1
       }
@@ -1323,13 +1323,13 @@
       },
       {
         "id": "2a495c99-bbfa-4ddb-b27a-7365f3402a77",
-        "name": "Bespoke Plastic Car",
+        "name": "Plastic Car",
         "price": "713.00",
         "count": 2
       },
       {
         "id": "9aa6adce-ff51-4573-9ae3-e667a0f538df",
-        "name": "Awesome Bronze Hat",
+        "name": "Bronze Hat",
         "price": "482.00",
         "count": 1
       },
@@ -1490,13 +1490,13 @@
     "items": [
       {
         "id": "4fd223da-c797-4ad2-9846-eeba95c138f7",
-        "name": "Awesome Fresh Chicken",
+        "name": "Fresh Chicken",
         "price": "351.00",
         "count": 3
       },
       {
         "id": "f3cf04d0-9edf-438e-8dd4-540b7e74352d",
-        "name": "Awesome Plastic Cheese",
+        "name": "Plastic Cheese",
         "price": "771.00",
         "count": 4
       },
@@ -1546,7 +1546,7 @@
       },
       {
         "id": "9aa6adce-ff51-4573-9ae3-e667a0f538df",
-        "name": "Awesome Bronze Hat",
+        "name": "Bronze Hat",
         "price": "482.00",
         "count": 1
       }
@@ -1559,7 +1559,7 @@
     "items": [
       {
         "id": "686b9253-68f0-43aa-bfd3-903e8b98dd66",
-        "name": "Bespoke Plastic Salad",
+        "name": "Plastic Salad",
         "price": "677.00",
         "count": 4
       },
@@ -1603,7 +1603,7 @@
     "items": [
       {
         "id": "f3cf04d0-9edf-438e-8dd4-540b7e74352d",
-        "name": "Awesome Plastic Cheese",
+        "name": "Plastic Cheese",
         "price": "771.00",
         "count": 1
       },
@@ -1721,13 +1721,13 @@
       },
       {
         "id": "2a495c99-bbfa-4ddb-b27a-7365f3402a77",
-        "name": "Bespoke Plastic Car",
+        "name": "Plastic Car",
         "price": "713.00",
         "count": 1
       },
       {
         "id": "686b9253-68f0-43aa-bfd3-903e8b98dd66",
-        "name": "Bespoke Plastic Salad",
+        "name": "Plastic Salad",
         "price": "677.00",
         "count": 1
       },
@@ -1796,7 +1796,7 @@
     "items": [
       {
         "id": "9aa6adce-ff51-4573-9ae3-e667a0f538df",
-        "name": "Awesome Bronze Hat",
+        "name": "Bronze Hat",
         "price": "482.00",
         "count": 2
       },
@@ -1950,7 +1950,7 @@
     "items": [
       {
         "id": "4fd223da-c797-4ad2-9846-eeba95c138f7",
-        "name": "Awesome Fresh Chicken",
+        "name": "Fresh Chicken",
         "price": "351.00",
         "count": 4
       },
@@ -2019,7 +2019,7 @@
     "items": [
       {
         "id": "4fd223da-c797-4ad2-9846-eeba95c138f7",
-        "name": "Awesome Fresh Chicken",
+        "name": "Fresh Chicken",
         "price": "351.00",
         "count": 1
       },
@@ -2100,7 +2100,7 @@
       },
       {
         "id": "9aa6adce-ff51-4573-9ae3-e667a0f538df",
-        "name": "Awesome Bronze Hat",
+        "name": "Bronze Hat",
         "price": "482.00",
         "count": 4
       }
@@ -2301,7 +2301,7 @@
     "items": [
       {
         "id": "686b9253-68f0-43aa-bfd3-903e8b98dd66",
-        "name": "Bespoke Plastic Salad",
+        "name": "Plastic Salad",
         "price": "677.00",
         "count": 2
       },
@@ -2338,7 +2338,7 @@
       },
       {
         "id": "2a495c99-bbfa-4ddb-b27a-7365f3402a77",
-        "name": "Bespoke Plastic Car",
+        "name": "Plastic Car",
         "price": "713.00",
         "count": 4
       },
@@ -2369,7 +2369,7 @@
       },
       {
         "id": "4fd223da-c797-4ad2-9846-eeba95c138f7",
-        "name": "Awesome Fresh Chicken",
+        "name": "Fresh Chicken",
         "price": "351.00",
         "count": 1
       },
@@ -2419,7 +2419,7 @@
     "items": [
       {
         "id": "f3cf04d0-9edf-438e-8dd4-540b7e74352d",
-        "name": "Awesome Plastic Cheese",
+        "name": "Plastic Cheese",
         "price": "771.00",
         "count": 2
       },
@@ -2437,7 +2437,7 @@
       },
       {
         "id": "9aa6adce-ff51-4573-9ae3-e667a0f538df",
-        "name": "Awesome Bronze Hat",
+        "name": "Bronze Hat",
         "price": "482.00",
         "count": 3
       },
@@ -2537,7 +2537,7 @@
       },
       {
         "id": "f3cf04d0-9edf-438e-8dd4-540b7e74352d",
-        "name": "Awesome Plastic Cheese",
+        "name": "Plastic Cheese",
         "price": "771.00",
         "count": 1
       }
