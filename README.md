@@ -48,6 +48,17 @@ Codespaces is also available and is pre-configured with node and pnpm.
 
 1. Run `pnpm test`
 
+### Docker
+
+Build and run the production container locally:
+
+```bash
+docker build -t next-product-site:latest .
+docker run --rm -p 3000:3000 next-product-site:latest
+```
+
+Visit `http://localhost:3000` to access the site served from the container.
+
 ## Task
 
 Select one of the four areas to contribute to and help enhance the application with features that might not be present. Look at the [GitHub Issues](https://github.com/jhanke00/next-product-site/issues) for capabilities to work on. Feature requests will have the `feature request` label associated with the GitHub Issue and may encompass one or multiple areas of focus. You are not limited to one issue. If you are working on multiple issues, make sure to assign the issues to yourself and link it in your PR.
@@ -85,6 +96,16 @@ Setup your PRs based on the following areas of focus. For all changes, please de
 1. Create a new folder under `/infra`, which will store the infrastructure setup with Docker. (Ex: `/infra/products`)
 2. Create a `Dockerfile` or `docker-compose.yml` for any image you want to use to manage creating local resources. (`/infra/products/Dockerfile`)
 3. Create a Markdown file in the `/docs` folder with the name of your change detailing what you are trying to build, how it is used within the project, and how to test your changes. (Ex: `/docs/infrastructure/products-db.md`)
+
+## Learning Resources
+
+Product detail pages now surface tutorials and guides to help customers get the most out of each item.
+
+- **Browse tutorials:** open any product detail page to see the _Learning Resources_ section. Each entry links out to an external tutorial, guide, or training module.
+- **Add tutorials (Admin):** switch to Admin mode, select _Learning Resources_, enter a product ID, and use the form to add a title, URL, and optional description. Resources are stored persistently in `src/mock/generated/resources.json` via the `/api/products/[productId]/resources` endpoint.
+- **API access:** `GET /api/products/{productId}/resources` returns the tutorials for a product; `POST` to the same endpoint creates a new resource.
+
+Use these resources to keep customers engaged and informed after they discover a product.
 
 ## Contributing
 

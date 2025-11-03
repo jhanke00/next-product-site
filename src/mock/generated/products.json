@@ -1,0 +1,32 @@
+[
+  {
+    "id": "aacd3dc9-fa01-4321-a31d-0eaa9482bee3",
+    "name": "Electronic Fresh Pants",
+    "price": "556.00",
+    "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+    "category": "Baby",
+    "rating": 0.9358598489779979,
+    "numReviews": 97,
+    "countInStock": 24
+  },
+  {
+    "id": "24b48094-6674-499b-8212-22a7bab5767d",
+    "name": "uyyjg",
+    "price": "988.00",
+    "description": "rtfgh",
+    "category": "Computers",
+    "rating": 0,
+    "numReviews": 0,
+    "countInStock": 9
+  },
+  {
+    "id": "64b1112f-12ac-44cc-bd16-7cf1849985a6",
+    "name": "aaaaa",
+    "price": "544.00",
+    "description": "ytgh",
+    "category": "Baby",
+    "rating": 0,
+    "numReviews": 0,
+    "countInStock": 779
+  }
+]
