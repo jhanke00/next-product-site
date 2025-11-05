@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.product {
+  width: 450px;
+  background-color: white;
+}
