@@ -21,16 +21,40 @@ This is a dummy product site that needs help adding new features and maturing th
 - ESLint
 - Folder Structure
 - Mock Product Page (`/app/products`)
+- Mock Product Details Page (`/app/products/[productId]`)
 
 ## Getting Started
 
-### Prerequisite
+You can run this application using either Docker (recommended for simplicity) or by installing dependencies locally.
+
+### Option 1: Using Docker (Recommended)
+
+#### Prerequisite
+
+- [Install Docker Desktop](https://www.docker.com/products/docker-desktop)
+
+#### Setup
+
+1. Clone the repository with `git clone` or fork the repository.
+2. Run `docker-compose -f infra/docker-compose.yml up --build` to build and start the application.
+3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+To stop the application:
+
+```bash
+docker-compose -f infra/docker-compose.yml down
+```
+
+For more details, see [Docker Setup Documentation](./docs/devops/docker-setup.md).
+
+### Option 2: Local Development
+
+#### Prerequisite
 
 - [Install Node v22+](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)
 - [Install PNPM v9+](https://pnpm.io/installation)
-- [Install Docker Desktop](https://www.docker.com/products/docker-desktop)
 
-### Setup
+#### Setup
 
 1. Clone the repository with `git clone` or fork the repository.
 2. Run `pnpm i` to install dependencies.
@@ -77,13 +101,13 @@ Setup your PRs based on the following areas of focus. For all changes, please de
 ### DevOps
 
 1. Create a new workflow file under `/.github/workflows` or actions folder under `/.github/actions`, which will store changes to the GitHub Actions. (Ex: `/.github/workflows/deploy.yml`)
-2. Updates to the project can be made directly to the root and additional configuration files may also be created as well. (Ex: `Dockerfile`)
+2. Updates to the project can be made directly to the root and additional configuration files may also be created as well.
 3. Create a Markdown file in the `/docs` folder with the name of your change detailing what you are trying to build, how it is used within the project, and how to test your changes. (Ex: `/docs/devops/github-action-workflow-deploy.md`)
 
 ### Infrastructure
 
-1. Create a new folder under `/infra`, which will store the infrastructure setup with Docker. (Ex: `/infra/products`)
-2. Create a `Dockerfile` or `docker-compose.yml` for any image you want to use to manage creating local resources. (`/infra/products/Dockerfile`)
+1. The main application Docker setup is in `/infra` (`Dockerfile` and `docker-compose.yml`). For additional infrastructure components, create a new folder under `/infra` (Ex: `/infra/products`)
+2. Create a `Dockerfile` or `docker-compose.yml` for any additional resources you want to manage. (`/infra/products/Dockerfile`)
 3. Create a Markdown file in the `/docs` folder with the name of your change detailing what you are trying to build, how it is used within the project, and how to test your changes. (Ex: `/docs/infrastructure/products-db.md`)
 
 ## Contributing

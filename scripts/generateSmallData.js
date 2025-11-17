@@ -1,6 +1,6 @@
 const { faker } = require('@faker-js/faker');
-const { randomInt } = require('crypto');
-const fs = require('fs');
+const { randomInt } = require('node:crypto');
+const fs = require('node:fs');
 
 function generateProducts() {
   const products = [];
@@ -55,7 +55,7 @@ function generateOrders(users, products) {
       const { id, name, price } = products[randomInt(products.length)];
       const count = randomInt(1, 5);
 
-      item = { id, name, price, count };
+      const item = { id, name, price, count };
 
       items.push(item);
       total += price * count;
@@ -74,13 +74,47 @@ function generateOrders(users, products) {
   return orders;
 }
 
+function generateLearning(products) {
+  const learning = [];
+  const resourceTypes = ['Guide', 'Tutorial', 'Documentation', 'Video Course', 'Reference', 'Best Practices'];
+  const topics = ['Getting Started', 'Advanced', 'Troubleshooting', 'Integration', 'Configuration', 'API'];
+
+  let resourceCounter = 1;
+
+  // Generate 0-3 learning resources per product
+  for (const product of products) {
+    const numResources = randomInt(0, 4); // 0 to 3 inclusive
+
+    for (let j = 0; j < numResources; j++) {
+      const resourceType = resourceTypes[randomInt(resourceTypes.length)];
+      const topic = topics[randomInt(topics.length)];
+
+      const learningResource = {
+        resourceId: `learn-s-${String(resourceCounter).padStart(3, '0')}`,
+        productId: product.id,
+        name: `${topic} ${resourceType}`,
+        description: faker.commerce.productDescription(),
+        resourceURI: faker.internet.url(),
+        popularityScore: faker.number.int({ min: 1, max: 100 }),
+      };
+
+      learning.push(learningResource);
+      resourceCounter++;
+    }
+  }
+
+  return learning;
+}
+
 const products = generateProducts();
 const users = generateUsers();
 const orders = generateOrders(users, products);
+const learning = generateLearning(products);
 
 const pJSON = JSON.stringify(products, null, 2);
 const uJSON = JSON.stringify(users, null, 2);
 const oJSON = JSON.stringify(orders, null, 2);
+const lJSON = JSON.stringify(learning, null, 2);
 
 fs.writeFileSync('src/mock/small/products.json', pJSON);
 console.log('Products Generated!');
@@ -90,3 +124,6 @@ console.log('Users Generated!');
 
 fs.writeFileSync('src/mock/small/orders.json', oJSON);
 console.log('Orders Generated!');
+
+fs.writeFileSync('src/mock/small/learning.json', lJSON);
+console.log('Learning Content Generated!');
