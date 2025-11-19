@@ -1,0 +1,114 @@
+.formContainer {
+  margin: 1rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: black;
+}
+
+.paymentformContainer {
+  max-width: 60%;
+  margin: 1rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: black;
+}
+
+.formContainer.single {
+  max-width: 700px;
+}
+
+.formContainer.double {
+  max-width: 1100px;
+}
+
+.flexRow {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.flexCol {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.inputField {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 90%;
+  max-width: 100%;
+}
+
+.errorMsg {
+  color: #dc2626;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.nextBtn {
+  padding: 0.75rem;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 20%;
+}
+
+.nextBtn:hover {
+  background: #1e40af;
+}
+
+.formTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.formSubtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .formContainer.double {
+    max-width: 98vw;
+  }
+  .flexRow {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .flexCol {
+    align-items: stretch;
+  }
+  .inputField {
+    width: 100%;
+  }
+}

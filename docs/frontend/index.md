@@ -22,3 +22,43 @@ Documentation on any Frontend capabilities or changes made.
 - `app/products/[productId]/page.tsx` - Page for the single page description
 - `src/mock/small/products-new.json` - Mock JSON for Prodcut list
 - `src/mock/large/products-new.json` - Mock JSON for Prodcut list
+
+# Cart and Checkout Documentation
+
+## Cart Functionality
+
+- **Add to Cart:**  
+  Users can add products to their cart directly from the products page by clicking the "Add to Cart" button. Each product added will appear in the cart with its name, price, and quantity.
+
+- **View Cart:**  
+  The cart can be accessed from any page using the cart button in the top-right corner. The cart displays all added items, allows quantity adjustments, and shows the subtotal.
+
+- **Remove from Cart:**  
+  Users can remove items from the cart using the "Remove" button next to each product.
+
+- **Persistence:**  
+  Cart contents are saved in `localStorage`, so the cart remains intact even after a page reload.
+
+- **Snackbar Notification:**  
+  When an item is added to the cart, a snackbar message appears at the top center of the page confirming the action.
+
+## Checkout Functionality
+
+- **Checkout Flow:**  
+  Users can proceed to checkout from the cart page. The checkout process consists of multiple steps:
+  1. **Shipping Information:** Users enter their shipping address.
+  2. **Payment Information:** Users provide payment details (card or UPI).
+  3. **Order Review:** Users review their order, shipping, and payment details before submitting.
+
+- **Order Confirmation:**  
+  After submitting the order, users see a confirmation page with a thank you message, order summary, and a "Back to Shopping" button.
+
+- **State Management:**  
+  Checkout state (shipping, payment, cart) is stored in `localStorage` under the key `checkout_state` and is cleared after a successful order.
+
+- **Validation:**  
+  The checkout process validates that all required information is provided before allowing users to proceed to the next step.
+
+---
+
+For more details or troubleshooting, see the `/docs` directory or contact the development team.

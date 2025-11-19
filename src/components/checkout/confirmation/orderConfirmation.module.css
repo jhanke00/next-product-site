@@ -1,0 +1,96 @@
+.confirmationContainer {
+  max-width: 60%;
+  margin: 40px auto;
+  padding: 32px 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: black;
+}
+.headtitle {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+}
+.section {
+  margin-bottom: 32px;
+}
+
+.sectionTitle1 {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 0.5px;
+}
+
+.sectionContent {
+  padding-left: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.orderList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.orderItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+}
+
+.itemName {
+  flex: 2;
+  font-weight: 500;
+}
+
+.itemQty {
+  flex: 1;
+  text-align: center;
+  color: #555;
+}
+
+.itemPrice {
+  flex: 1;
+  text-align: right;
+  color: #222;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.submitBtn {
+  min-width: 100px;
+  max-width: 140px;
+  padding: 8px 16px;
+  background: #0070f3;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submitBtn:hover,
+.submitBtn:focus {
+  background: #005bb5;
+}
+
+.sectionContent1 {
+  margin-top: 20px;
+}

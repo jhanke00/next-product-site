@@ -1,0 +1,6 @@
+[
+  { "id": "1", "name": "Generic Granite Tuna", "price": 397.00, "quantity": 2 },
+  { "id": "2", "name": "Generic Rubber Pizza", "price": 40.58, "quantity": 1 },
+  { "id": "3", "name": "Refined Steel Chair", "price": 120.99, "quantity": 3 },
+  { "id": "4", "name": "Sleek Cotton Keyboard", "price": 75.49, "quantity": 1 }
+]
