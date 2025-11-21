@@ -1,0 +1,16 @@
+services:
+  next-product-site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: next-product-site
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    volumes:
+      # Mount source code for development (optional)
+      - ./src:/app/src:ro
+      - ./app:/app/app:ro
+      - ./public:/app/public:ro
