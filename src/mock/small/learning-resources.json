@@ -1,0 +1,23 @@
+[
+  {
+    "id": "lr-001",
+    "productId": "0e5e5900-29dd-46d6-af40-f8be36445b81",
+    "title": "Getting Started Guide",
+    "description": "A comprehensive guide to help you get started with this product",
+    "url": "https://example.com/guides/getting-started",
+    "type": "guide",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "id": "lr-002",
+    "productId": "0e5e5900-29dd-46d6-af40-f8be36445b81",
+    "title": "Advanced Tutorial",
+    "description": "Learn advanced features and techniques",
+    "url": "https://example.com/tutorials/advanced",
+    "type": "tutorial",
+    "createdAt": "2024-01-16T10:00:00Z",
+    "updatedAt": "2024-01-16T10:00:00Z"
+  }
+]
+
