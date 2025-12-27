@@ -1,0 +1,38 @@
+name: Pull Request
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches: [main]
+
+env:
+  NODE_VERSION: 18.x
+  PNPM_VERSION: 8
+
+jobs:
+  labels-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Git
+        uses: actions/checkout@v4
+
+      - name: 'Check for required labels'
+        id: label-check
+        run: |
+          labels=$(jq -r '.pull_request.labels[].name' "$GITHUB_EVENT_PATH")
+          required_labels=("Feature request" "Infrastructure" "Backend" "Frontend" "Devops")
+          found=false
+          for label in "${required_labels[@]}"; do
+            if echo "$labels" | grep -q "$label"; then
+              found=true
+              break
+            fi
+          done
+          if [ "$found" = false ]; then
+            echo "No required labels found on this PR."
+            exit 1
+          fi
+
+      - name: 'Set status'
+        if: failure()
+        run: echo 'Required label missing. Labels are "Feature request", "Infrastructure", "Backend", "Frontend", "Devops".'
