@@ -48,6 +48,23 @@ Codespaces is also available and is pre-configured with node and pnpm.
 
 1. Run `pnpm test`
 
+### Security Scanning
+
+1. Security scans run automatically on pull requests and pushes
+2. View scan results in GitHub Actions artifacts
+
+#### Manual Snyk Scan
+```bash
+# Install Snyk globally
+npm install -g snyk
+
+# Authenticate with your token
+snyk auth YOUR_SNYK_TOKEN
+
+# Run vulnerability scan
+snyk test
+```
+
 ## Task
 
 Select one of the four areas to contribute to and help enhance the application with features that might not be present. Look at the [GitHub Issues](https://github.com/jhanke00/next-product-site/issues) for capabilities to work on. Feature requests will have the `feature request` label associated with the GitHub Issue and may encompass one or multiple areas of focus. You are not limited to one issue. If you are working on multiple issues, make sure to assign the issues to yourself and link it in your PR.
