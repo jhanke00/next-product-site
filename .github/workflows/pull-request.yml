@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Git
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Configure Worflow
         uses: ./.github/actions/configure
@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Git
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Configure Worflow
         uses: ./.github/actions/configure
@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Git
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Configure Worflow
         uses: ./.github/actions/configure
