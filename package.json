@@ -21,7 +21,9 @@
     "pnpm": ">=9"
   },
   "dependencies": {
+    "@sendgrid/mail": "^8.1.6",
     "next": "15.5.4",
+    "nodemailer": "^6.9.5",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
