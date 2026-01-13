@@ -1,0 +1,72 @@
+.hero {
+  background: linear-gradient(135deg, #ffe4e6, #fff0f5); /* light, soft background */
+  padding: 100px 20px;
+  text-align: center;
+}
+.subtitle {
+  letter-spacing: 2px;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #222;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.button {
+  background-color: #e91e63;
+  color: #fff;
+  border: none;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #d81b60;
+}
+
+/* 
+@keyframes glow {
+  0% { text-shadow: 0 0 10px #ffdd00, 0 0 20px #ffdd00; color: #fff; }
+  50% { text-shadow: 0 0 20px #ffdd00, 0 0 30px #ffdd00; color: #ffdd00; }
+  100% { text-shadow: 0 0 10px #ffdd00, 0 0 20px #ffdd00; color: #fff; }
+} */
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: -10px;
+  opacity: 0.8;
+  animation: fall 4s linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+/* Different positions, colors, and speeds for confetti */
+.confetti:nth-child(1) { left: 10%; animation-duration: 3s; background-color: #ff5555; }
+.confetti:nth-child(2) { left: 25%; animation-duration: 4s; background-color: #55ff55; }
+.confetti:nth-child(3) { left: 40%; animation-duration: 5s; background-color: #5555ff; }
+.confetti:nth-child(4) { left: 60%; animation-duration: 3.5s; background-color: #ff55ff; }
+.confetti:nth-child(5) { left: 75%; animation-duration: 4.5s; background-color: #ffff55; }
+.confetti:nth-child(6) { left: 85%; animation-duration: 5.5s; background-color: #55ffff; }

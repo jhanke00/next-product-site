@@ -1,0 +1,232 @@
+.grid {
+    display: flex;
+    margin: 10px ;
+    flex-wrap: wrap;
+    padding: 80px;
+}
+
+.gridone {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.container {
+    border: "1px solid #eee";
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: white;
+    margin: 8px 2px;
+
+}
+
+.sectionone {
+    margin: 40px auto;
+    width: 700px;
+    text-align: center;
+}
+
+.heading {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.title {
+    margin-top: 12px;
+}
+
+.price {
+    font-weight: bold;
+}
+.btn {
+    background-color: #A8DF8E;
+    color: "#fff";
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.category {
+    background-color:#f7a600;
+     color: white;
+     padding: 3px 15px;
+     border-radius: 20px;
+     border: none;
+     cursor: pointer;
+     font-weight: 800;
+}
+.category:hover {
+  background-color: #f1f5f9;
+  color: black;
+}
+.sectiontwo{
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px;
+    width: 1200px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.ulstyle{
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.listyle{
+    border: 1px solid #ddd;
+    padding: 15px;
+    width : 280px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.active {
+  background-color: black;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+.searchInput {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+  margin-left: 545px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    padding: 30px 16px;
+    margin: 0;
+  }
+
+  .heading {
+    font-size: 18px;
+  }
+
+  .sectionone {
+    margin: 20px auto;
+    padding: 0 10px;
+  }
+
+  .category {
+    padding: 6px 14px;
+    font-size: 14px;
+    width:300px;
+  }
+
+  .sectiontwo{
+    width: 350px;
+  }
+
+  .searchContainer {
+    width: 350px;
+  }
+
+  .sectionone {
+    width: 350px;
+  }
+  .ulstyle {
+    gap: 15px;
+    padding: 0;
+  }
+
+  .listyle {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .searchInput {
+   margin: 15px;
+   width: fit-content;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    padding: 20px 12px;
+  }
+
+  .heading {
+    font-size: 16px;
+  }
+
+  .sectionone,
+  .sectiontwo,
+  .searchContainer {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .category {
+    width: 100%;
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .ulstyle {
+    gap: 12px;
+  }
+
+  .listyle {
+    max-width: 100%;
+  }
+
+  .searchInput {
+    width: 100%;
+    margin: 10px 0;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .grid {
+    padding: 40px 24px;
+  }
+
+  .heading {
+    font-size: 20px;
+  }
+
+  .sectionone {
+    margin: 30px auto;
+    padding: 0 20px;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .category {
+    font-size: 15px;
+    padding: 8px 18px;
+    width: auto;
+    min-width: 250px;
+  }
+
+  .sectiontwo,
+  .searchContainer {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .ulstyle {
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .listyle {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .searchInput {
+    width: 100%;
+    margin: 20px auto;
+    font-size: 15px;
+  }
+}

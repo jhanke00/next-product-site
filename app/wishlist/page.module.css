@@ -1,0 +1,91 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  height: 100vh;
+}
+
+.heading {
+  margin: 20px 0;
+  font-size: 28px;
+}
+
+.empty {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.info {
+  margin-bottom: 12px;
+}
+
+.name {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.price {
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.viewBtn {
+  flex: 1;
+  padding: 8px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 130px;
+}
+
+.viewBtn:hover {
+  background: #333;
+}
+
+.removeBtn {
+  flex: 1;
+  padding: 8px;
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100px;
+}
+
+.removeBtn:hover {
+  background: #d9363e;
+}
