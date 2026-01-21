@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/nextjs';
+import path from 'node:path';
 
 const config: StorybookConfig = {
   stories: ['../**/*.mdx', '../**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -13,6 +14,13 @@ const config: StorybookConfig = {
       test: /\.scss$/,
       use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
     });
+
+    if (config?.resolve?.alias) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '@/src': path.resolve(__dirname, '../src'),
+      };
+    }
 
     return config;
   },
