@@ -2,7 +2,7 @@ name: Pull Request
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronize, labeled]
     branches: [main]
 
 env:
@@ -10,6 +10,15 @@ env:
   PNPM_VERSION: 9
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    if: "!(contains(github.event.pull_request.labels.*.name, 'frontend') || contains(github.event.pull_request.labels.*.name, 'backend') || contains(github.event.pull_request.labels.*.name, 'devops') || contains(github.event.pull_request.labels.*.name, 'infrastructure'))"
+    steps:
+      - name: message
+        run: |
+          echo "Required label '(frontend, backend, devops, infrastructure)' not found."
+          exit 1
+
   build:
     runs-on: ubuntu-latest
     steps:
