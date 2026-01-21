@@ -11,3 +11,17 @@ export type Order = {
   total: number;
   time: Date;
 };
+
+export type UserOrdersProps = {
+  params: {
+    userId: string;
+  };
+};
+
+export type CardProps = {
+  data: Item;
+};
+
+export type OrderSummaryProps = {
+  data: Item[];
+};
