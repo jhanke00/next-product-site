@@ -11,3 +11,8 @@ export type Order = {
   total: number;
   time: Date;
 };
+
+export type OrderProps = {
+  data: Item;
+};
+
