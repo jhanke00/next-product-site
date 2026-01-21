@@ -1,3 +1,7 @@
+# Solution
+
+[Click here for solution](docs/backend/index.md)
+
 # NextJS Product Site
 
 Mock NextJS Product Application for Testing
