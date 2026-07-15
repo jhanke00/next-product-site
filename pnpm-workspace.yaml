@@ -1,0 +1,10 @@
+packages:
+  - '.'
+
+allowBuilds:
+  '@swc/core': false
+  '@tailwindcss/oxide': false
+  core-js-pure: false
+  esbuild: false
+  sharp: false
+  unrs-resolver: false

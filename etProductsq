@@ -1,0 +1,423 @@
+[33mcommit eb730eb0dc6cd865c1789259add0ebe98328e874[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/add-new-feature-cart[m[33m)[m
+Author: divs-divs <jdivs0786@gmail.com>
+Date:   Tue Jul 14 13:16:09 2026 +0530
+
+    Implement wishlist feature
+
+[33mcommit af0b621481c05ad14c8fba952f343a631811bf07[m[33m ([m[1;31morigin/feature/cartFlow[m[33m, [m[1;32mfeature/cartFlow[m[33m)[m
+Author: divs-divs <jdivs0786@gmail.com>
+Date:   Sat Jul 11 17:29:28 2026 +0530
+
+    remove the external api calls directly fetching the data from existing products json
+
+[33mcommit dd71c29dceb09a3422ba0a8c932a1addb8f707ad[m
+Author: divs-divs <jdivs0786@gmail.com>
+Date:   Fri Jul 10 14:13:19 2026 +0530
+
+    fix the package that were causing buid issue
+
+[33mcommit eb4020386745a1d259eb4b77f9d337e36228ba2e[m
+Author: divs-divs <jdivs0786@gmail.com>
+Date:   Thu Jul 9 21:24:43 2026 +0530
+
+    create cart flow
+
+[33mcommit f896f334aa114e4c6832985e024bfa39ea60b275[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Mon Sep 29 09:25:45 2025 -0500
+
+    Update Node and PNPM versions in workflow
+
+[33mcommit f89b79ad0abf80608670f68d5005dc2d598f43f6[m
+Author: Jeffrey <jeffrey.hanke@bayer.com>
+Date:   Thu Sep 25 12:48:19 2025 -0500
+
+    Update version in README
+
+[33mcommit deea7002de515c47d77adf2fa368d001df34e5e3[m
+Author: Jeffrey <jeffrey.hanke@bayer.com>
+Date:   Thu Sep 25 12:43:51 2025 -0500
+
+    Update dependencies and mock data
+
+[33mcommit 117b2c45e5d34d932548d68585af6122269ca23f[m
+Merge: eb2deee cd52bcc
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Thu Sep 25 11:27:18 2025 -0500
+
+    Merge pull request #111 from vdiorio/storybook-fix
+    
+    fix: Fix storybook command error
+
+[33mcommit cd52bcc330bc7ce9d1ce8dbb8ef306002e5dfb07[m
+Author: Vitor Diorio <vitor.diorio@yahoo.com.br>
+Date:   Wed Sep 25 10:01:58 2024 -0300
+
+    fix: Fix storybook command error
+    
+    Add's baseUrl to ts config, making able for storybook to find the alias (@)
+
+[33mcommit eb2deeeda5a3de78b8c4dd258c690bcb94f0f9d4[m
+Merge: e94de1e f2afa12
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Fri Mar 15 11:04:59 2024 -0500
+
+    Merge pull request #32 from bishnoimukesh/dev
+    
+    Product details page
+
+[33mcommit f2afa120e77e7918102b46f5455654a7d1744a2d[m
+Author: Mukesh Bishnoi <mukeshbishnoi@gmail.com>
+Date:   Fri Mar 8 03:15:35 2024 +0530
+
+    documentation: updated frontend doc for changes made
+
+[33mcommit b05984cb516aac13343ebc381d82ced2f8df631b[m
+Author: Mukesh Bishnoi <mukeshbishnoi@gmail.com>
+Date:   Fri Mar 8 00:34:43 2024 +0530
+
+    feat: added single page description of product
+
+[33mcommit 183b740de0991138ebc5d31ae1744371db75483a[m
+Author: Mukesh Bishnoi <mukeshbishnoi@gmail.com>
+Date:   Thu Mar 7 03:20:22 2024 +0530
+
+    feat: added products and pagination
+
+[33mcommit e94de1e2fac84f583a84c08168fa38bdaa346d7d[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Wed Feb 14 15:54:46 2024 -0600
+
+    Update README.md
+
+[33mcommit 349d435ef1f409fd8c2fc236e72680a6040a2302[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Wed Feb 14 10:04:02 2024 -0600
+
+    Update README.md
+
+[33mcommit d862e0f035e665a45bfb1f709b62f5f383fb8d6c[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Wed Feb 14 09:46:54 2024 -0600
+
+    Update CONTRIBUTING.md
+
+[33mcommit c53d531bc1d5a63df4dbf2dab0ccfcff9f2b310c[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Wed Feb 14 15:44:22 2024 +0000
+
+    Add env file
+
+[33mcommit f26dfbc43fd789863be59861e7e5e13ad6c4ac0e[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Wed Feb 14 15:43:38 2024 +0000
+
+    Add env file
+
+[33mcommit 36d85bba2b70a094fb24e8d48bf4f9609a3a4a43[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Wed Feb 14 09:36:48 2024 -0600
+
+    Update README.md
+
+[33mcommit db9e121895ece0c458dc51f83f0062b8578fef5d[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Wed Feb 14 09:35:41 2024 -0600
+
+    Update README.md
+
+[33mcommit 1fea8bb84f23572a7e4efc6f6dfe473f7b6aec2d[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Wed Feb 14 09:33:28 2024 -0600
+
+    Update README.md
+
+[33mcommit a92a65fafade213995a91798ac51eedae6127192[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Wed Feb 14 09:30:44 2024 -0600
+
+    Update README.md
+
+[33mcommit e2796e1f681fe7cc199a453d2b757a8efd75dd3d[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Wed Feb 14 15:27:38 2024 +0000
+
+    Add type definitions for all mock data
+
+[33mcommit b34dfa6324b9ae8cd9f064c451676f9dcb7a901c[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Wed Feb 14 09:13:05 2024 -0600
+
+    Update README.md
+
+[33mcommit 40f962d5f917d8e2248c3fb306c89830054f6551[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Wed Feb 14 08:36:07 2024 -0600
+
+    Update README.md
+
+[33mcommit 6aeca6f873a2e7eae34251e8ffa4b8a18247943c[m
+Author: Chad DeBauch <thychamp@users.noreply.github.com>
+Date:   Wed Feb 14 12:22:20 2024 +0000
+
+    Updated the README
+
+[33mcommit 35a8ef1d914c92950151e3f3deba33c2f6e5d1ef[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Tue Feb 13 18:06:07 2024 +0000
+
+    Update GitHub action versions
+
+[33mcommit 0cf9e54c14bc2f7bd684a49b7addb50d37c2fdd6[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Tue Feb 13 17:54:33 2024 +0000
+
+    Updated feedback issue
+
+[33mcommit 2c14dacc3d454df62d899e71e776b37975c41a32[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Tue Feb 13 17:53:34 2024 +0000
+
+    Added feedback issue
+
+[33mcommit 1041f92f9768553e00d8228d9f8acd37ca9cbdaf[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Tue Feb 13 17:35:11 2024 +0000
+
+    Update with different dataset size
+
+[33mcommit 792733686942697abfdef088f0ca12e8c2007f79[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Tue Feb 13 17:09:56 2024 +0000
+
+    Update PR template
+
+[33mcommit 69eb6e4be384f891e39aadbde02e76c4e50dbafe[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Tue Feb 13 17:01:18 2024 +0000
+
+    Add infrastructure option
+
+[33mcommit b651c1ab9e1f22a2b2bb72252ab1bf2c494810fe[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Tue Feb 13 16:58:00 2024 +0000
+
+    Added new area with infrastructure option.
+
+[33mcommit 5cf9231502b1373cf6aa0570ab78003eb19ecb41[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Tue Feb 13 16:43:10 2024 +0000
+
+    Update issue template
+
+[33mcommit fd80a000d92dba74df7dab05a1fee13fbdac264a[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Tue Feb 13 16:38:13 2024 +0000
+
+    Update README.md
+
+[33mcommit 68acbba868d18ba06a5cc419afac75f907243a5d[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Tue Feb 13 16:37:01 2024 +0000
+
+    Update folder structure for docs
+
+[33mcommit a180f78f20e30b70e5ea613ffba0cb4b49c3f23c[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Tue Feb 13 16:27:57 2024 +0000
+
+    Update dependencies
+
+[33mcommit 55399e4d6a9fdca294936319f10718b353e8af61[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Tue Feb 13 16:26:22 2024 +0000
+
+    Update issue template
+
+[33mcommit 04a0f87af49ac50613e02752af7c50370ebc47fd[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Tue Feb 13 16:25:53 2024 +0000
+
+    Update issue template
+
+[33mcommit 701ff0ace8a7adc215d643dc6ba0fcff92e3a1f6[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Tue Feb 13 16:24:39 2024 +0000
+
+    Update issue template
+
+[33mcommit f07e24ad563e8837fee44449fad42a7e1fa66afe[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Tue Feb 13 16:21:06 2024 +0000
+
+    Update issue template
+
+[33mcommit 3d1d3a5e3371029b914c8ad4c63d5a2e70b5b4e6[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Tue Feb 13 16:19:26 2024 +0000
+
+    Update issue template
+
+[33mcommit 545cafb17529f5aceab4295fa38af0a033592311[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Tue Feb 13 16:18:15 2024 +0000
+
+    Update issue template
+
+[33mcommit f0428e2e27091e8ab60b1ef94b96803fc318ee89[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Tue Feb 13 16:14:33 2024 +0000
+
+    Update issue templates
+
+[33mcommit 59361d1e1a044ce0b1fa13ce09c21e7034d6ef49[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Tue Feb 13 15:59:13 2024 +0000
+
+    Update products page
+
+[33mcommit 1fe7860483379ef2a3b67db39db023811748ab50[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Tue Feb 13 15:40:12 2024 +0000
+
+    Update page with type folder
+
+[33mcommit e04a899460484fe23bd0d848fbc51a33a9dd7d96[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Mon Feb 12 21:49:36 2024 +0000
+
+    Update mock data
+
+[33mcommit 1bfe9f007cae7889b4c7081ce1816a5413db33c0[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Mon Feb 12 21:49:07 2024 +0000
+
+    Update mock data
+
+[33mcommit aa199c091789e0a2945739b00c8ad48a8138d191[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Mon Feb 12 21:46:40 2024 +0000
+
+    Update with mock data
+
+[33mcommit 1aa5b6de4c291e7a168c7ec210e69dc6efde9fdb[m
+Merge: 7e4b6a3 4d71843
+Author: Srikanth Bandaru <srikanth.bandaru@bayer.com>
+Date:   Mon Feb 12 15:13:08 2024 -0600
+
+    Merge branch 'main' of github.com:jhanke00/next-product-site
+
+[33mcommit 7e4b6a313d939e3d17dd32a2e8ff14ca8571f8d9[m
+Author: Srikanth Bandaru <srikanth.bandaru@bayer.com>
+Date:   Mon Feb 12 15:12:59 2024 -0600
+
+    add storybook story for the Products Page
+
+[33mcommit 4d71843f001b11ea25764f5148a8f981994dbc71[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Mon Feb 12 21:03:52 2024 +0000
+
+    Update format
+
+[33mcommit c3888f63f8659e8aae9c704518606c7f5c50d2a5[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Mon Feb 12 21:03:11 2024 +0000
+
+    Cleanup code
+
+[33mcommit 069fb15129901a661ef24d64cad15729737ff3a7[m
+Merge: 6f2fa33 0d3a286
+Author: Srikanth Bandaru <srikanth.bandaru@bayer.com>
+Date:   Mon Feb 12 14:55:24 2024 -0600
+
+    Merge branch 'main' of github.com:jhanke00/next-product-site
+
+[33mcommit 6f2fa334308c2feadf9dbac68defe458bb338006[m
+Author: Srikanth Bandaru <srikanth.bandaru@bayer.com>
+Date:   Mon Feb 12 14:54:44 2024 -0600
+
+    generate 20000 products
+
+[33mcommit 0d3a286f10eec14cbd7879bd071beebb98f76623[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Mon Feb 12 20:48:27 2024 +0000
+
+    Update with config files
+
+[33mcommit 836b53bc8d3ff25be204247feadcb58898b26c3e[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Mon Feb 12 20:46:57 2024 +0000
+
+    Update husky and jest
+
+[33mcommit 4635fe9c1a3de01899737479c332b7b5abc56378[m
+Author: Srikanth Bandaru <srikanth.bandaru@bayer.com>
+Date:   Mon Feb 12 14:37:01 2024 -0600
+
+    dummy products page
+
+[33mcommit e290ece48d364103124373baa78a1e16175c2cc0[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Mon Feb 12 20:20:22 2024 +0000
+
+    Update mock data files
+
+[33mcommit 7c569784a80665f24a0049550910951e57786217[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Mon Feb 12 16:41:02 2024 +0000
+
+    Added jest and storybook testing
+
+[33mcommit ef2931a01c88a07a55b1b2429f278ddd16d676a6[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Fri Feb 9 21:44:35 2024 +0000
+
+    Update project name
+
+[33mcommit 6ec74325c0ce3f40fb1df8481c9105cb3435238a[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Fri Feb 9 21:25:07 2024 +0000
+
+    Update with mock data folder
+
+[33mcommit 0b7c5b662ab1c4ca21f384fb8472162f24efa49f[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Fri Feb 9 21:23:13 2024 +0000
+
+    Added folder structure
+
+[33mcommit cd494fdf0df46097274c24b4cf98a4275a90068b[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Fri Feb 9 21:16:23 2024 +0000
+
+    Adding base NextJS app
+
+[33mcommit 3c743313ea38a015a0f300e19ac447d6d8f9997b[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Fri Feb 9 20:56:39 2024 +0000
+
+    Pull request template
+
+[33mcommit ba8eb56c6f38f1ca89b172e0e2f59563f34b0696[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Fri Feb 9 14:31:06 2024 -0600
+
+    Create dependabot.yml
+
+[33mcommit 766482d9f894378dd3c0d8cfb138febca9e5a7f0[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Fri Feb 9 20:19:53 2024 +0000
+
+    Adding CONTRIBUTING.md
+
+[33mcommit f46fce37b92c7bb869990a24d8867cf5fefb7937[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Fri Feb 9 20:19:15 2024 +0000
+
+    Adding project details
+
+[33mcommit 56846959ac4cc7d84496ca33b42b18312a507493[m
+Author: Jeffrey Hanke <jeffrey.hanke1@gmail.com>
+Date:   Fri Feb 9 13:39:14 2024 -0600
+
+    Initial commit
